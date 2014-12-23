@@ -7,6 +7,8 @@ gem 'pg'
 gem 'slim-rails'
 gem 'figaro'
 gem 'sorcery'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 
 # assets processors
 gem 'sass-rails'
