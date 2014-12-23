@@ -6,6 +6,7 @@ gem 'pg'
 
 gem 'slim-rails'
 gem 'figaro'
+gem 'sorcery'
 
 # assets processors
 gem 'sass-rails'
