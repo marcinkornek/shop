@@ -30,13 +30,11 @@ describe User do
         user_with_same_email.save
         @user.save
       end
-
       it { should_not be_valid }
     end
 
     context "is with mixed case" do
       let(:mixed_case_email) { "Foo@ExAMPle.CoM" }
-
       it "should be saved as all lower-case" do
         @user.email = mixed_case_email
         @user.save
@@ -83,9 +81,28 @@ describe User do
       it { expect(@user).not_to be_valid }
     end
 
+    context "format is valid" do
+      it "should be valid" do
+        names = ["Mathias", "Martin Jr.", "Hector", "Łukasz"]
+        names.each do |valid_name|
+          @user.first_name = valid_name
+          expect(@user).to be_valid
+        end
+      end
+    end
+
+    context "format is invalid" do
+      it "should be invalid" do
+        names = ["Mathias d1Arras", "Stev3 Smith", "Steve Sm1th"]
+        names.each do |invalid_name|
+          @user.first_name = invalid_name
+          expect(@user).not_to be_valid
+        end
+      end
+    end
+
     context "is with mixed case" do
       let(:mixed_case_first_name) { "aDaM" }
-
       it "should be saved as capitalize" do
         @user.first_name = mixed_case_first_name
         @user.save
@@ -111,9 +128,28 @@ describe User do
       it { expect(@user).not_to be_valid }
     end
 
+    context "format is valid" do
+      it "should be valid" do
+        names = ["d'Arras", "Luther King", "Sausage-Hausen", "B-Ball Basketball", "Bżęczyszczykiewicz"]
+        names.each do |valid_name|
+          @user.first_name = valid_name
+          expect(@user).to be_valid
+        end
+      end
+    end
+
+    context "format is invalid" do
+      it "should be invalid" do
+        names = ["d1Arras", "Steve Sm1th"]
+        names.each do |invalid_name|
+          @user.first_name = invalid_name
+          expect(@user).not_to be_valid
+        end
+      end
+    end
+
     context "is with mixed case" do
       let(:mixed_case_last_name) { "aDaM" }
-
       it "should be saved as capitalize" do
         @user.last_name = mixed_case_last_name
         @user.save
