@@ -2,11 +2,14 @@
   cursor: pointer;
 }
 
-.background {
-  background-color: white;
-  height: 1000px;
-}
-
 body li {
   list-style-type: none;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.errors {
+  color: red;
 }

@@ -1,0 +1,41 @@
+.background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.login {
+  margin-top:150px;
+  margin-bottom: 500px;
+  height: 350px;
+}
+
+.login-form {
+  padding-top: 25px;
+  width: 66.66%;
+  display: inline-block;
+  background: #f4f3f1;
+  height: 350px;
+  vertical-align: top;
+}
+
+.register-form {
+  padding: 25px;
+  width: 33.33%;
+  display: inline-block;
+  background: #fff;
+  height: 350px;
+  vertical-align: top;
+}
+
+.oauth-login {
+  a {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    i {
+      padding-right: 5px;
+    }
+  }
+}

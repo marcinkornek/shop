@@ -38,4 +38,7 @@
   $scope.navHome = ->
     $state.go('home')
 
+  $scope.navLogin = ->
+    $state.go('login')
+
 @GlobalHeaderCtrl.$inject = ['$scope', '$state', '$translate', '$stateParams', '$cookies']

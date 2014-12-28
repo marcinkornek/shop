@@ -2,3 +2,20 @@ pl:
   "HEADER_LOGO": "Sklep"
   "HEADER_ACCOUNT": "Twoje konto"
   "HEADER_SEARCH_PRODUCTS_PLACEHOLDER": "Szukaj produkty"
+
+  # SESSIONS
+
+  "SESSION_NEW_SIGN_IN": "Zaloguj się"
+  "SESSION_NEW_SIGN_IN_WITH_FACEBOOK": "Zaloguj się z facebook"
+  "SESSION_NEW_SIGN_IN_WITH_GOOGLE": "Zaloguj się z google+"
+  "SESSION_NEW_SIGN_IN": "Zaloguj się"
+  "SESSION_NEW_EMAIL": "Email"
+  "SESSION_NEW_PASSWORD": "Hasło"
+  "SESSION_NEW_REMEMBER_PASSWORD": "Zapamiętaj mnie"
+  "SESSION_NEW_SIGN_IN": "Zaloguj"
+  "SESSION_NEW_SIGN_UP": "Nie mam konta, załóż"
+  "SESSION_NEW_OR": "lub"
+
+  session_controller:
+    "activate_email": "Proszę sprawdzić email i aktywować konto"
+    "wrong_email_password": "Nieprawidłowy email/nick lub hasło"

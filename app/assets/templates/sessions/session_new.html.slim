@@ -1,0 +1,45 @@
+.background.clearfix style="background-image: url(https://s3-eu-west-1.amazonaws.com/ngshop/page/login/login_photo.jpg)"
+  .login
+    .col-md-8.col-md-offset-2
+      .login-form
+        h3.text-center.uppercase.uppercase style="margin-top:0px;"
+          ' {{ "SESSION_NEW_SIGN_IN" | translate }}
+
+        .oauth-login.text-center
+          a href='/auth/facebook' class="btn btn-facebook width342"
+            i class="fa fa-facebook-square"
+            ' {{ "SESSION_NEW_SIGN_IN_WITH_FACEBOOK" | translate }}
+
+        .oauth-login.text-center
+          a href='/auth/google'  class="btn btn-google-plus width342"
+            i class="fa fa-google-plus"
+            ' {{ "SESSION_NEW_SIGN_IN_WITH_GOOGLE" | translate }}
+
+        p.text-center
+          ' {{ "SESSION_NEW_OR" | translate }}
+
+        .errors.text-center
+          div ng-show="formData.data_error"
+            ' {{ formData.data_error }}
+
+        form(style='width:50%;margin-left:auto;margin-right:auto' name='signinForm')
+
+          .field
+            input.span12(type="text" id="session_email" name="email" placeholder="{{ 'SESSION_NEW_EMAIL' | translate }}" maxlength="60" ng-model="formData.email" required)
+
+          .field
+            input.span12(type="password" id="session_password" name="password" placeholder="{{ 'SESSION_NEW_PASSWORD' | translate }}" maxlength="60" ng-model="formData.password" required)
+
+          .field
+            input.span12(type="checkbox" id="session_remember_me" name="remember_me" ng-model="formData.remember")
+            label
+              strong
+                ' {{ "SESSION_NEW_REMEMBER_PASSWORD" | translate }}
+
+          button.btn.btn-default(style="width:100%" ng-click="createSession()")
+            ' {{ "SESSION_NEW_SIGN_IN" | translate }}
+
+      .register-form
+        h3.text-center.uppercase style="margin-top:0px;"
+          ' {{ "SESSION_NEW_SIGN_UP" | translate }}
+
