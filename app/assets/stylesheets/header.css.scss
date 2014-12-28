@@ -92,11 +92,11 @@ header a {
 
 .search {
   float: right;
+  border-left: 1px #ecebe8 solid;
   a {
-    display: block;
+    display: inline-block;
     width: 60px;
     height: 60px;
-    border-left: 1px #ecebe8 solid;
     i {
       font-size: 20px;
       padding-left: 20px;
@@ -105,9 +105,25 @@ header a {
   }
   input {
     padding-left: 18px;
-    width: 110px;
+    width: 130px;
+    height: 100%;
     border: 0px;
     outline: 0px;
+  }
+}
+
+input {
+  &.animate-show {
+    -webkit-transition: all linear 0.5s;
+    transition: all linear 0.5s;
+    opacity: 1;
+  }
+
+  &.animate-show.ng-hide-add, &.animate-show.ng-hide-remove {
+    display: inline-block !important;
+  }
+  &.animate-show.ng-hide {
+    opacity: 0;
   }
 }
 
