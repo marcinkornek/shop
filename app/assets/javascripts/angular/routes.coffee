@@ -1,16 +1,13 @@
-angular.module('Rails-AngularJS-template').config ($stateProvider, $urlRouterProvider) ->
+angular.module('shop').config ($stateProvider, $urlRouterProvider) ->
   $urlRouterProvider.otherwise('/');
 
-#   $stateProvider
-#     .state('home', {
-#       url: '/',
-#       data: {
-#         roles: []
-#       },
-#       views: {
-#         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'header/header.html' }
-#         "body":       { controller: 'SessionNewCtrl',  templateUrl: 'body/sessions/session_new.html' }
-#       }
+  $stateProvider
+    .state('home', {
+      url: '/',
+      views: {
+        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'global/header.html' }
+      }
+    })
 #       data: {
 #         roles: ['User', 'Admin']
 #       }
@@ -20,7 +17,7 @@ angular.module('Rails-AngularJS-template').config ($stateProvider, $urlRouterPro
 #         "body":       { controller: 'ProductsIndexCtrl',  templateUrl: 'body/products/products_index.html' }
 #         "order":      { controller: 'OrderSummaryCtrl',  templateUrl: 'body/orders/orders_index.html' }
 #       }
-#     })
+    # })
 
 #     # User
 #     .state('sign_up', {

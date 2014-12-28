@@ -1,0 +1,102 @@
+header.main-header
+
+  figure.logo ng-click="navHome()"
+    a
+      ' {{ "HEADER_LOGO" | translate }}
+
+  nav.main-nav
+    ul.menu
+      li.header
+        a.title.top-border href="#"  Hyperlink 2
+
+        .submenu-with-banner style="background-image: url(https://s3.amazonaws.com/bartender-app-heroku/category_images/food.jpg);background-size:200px;"
+          .columns
+            ul.links
+              li
+                a
+                  ' Hyperlink 2.1
+              li
+                a
+                  ' Hyperlink 2.2
+              li
+                a
+                  ' Hyperlink 2.3
+              li
+                a
+                  ' Hyperlink 2.4
+              li
+                a
+                  ' Hyperlink 2.5
+              li
+                a
+                  ' Hyperlink 2.6
+            ul.links
+              li
+                a
+                  ' Hyperlink 2.1
+              li
+                a
+                  ' Hyperlink 2.2
+              li
+                a
+                  ' Hyperlink 2.3
+            ul.links
+              li
+                a
+                  ' Hyperlink 2.1
+              li
+                a
+                  ' Hyperlink 2.2
+              li
+                a
+                  ' Hyperlink 2.3
+              li
+                a
+                  ' Hyperlink 2.4
+        li.header
+          a.title.top-border href="#"  Hyperlink 3
+
+          .submenu-with-banner style="background-image: url(https://s3.amazonaws.com/bartender-app-heroku/category_images/drinks.jpg);background-size:150px;"
+            .columns
+              ul.links
+                li
+                  a
+                    ' Hyperlink 3.1
+                li
+                  a
+                    ' Hyperlink 3.2
+                li
+                  a
+                    ' Hyperlink 3.3
+
+  nav.right-nav
+    ul.menu
+      li.language
+        a.title ng-show="data.locale=='pl'"
+          ' PL
+        a.title ng-show="data.locale=='en'"
+          ' EN
+
+        .submenu-small
+          ul.links-small
+            li
+              a ng-click="changeLanguage('pl')" PL
+              i.fa.fa-check ng-show="data.locale=='pl'"
+            li
+              a ng-click="changeLanguage('en')" EN
+              i.fa.fa-check ng-show="data.locale=='en'"
+
+      li.cart
+        a
+          i.fa.fa-shopping-cart
+
+      li.search
+        / input(id="search" placeholder="{{ 'HEADER_SEARCH_PRODUCTS_PLACEHOLDER' | translate }}" type="text" ng-model="formData.search_query" style="display:none;")
+        a
+          i.fa.fa-search
+
+      li.account
+        a
+          ' {{ "HEADER_ACCOUNT" | translate }}
+
+.background

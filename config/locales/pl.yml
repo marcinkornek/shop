@@ -1,2 +1,4 @@
 pl:
-  "EXAMPLE_TRANSLATE": "Przykładowe tłumaczenie"
+  "HEADER_LOGO": "Sklep"
+  "HEADER_ACCOUNT": "Twoje konto"
+  "HEADER_SEARCH_PRODUCTS_PLACEHOLDER": "Szukaj produkty"

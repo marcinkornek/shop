@@ -1,4 +1,4 @@
-angular.module('Rails-AngularJS-template').factory "exampleData", ($resource) ->
+angular.module('shop').factory "exampleData", ($resource) ->
   $resource("/api/examples/:id", {id: "@id"},
     {
       get:   {isArray: true},
