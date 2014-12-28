@@ -6,7 +6,7 @@ gem 'pg'
 
 gem 'slim-rails'
 gem 'figaro'
-gem 'sorcery'
+gem 'sorcery', '~> 0.8.6'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 
@@ -21,11 +21,16 @@ gem 'autoprefixer-rails'
 
 # assets
 gem 'rails-assets-lodash'
-gem 'rails-assets-angular'
-gem 'rails-assets-angular-cache'
+gem 'rails-assets-angular', '~> 1.2.0'
+gem 'rails-assets-angular-cache', '~> 2.3.4'
 gem 'rails-assets-angular-ui-router'
 gem 'rails-assets-angular-resource'
 gem 'rails-assets-angular-translate'
+gem 'rails-assets-angular-animate'
+gem 'rails-assets-angular-bootstrap'
+gem 'rails-assets-bootstrap'
+gem 'rails-assets-Font-Awesome'
+gem 'rails-assets-angular-cookies'
 
 group :development, :test do
   gem 'spring'

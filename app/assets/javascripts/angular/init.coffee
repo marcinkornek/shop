@@ -1,8 +1,11 @@
-angular.module('Rails-AngularJS-template', [
+angular.module('shop', [
   'ui.router',
   'jmdobry.angular-cache',
   'pascalprecht.translate',
   'ngResource',
+  'ui.bootstrap',
+  'ngAnimate',
+  'ngCookies',
 ])
   .factory 'railsLocalesLoader', ($http) ->
     (options) ->
@@ -36,6 +39,6 @@ angular.module('Rails-AngularJS-template', [
     $translateProvider.useLoader('railsLocalesLoader')
     $translateProvider.preferredLanguage('pl')
 
-angular.module('Rails-AngularJS-template').config(["$httpProvider", (provider) ->
-  provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
-])
+# angular.module('shop').config(["$httpProvider", (provider) ->
+#   provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
+# ])
