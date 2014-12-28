@@ -9,6 +9,7 @@ gem 'figaro'
 gem 'sorcery', '~> 0.8.6'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
+gem 'angular_rails_csrf'
 
 # assets processors
 gem 'sass-rails'
