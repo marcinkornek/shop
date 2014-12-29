@@ -38,3 +38,7 @@ angular.module('shop', [
     # Angular translate
     $translateProvider.useLoader('railsLocalesLoader')
     $translateProvider.preferredLanguage('pl')
+
+angular.module("shop").config (datepickerConfig, datepickerPopupConfig) ->
+  datepickerPopupConfig.showButtonBar = false
+  datepickerConfig.showWeeks = false

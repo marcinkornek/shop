@@ -9,12 +9,28 @@ en:
   "SESSION_NEW_SIGN_IN_WITH_FACEBOOK": "Login with facebook"
   "SESSION_NEW_SIGN_IN_WITH_GOOGLE": "Login with google+"
   "SESSION_NEW_SIGN_IN": "Login"
-  "SESSION_NEW_EMAIL": "Email"
-  "SESSION_NEW_PASSWORD": "Password"
+  "SESSION_NEW_EMAIL_PLACEHOLDER": "Email"
+  "SESSION_NEW_PASSWORD_PLACEHOLDER": "Password"
   "SESSION_NEW_REMEMBER_PASSWORD": "Remember me"
   "SESSION_NEW_SIGN_IN": "Login"
-  "SESSION_NEW_SIGN_UP": "I don't have an account, register now"
+  "SESSION_NEW_SIGN_UP_TEXT": "I don't have an account"
+  "SESSION_NEW_SIGN_UP": "Register now"
   "SESSION_NEW_OR": "or"
+
+  # USERS
+
+  "USER_NEW_SIGN_UP": "Register"
+  "USER_NEW_FIRST_NAME_PLACEHOLDER": "First name*"
+  "USER_NEW_LAST_NAME_PLACEHOLDER": "Last name*"
+  "USER_NEW_EMAIL_PLACEHOLDER": "Email*"
+  "USER_NEW_TEL_NUM_PLACEHOLDER": "Telephone number"
+  "USER_NEW_BIRTH_DATE_PLACEHOLDER": "Birth date"
+  "USER_NEW_PASSWORD_PLACEHOLDER": "Password*"
+  "USER_NEW_PASSWORD_CONFIRMATION_PLACEHOLDER": "Password confirmation*"
+  "USER_NEW_REQUIRED": "* Required fields"
+  "USER_NEW_SIGN_UP": "Register"
+  "USER_NEW_LOGIN_TEXT": "You have an account"
+  "USER_NEW_NEW_LOGIN": "Login now"
 
   session_controller:
       "activate_email": "Please check your email and activate account"

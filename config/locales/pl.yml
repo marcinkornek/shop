@@ -9,12 +9,28 @@ pl:
   "SESSION_NEW_SIGN_IN_WITH_FACEBOOK": "Zaloguj się z facebook"
   "SESSION_NEW_SIGN_IN_WITH_GOOGLE": "Zaloguj się z google+"
   "SESSION_NEW_SIGN_IN": "Zaloguj się"
-  "SESSION_NEW_EMAIL": "Email"
-  "SESSION_NEW_PASSWORD": "Hasło"
+  "SESSION_NEW_EMAIL_PLACEHOLDER": "Email"
+  "SESSION_NEW_PASSWORD_PLACEHOLDER": "Hasło"
   "SESSION_NEW_REMEMBER_PASSWORD": "Zapamiętaj mnie"
   "SESSION_NEW_SIGN_IN": "Zaloguj"
-  "SESSION_NEW_SIGN_UP": "Nie mam konta, załóż"
+  "SESSION_NEW_SIGN_UP_TEXT": "Nie mam konta"
+  "SESSION_NEW_SIGN_UP": "Załóż teraz"
   "SESSION_NEW_OR": "lub"
+
+  # USERS
+
+  "USER_NEW_SIGN_UP": "Zarejestruj się"
+  "USER_NEW_FIRST_NAME_PLACEHOLDER": "Imię*"
+  "USER_NEW_LAST_NAME_PLACEHOLDER": "Nazwisko*"
+  "USER_NEW_EMAIL_PLACEHOLDER": "Email*"
+  "USER_NEW_TEL_NUM_PLACEHOLDER": "Numer telefonu"
+  "USER_NEW_BIRTH_DATE_PLACEHOLDER": "Data urodzenia"
+  "USER_NEW_PASSWORD_PLACEHOLDER": "Hasło*"
+  "USER_NEW_PASSWORD_CONFIRMATION_PLACEHOLDER": "Potwierdzenie hasła*"
+  "USER_NEW_REQUIRED": "* Wymagane pola"
+  "USER_NEW_SIGN_UP": "Zarejestruj się"
+  "USER_NEW_LOGIN_TEXT": "Masz konto"
+  "USER_NEW_NEW_LOGIN": "Zaloguj się"
 
   session_controller:
     "activate_email": "Proszę sprawdzić email i aktywować konto"
