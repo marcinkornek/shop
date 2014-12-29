@@ -1,6 +1,6 @@
-@GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies) ->
+@GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies, sessionData, principal) ->
 
-  # loading data
+  # loading data 1/2
 
   $scope.formData = {}
 
@@ -20,6 +20,14 @@
   $scope.searchQuery = ->
     console.log $scope.formData.search_query
 
+  $scope.destroySession = ->
+    sessionData.delete((response) ->
+      $scope.data = {}
+      window.currentUser = {}
+      principal.authenticate(null)
+      $state.go('home', {}, {reload: true})
+    )
+
   # language
 
   $scope.setLanguage = ->
@@ -33,6 +41,15 @@
     $translate.use key
     $cookies.locale = $scope.data.locale = key
 
+  # loading data 2/2
+
+  $scope.loadData = ->
+    $scope.data = {}
+    $scope.data.user =  window.currentUser
+    $scope.data.locale = $cookies.locale
+
+  $scope.loadData()
+
   # navigation
 
   $scope.navHome = ->
@@ -41,4 +58,5 @@
   $scope.navLogin = ->
     $state.go('login')
 
-@GlobalHeaderCtrl.$inject = ['$scope', '$state', '$translate', '$stateParams', '$cookies']
+
+@GlobalHeaderCtrl.$inject = ['$scope', '$state', '$translate', '$stateParams', '$cookies', 'sessionData', 'principal']

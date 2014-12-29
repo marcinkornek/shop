@@ -4,7 +4,7 @@ class Api::SessionsController < ApplicationController
     if @user = login(params[:email].downcase, params[:password], params[:remember])
       @user = User.find(@user.id)
       @user
-      render json: {user: @user.to_hash}
+      render json: {user: @user}
     else
       @user = User.find_by(email: params[:email])
       if @user && @user.activation_state != 'active'

@@ -95,6 +95,13 @@ header.main-header
         a ng-click="searchShow()"
           i.fa.fa-search
 
+      li.logout ng-show="data.user.id"
+        a ng-click="destroySession()"
+          i.fa.fa-power-off
+
       li.account
-        a ng-click="navLogin()"
+        a ng-click="navLogin()" ng-hide="data.user.id"
           ' {{ "HEADER_ACCOUNT" | translate }}
+
+        a.uppercase ng-show="data.user.id"
+          ' {{ data.user.first_name }}

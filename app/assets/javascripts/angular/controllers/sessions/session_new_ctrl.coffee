@@ -18,21 +18,21 @@
           console.log 'success'
           console.log success.user
           window.currentUser = success.user
-          # user authorization
           console.log 'role = ', success.user.role
           principal.authenticate(success.user.role)
-            # username: success.user.username
-            # roles: [ "User" ]
-          # friendly forwarding
           if ($scope.returnToState)
             $state.go($scope.returnToState.name, $scope.returnToStateParams)
           else
             $state.go('home')
         , (error) ->
           console.log 'error'
-          # console.log error.data
           $scope.formData.data_error = error.data.error if error.data
       )
+
+  # navigation
+
+  $scope.navRegister = ->
+    $state.go('register')
 
 @SessionNewCtrl.$inject = ['$scope', '$state', 'sessionData', 'principal']
 

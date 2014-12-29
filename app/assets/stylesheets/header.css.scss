@@ -146,6 +146,21 @@ input {
   }
 }
 
+.logout {
+  float: right;
+  border-left: 1px #ecebe8 solid;
+  a {
+    display: block;
+    width: 60px;
+    height: 60px;
+    i {
+      font-size: 20px;
+      padding-left: 20px;
+      padding-top: 18px;
+    }
+  }
+}
+
 .account {
   float: right;
   a {
