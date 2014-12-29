@@ -11,12 +11,13 @@
           ' {{ "SESSION_NEW_SIGN_IN" | translate }}
 
         .oauth-login.text-center
-          a href='/auth/facebook' class="btn btn-facebook width342"
+          a href='/auth/facebook' class="btn btn-facebook width342" ng-click="$event.stopPropagation()"
             i class="fa fa-facebook-square"
             ' {{ "SESSION_NEW_SIGN_IN_WITH_FACEBOOK" | translate }}
+          // ng-click="$event.stopPropagation()" - fixes external links in ui-router
 
         .oauth-login.text-center
-          a href='/auth/google'  class="btn btn-google-plus width342"
+          a href='/auth/google' class="btn btn-google-plus width342" ng-click="$event.stopPropagation()"
             i class="fa fa-google-plus"
             ' {{ "SESSION_NEW_SIGN_IN_WITH_GOOGLE" | translate }}
 
@@ -44,5 +45,5 @@
         h3.text-center.uppercase style="margin-top:0px;"
           ' {{ "SESSION_NEW_SIGN_UP_TEXT" | translate }}
 
-        button class="btn login-button" style="width:100%" ng-click="navRegister()"
+        a class="btn login-button" style="width:100%" ui-sref="register"
           ' {{ "SESSION_NEW_SIGN_UP" | translate }}

@@ -1,6 +1,6 @@
 header.main-header
 
-  figure.logo ng-click="navHome()"
+  figure.logo ui-sref="home"
     a
       ' {{ "HEADER_LOGO" | translate }}
 
@@ -100,7 +100,7 @@ header.main-header
           i.fa.fa-power-off
 
       li.account
-        a ng-click="navLogin()" ng-hide="data.user.id"
+        a ui-sref="login" ng-hide="data.user.id"
           ' {{ "HEADER_ACCOUNT" | translate }}
 
         a.uppercase ng-show="data.user.id"

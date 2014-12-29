@@ -50,12 +50,4 @@ GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies, sessionD
 
   $scope.loadData()
 
-  # navigation
-
-  $scope.navHome = ->
-    $state.go('home')
-
-  $scope.navLogin = ->
-    $state.go('login')
-
 angular.module("shop").controller "GlobalHeaderCtrl", GlobalHeaderCtrl
