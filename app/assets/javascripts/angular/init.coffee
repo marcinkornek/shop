@@ -42,3 +42,6 @@ angular.module('shop', [
 angular.module("shop").config (datepickerConfig, datepickerPopupConfig) ->
   datepickerPopupConfig.showButtonBar = false
   datepickerConfig.showWeeks = false
+
+angular.module("shop").config ($locationProvider) ->
+  $locationProvider.html5Mode true
