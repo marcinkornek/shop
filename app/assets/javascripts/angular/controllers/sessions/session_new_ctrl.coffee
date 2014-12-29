@@ -1,4 +1,4 @@
-@SessionNewCtrl = ($scope, $state, sessionData, principal) ->
+SessionNewCtrl = ($scope, $state, sessionData, principal) ->
 
   # function
 
@@ -43,5 +43,4 @@
   $scope.navRegister = ->
     $state.go('register')
 
-@SessionNewCtrl.$inject = ['$scope', '$state', 'sessionData', 'principal']
-
+angular.module("shop").controller "SessionNewCtrl", SessionNewCtrl

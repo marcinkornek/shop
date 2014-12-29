@@ -1,4 +1,4 @@
-@GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies, sessionData, principal) ->
+GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies, sessionData, principal) ->
 
   # loading data 1/2
 
@@ -58,5 +58,4 @@
   $scope.navLogin = ->
     $state.go('login')
 
-
-@GlobalHeaderCtrl.$inject = ['$scope', '$state', '$translate', '$stateParams', '$cookies', 'sessionData', 'principal']
+angular.module("shop").controller "GlobalHeaderCtrl", GlobalHeaderCtrl

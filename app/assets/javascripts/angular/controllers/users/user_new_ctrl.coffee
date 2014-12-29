@@ -1,4 +1,4 @@
-@UserNewCtrl = ($scope, $state, userData, principal) ->
+UserNewCtrl = ($scope, $state, userData, principal) ->
 
   # function
 
@@ -25,5 +25,4 @@
   $scope.navLogin = ->
     $state.go('login')
 
-@UserNewCtrl.$inject = ['$scope', '$state', 'userData', 'principal']
-
+angular.module("shop").controller "UserNewCtrl", UserNewCtrl

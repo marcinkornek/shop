@@ -24,7 +24,7 @@ gem 'autoprefixer-rails'
 
 # assets
 gem 'rails-assets-lodash'
-gem 'rails-assets-angular', '~> 1.2.0'
+gem 'rails-assets-angular'
 gem 'rails-assets-angular-cache', '~> 2.3.4'
 gem 'rails-assets-angular-ui-router'
 gem 'rails-assets-angular-resource'
