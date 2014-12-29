@@ -1,7 +1,12 @@
 .background.clearfix style="background-image: url(https://s3-eu-west-1.amazonaws.com/ngshop/page/login/login_photo.jpg)"
+
+  .login-errors
+    .col-md-8.col-md-offset-2
+      alert close="closeAlert($index)" ng-repeat="alert in alerts" type="{{alert.type}}" style="margin-bottom:0px;"
+        ' {{alert.msg}}
   .login
     .col-md-8.col-md-offset-2
-      .login-form
+      .login-form style="width:66.66%;height:350px;"
         h3.text-center.uppercase.uppercase style="margin-top:0px;"
           ' {{ "SESSION_NEW_SIGN_IN" | translate }}
 
@@ -18,17 +23,13 @@
         p.text-center
           ' {{ "SESSION_NEW_OR" | translate }}
 
-        .errors.text-center
-          div ng-show="formData.data_error"
-            ' {{ formData.data_error }}
-
         form(style='width:50%;margin-left:auto;margin-right:auto' name='signinForm')
 
           .field
-            input.span12(type="text" id="session_email" name="email" placeholder="{{ 'SESSION_NEW_EMAIL' | translate }}" maxlength="60" ng-model="formData.email" required)
+            input.form-control.span12(type="text" id="session_email" name="email" placeholder="{{ 'SESSION_NEW_EMAIL_PLACEHOLDER' | translate }}" maxlength="60" ng-model="formData.email" required)
 
           .field
-            input.span12(type="password" id="session_password" name="password" placeholder="{{ 'SESSION_NEW_PASSWORD' | translate }}" maxlength="60" ng-model="formData.password" required)
+            input.form-control.span12(type="password" id="session_password" name="password" placeholder="{{ 'SESSION_NEW_PASSWORD_PLACEHOLDER' | translate }}" maxlength="60" ng-model="formData.password" required)
 
           .field
             input.span12(type="checkbox" id="session_remember_me" name="remember_me" ng-model="formData.remember")
@@ -39,7 +40,9 @@
           button.btn.btn-default(style="width:100%" ng-click="createSession()")
             ' {{ "SESSION_NEW_SIGN_IN" | translate }}
 
-      .register-form
+      .register-form style="width:33.33%;height:350px;"
         h3.text-center.uppercase style="margin-top:0px;"
-          ' {{ "SESSION_NEW_SIGN_UP" | translate }}
+          ' {{ "SESSION_NEW_SIGN_UP_TEXT" | translate }}
 
+        button class="btn login-button" style="width:100%" ng-click="navRegister()"
+          ' {{ "SESSION_NEW_SIGN_UP" | translate }}

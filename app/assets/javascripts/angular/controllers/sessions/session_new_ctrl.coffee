@@ -26,8 +26,17 @@
             $state.go('home')
         , (error) ->
           console.log 'error'
-          $scope.formData.data_error = error.data.error if error.data
+          $scope.addAlert(error.data.error, 'danger') if error.data
       )
+
+  $scope.alerts = []
+
+  $scope.addAlert = (alert, type) ->
+    $scope.closeAlert()
+    $scope.alerts.push {type: type, msg: alert}
+
+  $scope.closeAlert = (index) ->
+    $scope.alerts.splice index, 1
 
   # navigation
 
