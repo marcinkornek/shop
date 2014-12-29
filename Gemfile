@@ -10,6 +10,7 @@ gem 'sorcery', '~> 0.8.6'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'angular_rails_csrf'
+gem 'roar-rails', '~> 0.1.6' # representer - extends/fits json files
 
 # assets processors
 gem 'sass-rails'
