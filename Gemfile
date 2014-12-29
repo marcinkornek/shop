@@ -11,6 +11,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'angular_rails_csrf'
 gem 'roar-rails', '~> 0.1.6' # representer - extends/fits json files
+gem 'jquery-rails'
 
 # assets processors
 gem 'sass-rails'

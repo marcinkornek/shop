@@ -1,5 +1,6 @@
 //= require lodash
 //
+//= require jquery
 //= require angular
 //= require angular-bootstrap
 //= require angular-animate
