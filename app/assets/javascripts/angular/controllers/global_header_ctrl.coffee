@@ -46,7 +46,7 @@ GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies, sessionD
   $scope.loadData = ->
     $scope.data = {}
     $scope.data.user =  window.currentUser
-    $scope.data.locale = $cookies.locale
+    $scope.data.locale = $cookies.locale || 'pl'
 
   $scope.loadData()
 

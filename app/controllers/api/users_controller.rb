@@ -1,12 +1,11 @@
 class Api::UsersController < ApplicationController
   before_action :current_user?, only:   [:update, :destroy]
   before_action :require_login, except: [:create, :activate, :show, :check_if_unique]
-  # before_action :check_if_admin, except: [:create, :activate, :show, :update, :avatar_upload, :check_if_unique]
+  before_action :check_if_admin, except: [:create, :activate, :show, :update, :check_if_unique]
 
   def index
-    @users = User.all.order(created_at: :desc).extend(ListUsersRepresenter).paginate(:page => params[:page], :per_page => 10)
-    @users_number = User.all.count
-    render json: {users: @users.to_hash, number: @users_number}
+    @users = User.all.order(created_at: :desc).extend(ListUsersRepresenter)
+    render json: @users
   end
 
   def create
@@ -25,14 +24,14 @@ class Api::UsersController < ApplicationController
     show_user = if current_user.role == 'Admin'
       user.extend(UserRepresenter)
     else
-      current_user.extend(UserRepresenter)
+      user
     end
     render json: show_user
   end
 
   def update
     if user.update_attributes(user_params)
-      render json: user.extend(UserRepresenter)
+      render json: user.extend(HeaderUserRepresenter)
     else
       render json: user.errors, status: :not_acceptable
     end
@@ -72,6 +71,10 @@ class Api::UsersController < ApplicationController
   end
 
   def user
+    @user ||= current_user
+  end
+
+  def admin_user
     @user ||= User.find(params[:id])
   end
 

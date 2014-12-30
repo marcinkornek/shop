@@ -5,9 +5,9 @@
 }
 
 .login {
+  width: 100%;
   margin-top:150px;
   margin-bottom: 500px;
-  height: 350px;
 }
 
 .login-errors {
@@ -15,16 +15,22 @@
 }
 
 .login-form {
+  display: table-cell;
   padding: 25px;
-  display: inline-block;
   background: #f4f3f1;
   vertical-align: top;
 }
 
 .register-form {
+  display: table-cell;
   padding: 25px;
-  display: inline-block;
   background: #fff;
+  vertical-align: top;
+}
+
+.account-form {
+  padding: 25px;
+  background: #f4f3f1;
   vertical-align: top;
 }
 

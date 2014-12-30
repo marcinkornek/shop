@@ -103,5 +103,5 @@ header.main-header
         a ui-sref="login" ng-hide="data.user.id"
           ' {{ "HEADER_ACCOUNT" | translate }}
 
-        a.uppercase ng-show="data.user.id"
+        a.uppercase ng-show="data.user.id" ui-sref="user_edit"
           ' {{ data.user.first_name }}

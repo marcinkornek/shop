@@ -38,9 +38,4 @@ SessionNewCtrl = ($scope, $state, sessionData, principal) ->
   $scope.closeAlert = (index) ->
     $scope.alerts.splice index, 1
 
-  # navigation
-
-  $scope.navRegister = ->
-    $state.go('register')
-
 angular.module("shop").controller "SessionNewCtrl", SessionNewCtrl

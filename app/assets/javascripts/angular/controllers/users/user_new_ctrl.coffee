@@ -20,9 +20,4 @@ UserNewCtrl = ($scope, $state, userData, principal) ->
     $event.stopPropagation()
     $scope.opened = true
 
-  # navigation
-
-  $scope.navLogin = ->
-    $state.go('login')
-
 angular.module("shop").controller "UserNewCtrl", UserNewCtrl
