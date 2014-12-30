@@ -15,6 +15,7 @@ describe User do
   it { expect(@user).to respond_to(:password_confirmation) }
   it { expect(@user).to respond_to(:provider) }
   it { expect(@user).to respond_to(:uid) }
+  it { expect(@user).to respond_to(:addresses) }
 
   it { expect(@user).to be_valid }
 

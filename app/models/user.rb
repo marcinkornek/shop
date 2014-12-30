@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
+  has_many :addresses
 
   before_save :prepare_to_save
+
+  accepts_nested_attributes_for :addresses
 
   authenticates_with_sorcery!
 
@@ -18,7 +21,7 @@ class User < ActiveRecord::Base
   validates :last_name,               length: { in: 3..30 },
                                       format: { with: VALID_NAME_REGEX }
 
-  VALID_NUMBER_REGEX = /[0-9]+/
+  VALID_NUMBER_REGEX = /\d+/
   validates :tel_num,                 length: { is: 9 }, allow_blank: true,
                                       format: { with: VALID_NUMBER_REGEX }
 
