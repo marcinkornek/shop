@@ -45,3 +45,28 @@ angular.module("shop").config (datepickerConfig, datepickerPopupConfig) ->
 
 angular.module("shop").config ($locationProvider) ->
   $locationProvider.html5Mode true
+
+# ###
+# http://stackoverflow.com/a/22540482/3922041
+# ###
+
+angular.module('shop').run([ "$rootScope", "$state", "$stateParams", "authorization", "principal", ($rootScope, $state, $stateParams, authorization, principal) ->
+  $rootScope.$on "$stateChangeStart", (event, toState, toParams, fromState, fromParams) ->
+    # console.log "toState.name: " + toState.name
+    # console.log "fromState.name: " + fromState.name
+    # console.log "----------------------"
+    $rootScope.toState = toState
+    $rootScope.toStateParams = toParams
+    # console.log window.currentUser.id
+    if window.currentUser.id
+      console.log 'true'
+      principal.authenticate
+        username: window.currentUser.username
+        roles: [ window.currentUser.role ]
+    else
+      principal.authenticate(null)
+      # console.log 'false'
+    authorization.authorize()
+  $rootScope.$on "$stateChangeSuccess", (event, toState, toParams, fromState, fromParams) ->
+    # console.log 'success'
+])

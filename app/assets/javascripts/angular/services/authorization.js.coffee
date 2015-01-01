@@ -17,6 +17,6 @@ angular.module('shop').factory "authorization", [ "$rootScope", "$state", "princ
             $rootScope.returnToStateParams = $rootScope.toStateParams
 
             # now, send them to the signin state so they can log in
-            $state.go "sign_in"
+            $state.go "login"
 
  ]

@@ -1,7 +1,6 @@
 en:
   "HEADER_LOGO": "Shop"
   "HEADER_ACCOUNT": "Your account"
-  "HEADER_SEARCH_PRODUCTS_PLACEHOLDER": "Search products"
 
   # SESSIONS
 
@@ -18,6 +17,18 @@ en:
   # USERS
 
   "USER_NEW_SIGN_UP": "Register"
+  "USER_NEW_REQUIRED": "* Required fields"
+  "USER_NEW_SIGN_UP": "Register"
+  "USER_NEW_LOGIN_TEXT": "You have an account"
+  "USER_NEW_NEW_LOGIN": "Login now"
+
+  "USER_EDIT_SUCCESS": "Data have successfully updated"
+  "USER_EDIT_TITLE": "My data"
+  "USER_EDIT_UPDATE": "Save changes"
+  "USER_EDIT_ADDRESS_TITLE": "Address"
+
+  # PLACEHOLDERS
+
   "FIRST_NAME_PLACEHOLDER": "First name*"
   "LAST_NAME_PLACEHOLDER": "Last name*"
   "EMAIL_PLACEHOLDER": "Email*"
@@ -25,10 +36,12 @@ en:
   "BIRTH_DATE_PLACEHOLDER": "Birth date (YYYY-MM-DD)"
   "PASSWORD_PLACEHOLDER": "Password*"
   "PASSWORD_CONFIRMATION_PLACEHOLDER": "Password confirmation*"
-  "USER_NEW_REQUIRED": "* Required fields"
-  "USER_NEW_SIGN_UP": "Register"
-  "USER_NEW_LOGIN_TEXT": "You have an account"
-  "USER_NEW_NEW_LOGIN": "Login now"
+  "TOWN_PLACEHOLDER": "Town"
+  "STREET_PLACEHOLDER": "Street"
+  "POSTCODE_PLACEHOLDER": "Postcode (00-000)"
+  "HOUSE_NUM_PLACEHOLDER": "House number/flat number"
+
+  # ERRORS
 
   "ERROR_FIRST_NAME_REQUIRED": "First name is required"
   "ERROR_FIRST_NAME_PATTERN": "First name is invalid"
@@ -38,19 +51,27 @@ en:
   "ERROR_LAST_NAME_PATTERN": "Last name is invalid"
   "ERROR_LAST_NAME_SHORT": "Last name is too short"
   "ERROR_LAST_NAME_LONG": "Last name is too long"
-  "ERROR_EMAIL_REQUIRED": "Email is required."
-  "ERROR_EMAIL_INVALID": "Email is invalid."
-  "ERROR_EMAIL_EXISTS": "Email already exists."
+  "ERROR_EMAIL_REQUIRED": "Email is required"
+  "ERROR_EMAIL_INVALID": "Email is invalid"
+  "ERROR_EMAIL_EXISTS": "Email already exists"
+  "ERROR_TEL_NUM_REQUIRED": "Telephone number is required"
   "ERROR_TEL_NUM_SHORT": "Telephone number is too short"
   "ERROR_TEL_NUM_PATTERN": "Telephone number must contain only digits"
   "ERROR_BIRTH_DATE_PATTERN": "Date format is invalid (YYYY-MM-DD)"
-  "ERROR_PASSWORD_REQUIRED": "Password is required."
-  "ERROR_PASSWORD_SHORT": "Password is too short."
-  "ERROR_PASSWORD_MISMATCH": "Password confirmation don't match password."
+  "ERROR_PASSWORD_REQUIRED": "Password is required"
+  "ERROR_PASSWORD_SHORT": "Password is too short"
+  "ERROR_PASSWORD_MISMATCH": "Password confirmation don't match password"
+  "ERROR_TOWN_REQUIRED": "Town is required"
+  "ERROR_STREET_REQUIRED": "Street is required"
+  "ERROR_STREET_PATTERN": "Street is invalid"
+  "ERROR_STREET_SHORT": "Street is too short"
+  "ERROR_STREET_LONG": "Street is too long"
+  "ERROR_POSTCODE_REQUIRED": "Postcode is required"
+  "ERROR_POSTCODE_PATTERN": "Postcode is invalid"
+  "ERROR_POSTCODE_SHORT": "Postcode is too short"
+  "ERROR_HOUSE_NUM_REQUIRED": "House number is required"
+  "ERROR_HOUSE_NUM_PATTERN": "House number is invalid"
 
-  "USER_EDIT_SUCCESS": "Data have successfully updated"
-  "USER_EDIT_TITLE": "My data"
-  "USER_EDIT_UPDATE": "Save changes"
 
   session_controller:
       "activate_email": "Please check your email and activate account"

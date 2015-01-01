@@ -74,6 +74,10 @@ header a {
     color: black;
     text-decoration: none;
   }
+  &:focus {
+    color: #777;
+    text-decoration: none;
+  }
 }
 
 .language {

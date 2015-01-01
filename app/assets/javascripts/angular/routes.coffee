@@ -38,7 +38,7 @@ angular.module('shop').config ($stateProvider, $urlRouterProvider) ->
     .state('user_edit', {
       url: '/account/edit',
       data: {
-        roles: ['User', 'Admin']
+        roles: ['user', 'admin']
       },
       views: {
         "header":     { controller: 'GlobalHeaderCtrl',  templateUrl: 'global/header.html' },

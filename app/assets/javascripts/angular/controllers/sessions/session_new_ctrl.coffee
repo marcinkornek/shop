@@ -20,6 +20,7 @@ SessionNewCtrl = ($scope, $state, sessionData, principal) ->
           window.currentUser = success.user
           console.log 'role = ', success.user.role
           principal.authenticate(success.user.role)
+          # friendly forwarding
           if ($scope.returnToState)
             $state.go($scope.returnToState.name, $scope.returnToStateParams)
           else

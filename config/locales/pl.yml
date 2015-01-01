@@ -1,7 +1,6 @@
 pl:
   "HEADER_LOGO": "Sklep"
   "HEADER_ACCOUNT": "Twoje konto"
-  "HEADER_SEARCH_PRODUCTS_PLACEHOLDER": "Szukaj produkty"
 
   # SESSIONS
 
@@ -18,6 +17,19 @@ pl:
   # USERS
 
   "USER_NEW_SIGN_UP": "Zarejestruj się"
+  "USER_NEW_REQUIRED": "* Wymagane pola"
+  "USER_NEW_SIGN_UP": "Zarejestruj się"
+  "USER_NEW_LOGIN_TEXT": "Masz konto"
+  "USER_NEW_NEW_LOGIN": "Zaloguj się"
+
+  "USER_EDIT_SUCCESS": "Dane zostały pomyślnie zmienione"
+  "USER_EDIT_TITLE": "Moje dane"
+  "USER_EDIT_UPDATE": "Zapisz zmiany"
+  "USER_EDIT_ADDRESS_TITLE": "Adres"
+
+  # PLACEHOLDERS
+
+  "HEADER_SEARCH_PRODUCTS_PLACEHOLDER": "Szukaj produkty"
   "FIRST_NAME_PLACEHOLDER": "Imię*"
   "LAST_NAME_PLACEHOLDER": "Nazwisko*"
   "EMAIL_PLACEHOLDER": "Email*"
@@ -25,10 +37,12 @@ pl:
   "BIRTH_DATE_PLACEHOLDER": "Data urodz. (RRRR-MM-DD)"
   "PASSWORD_PLACEHOLDER": "Hasło*"
   "PASSWORD_CONFIRMATION_PLACEHOLDER": "Potwierdzenie hasła*"
-  "USER_NEW_REQUIRED": "* Wymagane pola"
-  "USER_NEW_SIGN_UP": "Zarejestruj się"
-  "USER_NEW_LOGIN_TEXT": "Masz konto"
-  "USER_NEW_NEW_LOGIN": "Zaloguj się"
+  "TOWN_PLACEHOLDER": "Miejscowość"
+  "STREET_PLACEHOLDER": "Ulica"
+  "POSTCODE_PLACEHOLDER": "Kod pocztowy (00-000)"
+  "HOUSE_NUM_PLACEHOLDER": "Numer domu/numer mieszkania"
+
+  # ERRORS
 
   "ERROR_FIRST_NAME_REQUIRED": "Imię jest wymagane"
   "ERROR_FIRST_NAME_PATTERN": "Imię ma zły format"
@@ -38,19 +52,26 @@ pl:
   "ERROR_LAST_NAME_PATTERN": "Nazwisko ma zły format"
   "ERROR_LAST_NAME_SHORT": "Nazwisko jest zbyt krótkie"
   "ERROR_LAST_NAME_LONG": "Nazwisko jest zbyt długie"
-  "ERROR_EMAIL_REQUIRED": "Email jest wymagany."
-  "ERROR_EMAIL_INVALID": "Email jest nieprawidłowy."
-  "ERROR_EMAIL_EXISTS": "Email już istnieje."
+  "ERROR_EMAIL_REQUIRED": "Email jest wymagany"
+  "ERROR_EMAIL_INVALID": "Email jest nieprawidłowy"
+  "ERROR_EMAIL_EXISTS": "Email już istnieje"
+  "ERROR_TEL_NUM_REQUIRED": "Numer telefonu jest wymagany"
   "ERROR_TEL_NUM_SHORT": "Numer telefonu musi zbyt krótki"
   "ERROR_TEL_NUM_PATTERN": "Numer telefonu musi składać się z cyfr"
   "ERROR_BIRTH_DATE_PATTERN": "Format daty jest niepoprawny (RRRR-MM-DD)"
-  "ERROR_PASSWORD_REQUIRED": "Hasło jest wymagane."
-  "ERROR_PASSWORD_SHORT": "Hasło jest zbyt krótkie."
-  "ERROR_PASSWORD_MISMATCH": "Potwierdznie hasła nie pasuje do hasła."
-
-  "USER_EDIT_SUCCESS": "Dane zostały pomyślnie zmienione"
-  "USER_EDIT_TITLE": "Moje dane"
-  "USER_EDIT_UPDATE": "Zapisz zmiany"
+  "ERROR_PASSWORD_REQUIRED": "Hasło jest wymagane"
+  "ERROR_PASSWORD_SHORT": "Hasło jest zbyt krótkie"
+  "ERROR_PASSWORD_MISMATCH": "Potwierdznie hasła nie pasuje do hasła"
+  "ERROR_TOWN_REQUIRED": "Miasto jest wymagane"
+  "ERROR_STREET_REQUIRED": "Ulica jest wymagane"
+  "ERROR_STREET_PATTERN": "Ulica jest nieprawidłowa"
+  "ERROR_STREET_SHORT": "Ulica jest zbyt krótka"
+  "ERROR_STREET_LONG": "Ulica jest zbyt długa"
+  "ERROR_POSTCODE_REQUIRED": "Kod pocztowy jest wymagany"
+  "ERROR_POSTCODE_PATTERN": "Kod pocztowy jest nieprawidłowy"
+  "ERROR_POSTCODE_SHORT": "Kod pocztowy jest zbyt krótki"
+  "ERROR_HOUSE_NUM_REQUIRED": "Numer domu jest wymagany"
+  "ERROR_HOUSE_NUM_PATTERN": "Numer domu jest nieprawidłowy"
 
   session_controller:
     "activate_email": "Proszę sprawdzić email i aktywować konto"

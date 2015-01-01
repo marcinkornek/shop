@@ -6,63 +6,153 @@
 
   .login.clearfix
     .col-md-8.col-md-offset-2
-      .account-form style="width:100%;"
-        h3.text-center.uppercase.uppercase style="margin-top:0px;"
-          ' {{ "USER_EDIT_TITLE" | translate }}
+      tabset
+        tab heading="User data"
+          .account-form style="width:100%;"
+            h3.text-center.uppercase.uppercase style="margin-top:0px;"
+              ' {{ "USER_EDIT_TITLE" | translate }}
 
-        form(style='width:33.33%;margin-left:auto;margin-right:auto' name='editUserForm')
-          .field
-            input.form-control.span12(type="text" maxlength="30" name="first_name" placeholder="{{ 'FIRST_NAME_PLACEHOLDER' | translate }}" ng-model="formData.first_name" required ng-pattern="/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/" ng-minlength='3' ng-maxlength='30')
+            form(style='width:33.33%;margin-left:auto;margin-right:auto' name='editUserForm')
+              .field
+                input.form-control.span12(type="text" maxlength="30" name="first_name" placeholder="{{ 'FIRST_NAME_PLACEHOLDER' | translate }}" ng-model="formData.first_name" required ng-pattern="/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/" ng-minlength='3' ng-maxlength='30')
 
-            .errors ng-show="editUserForm.first_name.$touched && editUserForm.first_name.$dirty"
-              .field-error ng-show="editUserForm.first_name.$error.required"
-                ' {{ "ERROR_FIRST_NAME_REQUIRED" | translate }}
-              .field-error ng-show="editUserForm.first_name.$error.pattern"
-                ' {{ "ERROR_FIRST_NAME_PATTERN" | translate }}
-              .field-error ng-show="editUserForm.first_name.$error.minlength"
-                ' {{ "ERROR_FIRST_NAME_SHORT" | translate }}
-              .field-error ng-show="editUserForm.first_name.$error.maxlength"
-                ' {{ "ERROR_FIRST_NAME_LONG" | translate }}
+                .errors ng-show="editUserForm.first_name.$touched && editUserForm.first_name.$dirty"
+                  .field-error ng-show="editUserForm.first_name.$error.required"
+                    ' {{ "ERROR_FIRST_NAME_REQUIRED" | translate }}
+                  .field-error ng-show="editUserForm.first_name.$error.pattern"
+                    ' {{ "ERROR_FIRST_NAME_PATTERN" | translate }}
+                  .field-error ng-show="editUserForm.first_name.$error.minlength"
+                    ' {{ "ERROR_FIRST_NAME_SHORT" | translate }}
+                  .field-error ng-show="editUserForm.first_name.$error.maxlength"
+                    ' {{ "ERROR_FIRST_NAME_LONG" | translate }}
 
-          .field
-            input.form-control.span12(type="text" maxlength="30" name="last_name" placeholder="{{ 'LAST_NAME_PLACEHOLDER' | translate }}" ng-model="formData.last_name" required ng-pattern="/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/" ng-minlength='3' ng-maxlength='30')
+              .field
+                input.form-control.span12(type="text" maxlength="30" name="last_name" placeholder="{{ 'LAST_NAME_PLACEHOLDER' | translate }}" ng-model="formData.last_name" required ng-pattern="/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/" ng-minlength='3' ng-maxlength='30')
 
-            .errors ng-show="editUserForm.last_name.$touched && editUserForm.last_name.$dirty"
-              .field-error ng-show="editUserForm.last_name.$error.required"
-                ' {{ "ERROR_LAST_NAME_REQUIRED" | translate }}
-              .field-error ng-show="editUserForm.last_name.$error.pattern"
-                ' {{ "ERROR_LAST_NAME_PATTERN" | translate }}
-              .field-error ng-show="editUserForm.last_name.$error.minlength"
-                ' {{ "ERROR_LAST_NAME_SHORT" | translate }}
-              .field-error ng-show="editUserForm.last_name.$error.maxlength"
-                ' {{ "ERROR_LAST_NAME_LONG" | translate }}
+                .errors ng-show="editUserForm.last_name.$touched && editUserForm.last_name.$dirty"
+                  .field-error ng-show="editUserForm.last_name.$error.required"
+                    ' {{ "ERROR_LAST_NAME_REQUIRED" | translate }}
+                  .field-error ng-show="editUserForm.last_name.$error.pattern"
+                    ' {{ "ERROR_LAST_NAME_PATTERN" | translate }}
+                  .field-error ng-show="editUserForm.last_name.$error.minlength"
+                    ' {{ "ERROR_LAST_NAME_SHORT" | translate }}
+                  .field-error ng-show="editUserForm.last_name.$error.maxlength"
+                    ' {{ "ERROR_LAST_NAME_LONG" | translate }}
 
-          .field
-            input.form-control.span12(type="text" maxlength="60" name="email" placeholder="{{ 'EMAIL_PLACEHOLDER' | translate }}" ng-model="formData.email" required ng-pattern="/^[\w+\-.]+@[a-zA-Z\d\-]+(?:\.[a-zA-Z\d\-]+)*\.[a-zA-Z]+$/" ng-unique="email")
+              .field
+                input.form-control.span12(type="text" maxlength="60" name="email" placeholder="{{ 'EMAIL_PLACEHOLDER' | translate }}" ng-model="formData.email" required ng-pattern="/^[\w+\-.]+@[a-zA-Z\d\-]+(?:\.[a-zA-Z\d\-]+)*\.[a-zA-Z]+$/" ng-unique="email")
 
-            .errors ng-show="editUserForm.email.$touched && editUserForm.email.$dirty"
-              .field-error ng-show="editUserForm.email.$error.required"
-                ' {{ "ERROR_EMAIL_REQUIRED" | translate }}
-              .field-error ng-show="editUserForm.email.$error.pattern"
-                ' {{ "ERROR_EMAIL_INVALID" | translate }}
-              .field-error ng-show="editUserForm.email.$error.unique"
-                ' {{ "ERROR_EMAIL_EXISTS" | translate }}
+                .errors ng-show="editUserForm.email.$touched && editUserForm.email.$dirty"
+                  .field-error ng-show="editUserForm.email.$error.required"
+                    ' {{ "ERROR_EMAIL_REQUIRED" | translate }}
+                  .field-error ng-show="editUserForm.email.$error.pattern"
+                    ' {{ "ERROR_EMAIL_INVALID" | translate }}
+                  .field-error ng-show="editUserForm.email.$error.unique"
+                    ' {{ "ERROR_EMAIL_EXISTS" | translate }}
 
-          .field
-            input.form-control.span12(type="text" maxlength="9" name="tel_num" placeholder="{{ 'TEL_NUM_PLACEHOLDER' | translate }}" ng-model="formData.tel_num" ng-pattern="/[0-9]{9}/" ng-minlength='9')
+              .field
+                input.form-control.span12(type="text" maxlength="9" name="tel_num" placeholder="{{ 'TEL_NUM_PLACEHOLDER' | translate }}" ng-model="formData.tel_num" ng-pattern="/\d{9}/" ng-minlength='9')
 
-            .errors ng-show="editUserForm.tel_num.$touched && editUserForm.tel_num.$dirty"
-              .field-error ng-show="editUserForm.tel_num.$error.minlength"
-                ' {{ "ERROR_TEL_NUM_SHORT" | translate }}
-              .field-error ng-show="editUserForm.tel_num.$error.pattern"
-                ' {{ "ERROR_TEL_NUM_PATTERN" | translate }}
+                .errors ng-show="editUserForm.tel_num.$touched && editUserForm.tel_num.$dirty"
+                  .field-error ng-show="editUserForm.tel_num.$error.minlength"
+                    ' {{ "ERROR_TEL_NUM_SHORT" | translate }}
+                  .field-error ng-show="editUserForm.tel_num.$error.pattern"
+                    ' {{ "ERROR_TEL_NUM_PATTERN" | translate }}
 
-          .field
-            .input-group
-              input.form-control(placeholder="{{ 'BIRTH_DATE_PLACEHOLDER' | translate }}" id="birth_date" name="birth_date" close-text="Close" date-disabled="disabled(date, mode)" datepicker-options="dateOptions" datepicker-popup="{{format}}" is-open="opened" max-date="maxDate" min-date="minDate" ng-model="formData.birth_date" type="text" style="margin-bottom:0px;margin-top:0px;")
-              span.input-group-btn
-                button.btn.btn-default ng-click="open($event)" type="button"
-                  i.glyphicon.glyphicon-calendar
+              .field
+                .input-group
+                  input.form-control(placeholder="{{ 'BIRTH_DATE_PLACEHOLDER' | translate }}" id="birth_date" name="birth_date" close-text="Close" date-disabled="disabled(date, mode)" datepicker-options="dateOptions" datepicker-popup="{{format}}" is-open="opened" max-date="maxDate" min-date="minDate" ng-model="formData.birth_date" type="text" style="margin-bottom:0px;margin-top:0px;")
+                  span.input-group-btn
+                    button.btn.btn-default ng-click="open($event)" type="button"
+                      i.glyphicon.glyphicon-calendar
 
-          button.btn.btn-default(style='width:100%;margin-top:10px;' ng-click="editUser(formData.id)")
-            ' {{ "USER_EDIT_UPDATE" | translate }}
+              button.btn.btn-default(style='width:100%;margin-top:10px;' ng-click="editUser(formData.id)")
+                ' {{ "USER_EDIT_UPDATE" | translate }}
+
+
+
+        tab heading="User address"
+          .account-form style="width:100%;"
+            h3.text-center.uppercase.uppercase style="margin-top:0px;"
+              ' {{ "USER_EDIT_ADDRESS_TITLE" | translate }}
+
+            form(style='width:33.33%;margin-left:auto;margin-right:auto' name='editAddressForm')
+              .field
+                input.form-control.span12(type="text" maxlength="30" name="first_name" placeholder="{{ 'FIRST_NAME_PLACEHOLDER' | translate }}" ng-model="formData.address.first_name" required ng-pattern="/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/" ng-minlength='3' ng-maxlength='30')
+
+                .errors ng-show="editAddressForm.first_name.$touched && editAddressForm.first_name.$dirty"
+                  .field-error ng-show="editAddressForm.first_name.$error.required"
+                    ' {{ "ERROR_FIRST_NAME_REQUIRED" | translate }}
+                  .field-error ng-show="editAddressForm.first_name.$error.pattern"
+                    ' {{ "ERROR_FIRST_NAME_PATTERN" | translate }}
+                  .field-error ng-show="editAddressForm.first_name.$error.minlength"
+                    ' {{ "ERROR_FIRST_NAME_SHORT" | translate }}
+                  .field-error ng-show="editAddressForm.first_name.$error.maxlength"
+                    ' {{ "ERROR_FIRST_NAME_LONG" | translate }}
+
+              .field
+                input.form-control.span12(type="text" maxlength="30" name="last_name" placeholder="{{ 'LAST_NAME_PLACEHOLDER' | translate }}" ng-model="formData.address.last_name" required ng-pattern="/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/" ng-minlength='3' ng-maxlength='30')
+
+                .errors ng-show="editAddressForm.last_name.$touched && editAddressForm.last_name.$dirty"
+                  .field-error ng-show="editAddressForm.last_name.$error.required"
+                    ' {{ "ERROR_LAST_NAME_REQUIRED" | translate }}
+                  .field-error ng-show="editAddressForm.last_name.$error.pattern"
+                    ' {{ "ERROR_LAST_NAME_PATTERN" | translate }}
+                  .field-error ng-show="editAddressForm.last_name.$error.minlength"
+                    ' {{ "ERROR_LAST_NAME_SHORT" | translate }}
+                  .field-error ng-show="editAddressForm.last_name.$error.maxlength"
+                    ' {{ "ERROR_LAST_NAME_LONG" | translate }}
+
+              .field
+                input.form-control.span12(type="text" maxlength="9" name="tel_num" placeholder="{{ 'TEL_NUM_PLACEHOLDER' | translate }}" ng-model="formData.address.tel_num" ng-pattern="/\d{9}/" ng-minlength='9' required)
+
+                .errors ng-show="editAddressForm.tel_num.$touched && editAddressForm.tel_num.$dirty"
+                  .field-error ng-show="editAddressForm.tel_num.$error.required"
+                    ' {{ "ERROR_TEL_NUM_REQUIRED" | translate }}
+                  .field-error ng-show="editAddressForm.tel_num.$error.minlength"
+                    ' {{ "ERROR_TEL_NUM_SHORT" | translate }}
+                  .field-error ng-show="editAddressForm.tel_num.$error.pattern"
+                    ' {{ "ERROR_TEL_NUM_PATTERN" | translate }}
+
+              .field
+                input.form-control.span12(type="text" name="town" ng-model="formData.address.town" placeholder="{{ 'TOWN_PLACEHOLDER' | translate }}" typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" required)
+
+                .errors ng-show="editAddressForm.town.$touched && editAddressForm.town.$dirty"
+                  .field-error ng-show="editAddressForm.town.$error.required"
+                    ' {{ "ERROR_TOWN_REQUIRED" | translate }}
+
+              .field
+                input.form-control.span12(type="text" maxlength="40" name="street" placeholder="{{ 'STREET_PLACEHOLDER' | translate }}" ng-model="formData.address.street" required ng-pattern="/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/" ng-minlength='3' ng-maxlength='40')
+
+                .errors ng-show="editAddressForm.street.$touched && editAddressForm.street.$dirty"
+                  .field-error ng-show="editAddressForm.street.$error.required"
+                    ' {{ "ERROR_STREET_REQUIRED" | translate }}
+                  .field-error ng-show="editAddressForm.street.$error.pattern"
+                    ' {{ "ERROR_STREET_PATTERN" | translate }}
+                  .field-error ng-show="editAddressForm.street.$error.minlength"
+                    ' {{ "ERROR_STREET_SHORT" | translate }}
+                  .field-error ng-show="editAddressForm.street.$error.maxlength"
+                    ' {{ "ERROR_STREET_LONG" | translate }}
+
+              .field
+                input.form-control.span12(type="text" maxlength="6" name="postcode" placeholder="{{ 'POSTCODE_PLACEHOLDER' | translate }}" ng-model="formData.address.postcode" ng-pattern="/\d{2}-\d{3}/" ng-minlength='6' required)
+
+                .errors ng-show="editAddressForm.postcode.$touched && editAddressForm.postcode.$dirty"
+                  .field-error ng-show="editAddressForm.postcode.$error.required"
+                    ' {{ "ERROR_POSTCODE_REQUIRED" | translate }}
+                  .field-error ng-show="editAddressForm.postcode.$error.pattern"
+                    ' {{ "ERROR_POSTCODE_PATTERN" | translate }}
+                  .field-error ng-show="editAddressForm.postcode.$error.minlength"
+                    ' {{ "ERROR_POSTCODE_SHORT" | translate }}
+
+              .field
+                input.form-control.span12(type="text" maxlength="9" name="house_num" placeholder="{{ 'HOUSE_NUM_PLACEHOLDER' | translate }}" ng-model="formData.address.house_num" ng-pattern="/^\d{1,4}([a-z]{1})?((-|\/)\d{1,4})?([a-z]{1})?$/" required)
+
+                .errors ng-show="editAddressForm.house_num.$touched && editAddressForm.house_num.$dirty"
+                  .field-error ng-show="editAddressForm.house_num.$error.required"
+                    ' {{ "ERROR_HOUSE_NUM_REQUIRED" | translate }}
+                  .field-error ng-show="editAddressForm.house_num.$error.pattern"
+                    ' {{ "ERROR_HOUSE_NUM_PATTERN" | translate }}
+
+              button.btn.btn-default(style='width:100%;margin-top:10px;' ng-click="editAddress(formData.address.id)")
+                ' {{ "USER_EDIT_UPDATE" | translate }}

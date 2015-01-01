@@ -29,3 +29,17 @@ a.btn {
     text-decoration: none;
   }
 }
+
+body .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  background-color: #f4f3f1;
+  color: black;
+}
+
+body .nav-tabs a {
+  background-color: white;
+  color: #555;
+  &:hover {
+    background-color: #f4f3f1 !important;
+    color: black;
+  }
+}

@@ -10,4 +10,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def current_user?
+    unless current_user == user
+      render json: {error: 'unpermited user'}, status: :not_acceptable
+    end
+  end
+
 end

@@ -3,8 +3,6 @@ class User < ActiveRecord::Base
 
   before_save :prepare_to_save
 
-  accepts_nested_attributes_for :addresses
-
   authenticates_with_sorcery!
 
   validates :password,                length: { minimum: 6 }, if: lambda { new_record? || !password.nil? }
