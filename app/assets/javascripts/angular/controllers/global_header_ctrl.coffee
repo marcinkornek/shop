@@ -51,3 +51,4 @@ GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies, sessionD
   $scope.loadData()
 
 angular.module("shop").controller "GlobalHeaderCtrl", GlobalHeaderCtrl
+GlobalHeaderCtrl.$inject = ["$scope", "$state", "$translate", "$stateParams", "$cookies", "sessionData", "principal"]

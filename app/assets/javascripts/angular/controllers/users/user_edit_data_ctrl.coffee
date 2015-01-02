@@ -28,3 +28,4 @@ UserEditDataCtrl = ($scope, $stateParams, $state, userData, addressData, $http) 
     $scope.alerts.splice index, 1
 
 angular.module("shop").controller "UserEditDataCtrl", UserEditDataCtrl
+UserEditDataCtrl.$inject = ["$scope", "$stateParams", "$state", "userData", "addressData", "$http"]

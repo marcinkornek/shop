@@ -70,4 +70,16 @@ UserEditCtrl = ($scope, $stateParams, $state, userData, addressData, $http) ->
   $scope.loadTemporaryUser()
   $scope.firstLoadUser()
 
+  # alerts
+
+  $scope.alerts ||= []
+
+  $scope.addAlert = (type, message) ->
+    $scope.closeAlert()
+    $scope.alerts.push { type: type, message: message }
+
+  $scope.closeAlert = (index) ->
+    $scope.alerts.splice index, 1
+
 angular.module("shop").controller "UserEditCtrl", UserEditCtrl
+UserEditCtrl.$inject = ["$scope", "$stateParams", "$state", "userData", "addressData", "$http"]

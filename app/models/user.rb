@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :addresses
+  has_many :addresses, dependent: :destroy
 
   before_save :prepare_to_save
 
@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   validates :email,                   uniqueness: { case_sensitive: false },
                                       format: { with: VALID_EMAIL_REGEX }
 
-  VALID_NAME_REGEX = /\A[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+\z/u
+  VALID_NAME_REGEX = /\A[a-zA-ZàáâäãåąčćśęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+\z/u
   validates :first_name,              length: { in: 3..30 },
                                       format: { with: VALID_NAME_REGEX }
   validates :last_name,               length: { in: 3..30 },
@@ -43,7 +43,6 @@ class User < ActiveRecord::Base
                         email:auth.info.email,
                         password:password,
                         password_confirmation:password,
-                        friendly_token: true
                       )
         user.send_activation_email = false
         user.save
@@ -70,8 +69,8 @@ class User < ActiveRecord::Base
   def prepare_to_save
     role.downcase!
     email.downcase!
-    first_name.capitalize!
-    last_name.capitalize!
+    self.first_name = first_name.capitalize_words
+    self.last_name = last_name.capitalize_words
   end
 
 end

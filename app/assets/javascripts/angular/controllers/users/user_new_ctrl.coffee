@@ -21,3 +21,4 @@ UserNewCtrl = ($scope, $state, userData, principal) ->
     $scope.opened = true
 
 angular.module("shop").controller "UserNewCtrl", UserNewCtrl
+UserNewCtrl.$inject = ["$scope", "$state", "userData", "principal"]

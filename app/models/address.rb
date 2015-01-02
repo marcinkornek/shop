@@ -3,7 +3,7 @@ class Address < ActiveRecord::Base
 
   before_save :prepare_to_save
 
-  VALID_NAME_REGEX = /\A[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+\z/u
+  VALID_NAME_REGEX = /\A[a-zA-ZàáâäãåąčćśęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+\z/u
   validates :first_name,              length: { in: 3..30 },
                                       format: { with: VALID_NAME_REGEX }
 
@@ -33,10 +33,10 @@ class Address < ActiveRecord::Base
   private
 
   def prepare_to_save
-    first_name.capitalize!
-    last_name.capitalize!
-    street.capitalize!
-    town.capitalize!
+    self.first_name = first_name.capitalize_words
+    self.last_name = last_name.capitalize_words
+    self.street = street.capitalize_words
+    self.town = town.capitalize_words
   end
 
 end

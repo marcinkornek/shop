@@ -54,11 +54,11 @@ describe Address, focus:true do
     end
 
     context "is with mixed case" do
-      let(:mixed_case_first_name) { "aDaM" }
-      it "should be saved as capitalize" do
+      let(:mixed_case_first_name) { "aDaM adam" }
+      it "should be saved as titleize" do
         @address.first_name = mixed_case_first_name
         @address.save
-        expect(@address.reload.first_name).to eq mixed_case_first_name.capitalize
+        expect(@address.reload.first_name).to eq mixed_case_first_name.titleize
       end
     end
   end
@@ -101,11 +101,11 @@ describe Address, focus:true do
     end
 
     context "is with mixed case" do
-      let(:mixed_case_last_name) { "aDaM" }
-      it "should be saved as capitalize" do
+      let(:mixed_case_last_name) { "aDaM adam" }
+      it "should be saved as titleize" do
         @address.last_name = mixed_case_last_name
         @address.save
-        expect(@address.reload.last_name).to eq mixed_case_last_name.capitalize
+        expect(@address.reload.last_name).to eq mixed_case_last_name.titleize
       end
     end
   end

@@ -133,7 +133,7 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
   # location typeahead
 
   $scope.getLocation = (val) ->
-    $http.get("http://maps.googleapis.com/maps/api/geocode/json",
+    $http.get("https://maps.googleapis.com/maps/api/geocode/json",
       params:
         address: val
         sensor: false
@@ -142,3 +142,4 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
         item.formatted_address
 
 angular.module("shop").controller "UserEditAddressCtrl", UserEditAddressCtrl
+UserEditAddressCtrl.$inject = ["$scope", "$stateParams", "$state", "userData", "addressData", "$http"]

@@ -40,3 +40,4 @@ SessionNewCtrl = ($scope, $state, sessionData, principal) ->
     $scope.alerts.splice index, 1
 
 angular.module("shop").controller "SessionNewCtrl", SessionNewCtrl
+SessionNewCtrl.$inject = ["$scope", "$state", "sessionData", "principal"]

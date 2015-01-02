@@ -37,6 +37,7 @@ en:
 
   # PLACEHOLDERS
 
+  "HEADER_SEARCH_PRODUCTS_PLACEHOLDER": "Search products"
   "FIRST_NAME_PLACEHOLDER": "First name*"
   "LAST_NAME_PLACEHOLDER": "Last name*"
   "EMAIL_PLACEHOLDER": "Email*"
@@ -84,5 +85,5 @@ en:
   "NG_REALLY_MESSAGE": "Are you sure?"
 
   session_controller:
-      "activate_email": "Please check your email and activate account"
-      "wrong_email_password": "Wrong email/username or password"
+    "activate_email": "Please check your email and activate account"
+    "wrong_email_password": "Wrong email/username or password"
