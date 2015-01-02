@@ -23,9 +23,12 @@ pl:
   "USER_NEW_NEW_LOGIN": "Zaloguj się"
 
   "USER_EDIT_DATA_ALERT_SUCCESS": "Dane zostały pomyślnie zmienione"
-  "USER_EDIT_ADDRESS_ALERT_SUCCESS": "Adres został pomyślnie zmieniony"
+  "USER_EDIT_ADDRESS_ALERT_SUCCESS_ADD": "Adres został pomyślnie dodany"
+  "USER_EDIT_ADDRESS_ALERT_SUCCESS_EDIT": "Adres został pomyślnie zmieniony"
+  "USER_EDIT_ADDRESS_ALERT_SUCCESS_DESTROY": "Adres został pomyślnie usunięty"
   "USER_EDIT_TITLE": "Moje dane"
   "USER_EDIT_UPDATE": "Zapisz zmiany"
+  "USER_EDIT_DELETE_ADDRESS": "Skasuj adres"
   "USER_EDIT_ADDRESS_TITLE": "Adres"
   "USER_EDIT_HEADING_USER_DATA": "Dane użytkownika"
   "USER_EDIT_HEADING_USER_ADDRESS": "Adres użytkownika"
@@ -76,6 +79,8 @@ pl:
   "ERROR_POSTCODE_SHORT": "Kod pocztowy jest zbyt krótki"
   "ERROR_HOUSE_NUM_REQUIRED": "Numer domu jest wymagany"
   "ERROR_HOUSE_NUM_PATTERN": "Numer domu jest nieprawidłowy"
+
+  "NG_REALLY_MESSAGE": "Jesteś pewny?"
 
   session_controller:
     "activate_email": "Proszę sprawdzić email i aktywować konto"

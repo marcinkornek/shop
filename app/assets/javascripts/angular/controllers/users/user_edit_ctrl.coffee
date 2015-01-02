@@ -30,6 +30,7 @@ UserEditCtrl = ($scope, $stateParams, $state, userData, addressData, $http) ->
       town: ''
       postcode: ''
     $scope.editOrCreateAddressForm.$setPristine()
+    $scope.closeAlert()
 
   # loading data
 
@@ -44,6 +45,7 @@ UserEditCtrl = ($scope, $stateParams, $state, userData, addressData, $http) ->
         $scope.formData.tel_num = user.user.tel_num
         $scope.formData.birth_date = user.user.birth_date
         $scope.formData.addresses_ids = user.addresses_ids
+        $scope.formData.addresses_number = user.addresses_number
         if user.addresses_number > 0
           $scope.loadTemporaryAddress()
           $scope.loadAddress(user.addresses_ids[0])
@@ -54,6 +56,7 @@ UserEditCtrl = ($scope, $stateParams, $state, userData, addressData, $http) ->
     )
 
   $scope.loadAddress = (AddressId) ->
+    $scope.closeAlert()
     addressData.get({id: AddressId}
       , (address) ->
         # console.log address
@@ -106,8 +109,9 @@ UserEditCtrl = ($scope, $stateParams, $state, userData, addressData, $http) ->
         , (success) =>
           $scope.editOrCreateAddressForm.$setPristine()
           $scope.editOrCreateAddressForm.$setUntouched()
-          $scope.addAlert('success')
+          $scope.addAlert('success', 1)
           $scope.formData.addresses_ids.push(success.id)
+          $scope.changeAddressesNumber('+')
         , (error) ->
           console.log 'error'
           $scope.formData.user_error = error.data.error
@@ -120,19 +124,39 @@ UserEditCtrl = ($scope, $stateParams, $state, userData, addressData, $http) ->
         , (success) =>
           $scope.editOrCreateAddressForm.$setPristine()
           $scope.editOrCreateAddressForm.$setUntouched()
-          $scope.addAlert('success')
+          $scope.addAlert('success', 2)
         , (error) ->
           console.log 'error'
           $scope.formData.user_error = error.data.error
       )
 
+  $scope.destroyAddress = (addressId) ->
+    addressData.delete(id: addressId)
+    $scope.formData.addresses_ids = _.filter($scope.formData.addresses_ids, (item) ->
+      (item isnt addressId)
+    )
+    $scope.addAlert('success', 3)
+    $scope.changeAddressesNumber('-')
+    switch $scope.formData.addresses_number
+      when 0
+        $scope.loadNewAddress()
+      else
+        $scope.loadAddress($scope.formData.addresses_ids[0])
+
+  $scope.changeAddressesNumber = (sign) ->
+    switch sign
+      when '+'
+        $scope.formData.addresses_number = $scope.formData.addresses_number + 1
+      when '-'
+        $scope.formData.addresses_number = $scope.formData.addresses_number - 1
+
   # alerts
 
   $scope.alerts ||= []
 
-  $scope.addAlert = (type) ->
+  $scope.addAlert = (type, message) ->
     $scope.closeAlert()
-    $scope.alerts.push 'success'
+    $scope.alerts.push { type: type, message: message }
 
   $scope.closeAlert = (index) ->
     $scope.alerts.splice index, 1

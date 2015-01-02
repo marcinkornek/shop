@@ -23,9 +23,12 @@ en:
   "USER_NEW_NEW_LOGIN": "Login now"
 
   "USER_EDIT_DATA_ALERT_SUCCESS": "Data have successfully updated"
-  "USER_EDIT_ADDRESS_ALERT_SUCCESS": "Address have successfully updated"
+  "USER_EDIT_ADDRESS_ALERT_SUCCESS_ADD": "Address have successfully added"
+  "USER_EDIT_ADDRESS_ALERT_SUCCESS_EDIT": "Address have successfully updated"
+  "USER_EDIT_ADDRESS_ALERT_SUCCESS_DESTROY": "Address have successfully destroyed"
   "USER_EDIT_TITLE": "My data"
   "USER_EDIT_UPDATE": "Save changes"
+  "USER_EDIT_DELETE_ADDRESS": "Delete address"
   "USER_EDIT_ADDRESS_TITLE": "Address"
   "USER_EDIT_HEADING_USER_DATA": "User data"
   "USER_EDIT_HEADING_USER_ADDRESS": "User address"
@@ -76,6 +79,7 @@ en:
   "ERROR_HOUSE_NUM_REQUIRED": "House number is required"
   "ERROR_HOUSE_NUM_PATTERN": "House number is invalid"
 
+  "NG_REALLY_MESSAGE": "Are you sure?"
 
   session_controller:
       "activate_email": "Please check your email and activate account"
