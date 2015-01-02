@@ -1,5 +1,4 @@
 class Api::AddressesController < ApplicationController
-  before_action :current_user?, only:   [:update, :destroy]
   before_action :require_login, except: [:create, :activate, :show, :check_if_unique]
 
   def index
@@ -22,9 +21,6 @@ class Api::AddressesController < ApplicationController
   end
 
   def update
-    p '-----------------'
-    p params
-    p '-----------------'
     if address.update_attributes(address_params)
       render json: @address
     else

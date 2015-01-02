@@ -1,0 +1,59 @@
+// .headings {
+//   a {
+//     text-align: center;
+//     width: 200px;
+//     height: 40px;
+//     padding: 10px;
+//     border: 1px solid #f4f3f1;
+//     display: inline-block;
+//     background: white;
+//     cursor: pointer;
+//     color: grey;
+//     text-decoration: none;
+//     text-transform: uppercase;
+//     &:hover, &:active, &:focus {
+//       color: black;
+//       text-decoration: none;
+//       background: #f4f3f1;
+//     }
+//     &.current {
+//       background: #f4f3f1;
+//     }
+//   }
+// }
+
+.tabset {
+}
+
+.headings {
+  border: 1px solid #f4f3f1;
+  display: inline-block;
+  // float: left;
+  // background-color: rgb(200,200,200);
+  background-color: #f4f3f1;
+  color: grey;
+  // padding: 5px 19px;
+  list-style: none;
+  &:hover, &:hover a {
+    background-color: #f4f3f1;
+    color:black;
+    text-decoration: none;
+  }
+}
+
+.headings a {
+  text-decoration: none;
+  background-color: white;
+  color: gray;
+  text-align: center;
+  display: block;
+  width: 200px;
+  padding: 10px;
+  border-right: 1px solid #f4f3f1;
+}
+
+// .headings:nth-child(1) { border-radius: 4px 0px 0px 4px;}
+// .headings:nth-child(3) { border-radius: 0px 4px 4px 0px;}
+.active a {
+  background-color: #f4f3f1;
+}

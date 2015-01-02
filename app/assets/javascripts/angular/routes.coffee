@@ -43,5 +43,7 @@ angular.module('shop').config ($stateProvider, $urlRouterProvider) ->
       views: {
         "header":     { controller: 'GlobalHeaderCtrl',  templateUrl: 'global/header.html' },
         "body":       { controller: 'UserEditCtrl',      templateUrl: 'users/user_edit.html' },
+        "user_data@user_edit": { controller: 'UserEditCtrl',    templateUrl: 'users/user_edit.user_data.html' },
+        "user_address@user_edit": { controller: 'UserEditCtrl', templateUrl: 'users/user_edit.user_address.html' },
       }
     })

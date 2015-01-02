@@ -20,18 +20,33 @@ UserEditCtrl = ($scope, $stateParams, $state, userData, addressData, $http) ->
       town: 'Loading..'
       postcode: 'Loading..'
 
+  $scope.loadNewAddress = ->
+    $scope.formData.address =
+      first_name: ''
+      last_name: ''
+      tel_num: ''
+      street: ''
+      house_num: ''
+      town: ''
+      postcode: ''
+    $scope.editOrCreateAddressForm.$setPristine()
+
   # loading data
 
   $scope.loadUser = ->
     userData.get({id: 1}
       , (user) ->
         # console.log user
-        $scope.formData.id = user.id
-        $scope.formData.first_name = user.first_name
-        $scope.formData.last_name = user.last_name
-        $scope.formData.email = user.email
-        $scope.formData.tel_num = user.tel_num
-        $scope.formData.birth_date = user.birth_date
+        $scope.formData.id = user.user.id
+        $scope.formData.first_name = user.user.first_name
+        $scope.formData.last_name = user.user.last_name
+        $scope.formData.email = user.user.email
+        $scope.formData.tel_num = user.user.tel_num
+        $scope.formData.birth_date = user.user.birth_date
+        $scope.formData.addresses_ids = user.addresses_ids
+        if user.addresses_number > 0
+          $scope.loadTemporaryAddress()
+          $scope.loadAddress(user.addresses_ids[0])
       , (error) ->
         console.log 'error'
         console.log error.status
@@ -53,14 +68,11 @@ UserEditCtrl = ($scope, $stateParams, $state, userData, addressData, $http) ->
       , (error) ->
         console.log 'error'
         console.log error.status
-        $scope.formData.error = 'There is no such user'
+        $scope.formData.error = 'There is no such address'
     )
 
   $scope.loadTemporaryUser()
   $scope.loadUser()
-
-  $scope.loadTemporaryAddress()
-  $scope.loadAddress(1)
 
   # functions
 
@@ -69,8 +81,8 @@ UserEditCtrl = ($scope, $stateParams, $state, userData, addressData, $http) ->
       user = $scope.formData
       userData.update({id: userId}, user
         , (success) =>
-          # $scope.editUserForm.$setPristine()
-          # $scope.editUserForm.$setUntouched()
+          $scope.editUserForm.$setPristine()
+          $scope.editUserForm.$setUntouched()
           $scope.addAlert('success')
           window.currentUser.first_name = success.first_name
         , (error) ->
@@ -78,24 +90,49 @@ UserEditCtrl = ($scope, $stateParams, $state, userData, addressData, $http) ->
           $scope.formData.user_error = error.data.error
       )
 
+  $scope.editOrCreateAddress = (addressId) ->
+    switch addressId
+      when undefined
+        # console.log 'create'
+        $scope.createAddress()
+      else
+        # console.log 'edit'
+        $scope.editAddress(addressId)
+
+  $scope.createAddress = ->
+    if $scope.formData.address.first_name && $scope.formData.address.last_name && $scope.formData.address.tel_num && $scope.formData.address.street && $scope.formData.address.house_num && $scope.formData.address.town && $scope.formData.address.postcode
+      address = $scope.formData.address
+      addressData.save({}, address
+        , (success) =>
+          $scope.editOrCreateAddressForm.$setPristine()
+          $scope.editOrCreateAddressForm.$setUntouched()
+          $scope.addAlert('success')
+          $scope.formData.addresses_ids.push(success.id)
+        , (error) ->
+          console.log 'error'
+          $scope.formData.user_error = error.data.error
+      )
+
   $scope.editAddress = (addressId) ->
     if $scope.formData.address.first_name && $scope.formData.address.last_name && $scope.formData.address.tel_num && $scope.formData.address.street && $scope.formData.address.house_num && $scope.formData.address.town && $scope.formData.address.postcode
-      address = $scope.formData
+      address = $scope.formData.address
       addressData.update({id: addressId}, address
         , (success) =>
-          # $scope.editUserForm.$setPristine()
-          # $scope.editUserForm.$setUntouched()
+          $scope.editOrCreateAddressForm.$setPristine()
+          $scope.editOrCreateAddressForm.$setUntouched()
           $scope.addAlert('success')
         , (error) ->
           console.log 'error'
           $scope.formData.user_error = error.data.error
       )
 
-  $scope.alerts = []
+  # alerts
+
+  $scope.alerts ||= []
 
   $scope.addAlert = (type) ->
     $scope.closeAlert()
-    $scope.alerts.push {type: type}
+    $scope.alerts.push 'success'
 
   $scope.closeAlert = (index) ->
     $scope.alerts.splice index, 1
@@ -110,8 +147,5 @@ UserEditCtrl = ($scope, $stateParams, $state, userData, addressData, $http) ->
     ).then (response) ->
       response.data.results.map (item) ->
         item.formatted_address
-
-  $scope.createAddressUser = ->
-    console.log $scope.formData.address
 
 angular.module("shop").controller "UserEditCtrl", UserEditCtrl

@@ -22,10 +22,14 @@ en:
   "USER_NEW_LOGIN_TEXT": "You have an account"
   "USER_NEW_NEW_LOGIN": "Login now"
 
-  "USER_EDIT_SUCCESS": "Data have successfully updated"
+  "USER_EDIT_DATA_ALERT_SUCCESS": "Data have successfully updated"
+  "USER_EDIT_ADDRESS_ALERT_SUCCESS": "Address have successfully updated"
   "USER_EDIT_TITLE": "My data"
   "USER_EDIT_UPDATE": "Save changes"
   "USER_EDIT_ADDRESS_TITLE": "Address"
+  "USER_EDIT_HEADING_USER_DATA": "User data"
+  "USER_EDIT_HEADING_USER_ADDRESS": "User address"
+  "USER_EDIT_HEADING_USER_PASSWORD": "Change password"
 
   # PLACEHOLDERS
 

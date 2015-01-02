@@ -59,7 +59,6 @@ angular.module('shop').run([ "$rootScope", "$state", "$stateParams", "authorizat
     $rootScope.toStateParams = toParams
     # console.log window.currentUser.id
     if window.currentUser.id
-      console.log 'true'
       principal.authenticate
         username: window.currentUser.username
         roles: [ window.currentUser.role ]

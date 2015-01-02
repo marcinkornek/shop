@@ -1,5 +1,4 @@
 class Api::UsersController < ApplicationController
-  before_action :current_user?, only:   [:update, :destroy]
   before_action :require_login, except: [:create, :activate, :show, :check_if_unique]
   before_action :check_if_admin, except: [:create, :activate, :show, :update, :check_if_unique]
 
@@ -22,11 +21,11 @@ class Api::UsersController < ApplicationController
 
   def show
     show_user = if current_user.role == 'Admin'
-      user.extend(UserRepresenter)
+      admin_user
     else
       user
     end
-    render json: show_user
+    render json: {user: show_user, addresses_number: @user.addresses.size, addresses_ids: @user.addresses.order(:created_at).map(&:id)}
   end
 
   def update
