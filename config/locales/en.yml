@@ -27,6 +27,7 @@ en:
   "USER_EDIT_ADDRESS_ALERT_SUCCESS_EDIT": "Address have successfully updated"
   "USER_EDIT_ADDRESS_ALERT_SUCCESS_DESTROY": "Address have successfully destroyed"
   "USER_EDIT_TITLE": "My data"
+  "USER_EDIT_ADDRESS_NEW": "New address"
   "USER_EDIT_UPDATE": "Save changes"
   "USER_EDIT_DELETE_ADDRESS": "Delete address"
   "USER_EDIT_ADDRESS_TITLE": "Address"
@@ -43,10 +44,11 @@ en:
   "BIRTH_DATE_PLACEHOLDER": "Birth date (YYYY-MM-DD)"
   "PASSWORD_PLACEHOLDER": "Password*"
   "PASSWORD_CONFIRMATION_PLACEHOLDER": "Password confirmation*"
-  "TOWN_PLACEHOLDER": "Town"
-  "STREET_PLACEHOLDER": "Street"
-  "POSTCODE_PLACEHOLDER": "Postcode (00-000)"
-  "HOUSE_NUM_PLACEHOLDER": "House number/flat number"
+  "TEL_NUM_REQUIRED_PLACEHOLDER": "Telephone number*"
+  "TOWN_PLACEHOLDER": "Town*"
+  "STREET_PLACEHOLDER": "Street*"
+  "POSTCODE_PLACEHOLDER": "Postcode (00-000)*"
+  "HOUSE_NUM_PLACEHOLDER": "House number/flat number*"
 
   # ERRORS
 

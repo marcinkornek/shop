@@ -10,14 +10,27 @@ div ng-repeat="alert in alerts"
   h3.text-center.uppercase.uppercase style="margin-top:0px;"
     ' {{ "USER_EDIT_ADDRESS_TITLE" | translate }}
 
+  .addresses
+    .address ng-repeat="address in formData.addresses"
+      .radio
+        label
+          input id="address-edit-{{address.id}}" type="radio" ng-click="loadAddress(address.id)" name="address" ng-model="checked" ng-value="address.id"
+            .address-title
+              ' {{ address.first_name }} {{ address.last_name }}
+            .address-details
+              p
+                ' {{ address.street }} {{ address.house_num }}
+              p
+                ' {{ address.postcode }} {{ address.town }}
+              p
+                ' {{ address.tel_num }}
 
-  div ng-repeat="address in formData.addresses_ids"
-    / input type="radio" ng-click="loadAddress(address)"
-    button ng-click="loadAddress(address)"
-      ' Address {{ address }}
+    .address
+      .radio ng-click="loadNewAddress()"
+        label
+          input id="address-new" type="radio" name="address" ng-model="checked" ng-value="0"
+            ' {{ "USER_EDIT_ADDRESS_NEW" | translate }}
 
-  button ng-click="loadNewAddress()"
-    ' New address
 
   form(style='width:33.33%;margin-left:auto;margin-right:auto' name='editOrCreateAddressForm')
     .field
@@ -47,7 +60,7 @@ div ng-repeat="alert in alerts"
           ' {{ "ERROR_LAST_NAME_LONG" | translate }}
 
     .field
-      input.form-control.span12(type="text" maxlength="9" name="tel_num" placeholder="{{ 'TEL_NUM_PLACEHOLDER' | translate }}" ng-model="formData.address.tel_num" ng-pattern="/\d{9}/" ng-minlength='9' required)
+      input.form-control.span12(type="text" maxlength="9" name="tel_num" placeholder="{{ 'TEL_NUM_REQUIRED_PLACEHOLDER' | translate }}" ng-model="formData.address.tel_num" ng-pattern="/\d{9}/" ng-minlength='9' required)
 
       .errors ng-show="editOrCreateAddressForm.tel_num.$touched && editOrCreateAddressForm.tel_num.$dirty"
         .field-error ng-show="editOrCreateAddressForm.tel_num.$error.required"

@@ -43,3 +43,26 @@ body .nav-tabs a {
     color: black;
   }
 }
+
+.inline-block {
+  display: inline-block;
+}
+
+.address {
+  vertical-align: top;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.address-title {
+  font-size:  14px;
+}
+
+.address-details {
+  padding-top: 5px;
+  font-size:  12px;
+  p {
+    display: block;
+    margin-bottom: 2px;
+  }
+}

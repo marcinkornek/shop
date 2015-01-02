@@ -25,7 +25,10 @@ class Api::UsersController < ApplicationController
     else
       user
     end
-    render json: {user: show_user, addresses_number: @user.addresses.size, addresses_ids: @user.addresses.order(:created_at).map(&:id)}
+    # p '---------user--------'
+    # p show_user
+    # p '---------user--------'
+    render json: {user: show_user, addresses_number: show_user.addresses.size, addresses: show_user.addresses.order(:created_at)}
   end
 
   def update

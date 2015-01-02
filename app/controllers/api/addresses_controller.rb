@@ -17,6 +17,9 @@ class Api::AddressesController < ApplicationController
   end
 
   def show
+    # p '--------address---------'
+    # p address
+    # p '--------address---------'
     render json: address
   end
 
