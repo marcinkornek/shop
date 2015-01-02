@@ -51,7 +51,6 @@ pl:
   "POSTCODE_PLACEHOLDER": "Kod pocztowy (00-000)*"
   "HOUSE_NUM_PLACEHOLDER": "Numer domu/numer mieszkania*"
 
-
   # ERRORS
 
   "ERROR_FIRST_NAME_REQUIRED": "Imię jest wymagane"
@@ -96,6 +95,22 @@ pl:
   "USER_EDIT_ADDRESS_ALERT_SUCCESS_DESTROY": "Adres został pomyślnie usunięty"
   "USER_EDIT_CHANGE_PASSWORD_ALERT_SUCCESS": "Hasło zostało pomyślnie zmienione"
   "USER_EDIT_CHANGE_PASSWORD_ALERT_FAILURE": "Obecne hasło jest nieprawidłowe"
+
+  # TOOLTIPS
+
+  "FIRST_NAME_TOOLTIP": "Imię*"
+  "LAST_NAME_TOOLTIP": "Nazwisko*"
+  "EMAIL_TOOLTIP": "Email*"
+  "TEL_NUM_TOOLTIP": "Numer telefonu"
+  "BIRTH_DATE_TOOLTIP": "Data urodzenia"
+  "TEL_NUM_REQ_TOOLTIP": "Numer telefonu*"
+  "STREET_TOOLTIP": "Ulica*"
+  "HOUS_NUM_TOOLTIP": "Numer domu/Numer mieszkania*"
+  "TOWN_TOOLTIP": "Miasto*"
+  "POSTCODE_TOOLTIP": "Kod pocztowy*"
+  "OLD_PASSWORD_TOOLTIP": "Obecne hasło*"
+  "NEW_PASSWORD_TOOLTIP": "Nowe hasło*"
+  "ONEW_PASSWORD_CONFIRMATION_TOOLTIP": "Potwierdzenie nowego hasła*"
 
   "NG_REALLY_MESSAGE": "Jesteś pewny?"
 

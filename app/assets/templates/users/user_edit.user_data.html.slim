@@ -7,7 +7,7 @@ alert close="closeAlert($index)" ng-repeat="alert in alerts" type="{{alert.type}
 
   form(style='width:33.33%;margin-left:auto;margin-right:auto' name='editUserForm')
     .field
-      input.form-control.span12(type="text" maxlength="30" name="first_name" placeholder="{{ 'FIRST_NAME_PLACEHOLDER' | translate }}" ng-model="formData.first_name" required ng-pattern="/^[a-zA-ZàáâäãåąčćśęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/" ng-minlength='3' ng-maxlength='30')
+      input.form-control.span12(type="text" maxlength="30" name="first_name" placeholder="{{ 'FIRST_NAME_PLACEHOLDER' | translate }}" ng-model="formData.first_name" required ng-pattern="/^[a-zA-ZàáâäãåąčćśęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/" ng-minlength='3' ng-maxlength='30' tooltip="{{ 'FIRST_NAME_TOOLTIP' | translate }}" tooltip-trigger="focus" tooltip-placement="left")
 
       .errors ng-show="editUserForm.first_name.$touched && editUserForm.first_name.$dirty"
         .field-error ng-show="editUserForm.first_name.$error.required"
@@ -20,7 +20,7 @@ alert close="closeAlert($index)" ng-repeat="alert in alerts" type="{{alert.type}
           ' {{ "ERROR_FIRST_NAME_LONG" | translate }}
 
     .field
-      input.form-control.span12(type="text" maxlength="30" name="last_name" placeholder="{{ 'LAST_NAME_PLACEHOLDER' | translate }}" ng-model="formData.last_name" required ng-pattern="/^[a-zA-ZàáâäãåąčćśęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/" ng-minlength='3' ng-maxlength='30')
+      input.form-control.span12(type="text" maxlength="30" name="last_name" placeholder="{{ 'LAST_NAME_PLACEHOLDER' | translate }}" ng-model="formData.last_name" required ng-pattern="/^[a-zA-ZàáâäãåąčćśęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/" ng-minlength='3' ng-maxlength='30' tooltip="{{ 'LAST_NAME_TOOLTIP' | translate }}" tooltip-trigger="focus" tooltip-placement="left")
 
       .errors ng-show="editUserForm.last_name.$touched && editUserForm.last_name.$dirty"
         .field-error ng-show="editUserForm.last_name.$error.required"
@@ -33,7 +33,7 @@ alert close="closeAlert($index)" ng-repeat="alert in alerts" type="{{alert.type}
           ' {{ "ERROR_LAST_NAME_LONG" | translate }}
 
     .field
-      input.form-control.span12(type="text" maxlength="60" name="email" placeholder="{{ 'EMAIL_PLACEHOLDER' | translate }}" ng-model="formData.email" required ng-pattern="/^[\w+\-.]+@[a-zA-Z\d\-]+(?:\.[a-zA-Z\d\-]+)*\.[a-zA-Z]+$/" ng-unique="email")
+      input.form-control.span12(type="text" maxlength="60" name="email" placeholder="{{ 'EMAIL_PLACEHOLDER' | translate }}" ng-model="formData.email" required ng-pattern="/^[\w+\-.]+@[a-zA-Z\d\-]+(?:\.[a-zA-Z\d\-]+)*\.[a-zA-Z]+$/" ng-unique="email" tooltip="{{ 'EMAIL_TOOLTIP' | translate }}" tooltip-trigger="focus" tooltip-placement="left")
 
       .errors ng-show="editUserForm.email.$touched && editUserForm.email.$dirty"
         .field-error ng-show="editUserForm.email.$error.required"
@@ -44,7 +44,7 @@ alert close="closeAlert($index)" ng-repeat="alert in alerts" type="{{alert.type}
           ' {{ "ERROR_EMAIL_EXISTS" | translate }}
 
     .field
-      input.form-control.span12(type="text" maxlength="9" name="tel_num" placeholder="{{ 'TEL_NUM_PLACEHOLDER' | translate }}" ng-model="formData.tel_num" ng-pattern="/\d{9}/" ng-minlength='9')
+      input.form-control.span12(type="text" maxlength="9" name="tel_num" placeholder="{{ 'TEL_NUM_PLACEHOLDER' | translate }}" ng-model="formData.tel_num" ng-pattern="/\d{9}/" ng-minlength='9' tooltip="{{ 'TEL_NUM_TOOLTIP' | translate }}" tooltip-trigger="focus" tooltip-placement="left")
 
       .errors ng-show="editUserForm.tel_num.$touched && editUserForm.tel_num.$dirty"
         .field-error ng-show="editUserForm.tel_num.$error.minlength"

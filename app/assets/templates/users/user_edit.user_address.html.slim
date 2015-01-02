@@ -34,7 +34,7 @@ div ng-repeat="alert in alerts"
 
   form(style='width:33.33%;margin-left:auto;margin-right:auto' name='editOrCreateAddressForm')
     .field
-      input.form-control.span12(type="text" maxlength="30" name="first_name" placeholder="{{ 'FIRST_NAME_PLACEHOLDER' | translate }}" ng-model="formData.address.first_name" required ng-pattern="/^[a-zA-ZàáâäãåąčćśęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/" ng-minlength='3' ng-maxlength='30')
+      input.form-control.span12(type="text" maxlength="30" name="first_name" placeholder="{{ 'FIRST_NAME_PLACEHOLDER' | translate }}" ng-model="formData.address.first_name" required ng-pattern="/^[a-zA-ZàáâäãåąčćśęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/" ng-minlength='3' ng-maxlength='30' tooltip="{{ 'FIRST_NAME_TOOLTIP' | translate }}" tooltip-trigger="focus" tooltip-placement="left")
 
       .errors ng-show="editOrCreateAddressForm.first_name.$touched && editOrCreateAddressForm.first_name.$dirty"
         .field-error ng-show="editOrCreateAddressForm.first_name.$error.required"
@@ -47,7 +47,7 @@ div ng-repeat="alert in alerts"
           ' {{ "ERROR_FIRST_NAME_LONG" | translate }}
 
     .field
-      input.form-control.span12(type="text" maxlength="30" name="last_name" placeholder="{{ 'LAST_NAME_PLACEHOLDER' | translate }}" ng-model="formData.address.last_name" required ng-pattern="/^[a-zA-ZàáâäãåąčćśęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/" ng-minlength='3' ng-maxlength='30')
+      input.form-control.span12(type="text" maxlength="30" name="last_name" placeholder="{{ 'LAST_NAME_PLACEHOLDER' | translate }}" ng-model="formData.address.last_name" required ng-pattern="/^[a-zA-ZàáâäãåąčćśęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/" ng-minlength='3' ng-maxlength='30' tooltip="{{ 'LAST_NAME_TOOLTIP' | translate }}" tooltip-trigger="focus" tooltip-placement="left")
 
       .errors ng-show="editOrCreateAddressForm.last_name.$touched && editOrCreateAddressForm.last_name.$dirty"
         .field-error ng-show="editOrCreateAddressForm.last_name.$error.required"
@@ -60,7 +60,7 @@ div ng-repeat="alert in alerts"
           ' {{ "ERROR_LAST_NAME_LONG" | translate }}
 
     .field
-      input.form-control.span12(type="text" maxlength="9" name="tel_num" placeholder="{{ 'TEL_NUM_REQUIRED_PLACEHOLDER' | translate }}" ng-model="formData.address.tel_num" ng-pattern="/\d{9}/" ng-minlength='9' required)
+      input.form-control.span12(type="text" maxlength="9" name="tel_num" placeholder="{{ 'TEL_NUM_REQUIRED_PLACEHOLDER' | translate }}" ng-model="formData.address.tel_num" ng-pattern="/\d{9}/" ng-minlength='9' required tooltip="{{ 'TEL_NUM_REQ_TOOLTIP' | translate }}" tooltip-trigger="focus" tooltip-placement="left")
 
       .errors ng-show="editOrCreateAddressForm.tel_num.$touched && editOrCreateAddressForm.tel_num.$dirty"
         .field-error ng-show="editOrCreateAddressForm.tel_num.$error.required"
@@ -71,7 +71,7 @@ div ng-repeat="alert in alerts"
           ' {{ "ERROR_TEL_NUM_PATTERN" | translate }}
 
     .field
-      input.form-control.span12(type="text" maxlength="40" name="street" placeholder="{{ 'STREET_PLACEHOLDER' | translate }}" ng-model="formData.address.street" required ng-pattern="/^[a-zA-ZàáâäãåąčćśęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/" ng-minlength='3' ng-maxlength='40')
+      input.form-control.span12(type="text" maxlength="40" name="street" placeholder="{{ 'STREET_PLACEHOLDER' | translate }}" ng-model="formData.address.street" required ng-pattern="/^[a-zA-ZàáâäãåąčćśęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/" ng-minlength='3' ng-maxlength='40' tooltip="{{ 'STREET_TOOLTIP' | translate }}" tooltip-trigger="focus" tooltip-placement="left")
 
       .errors ng-show="editOrCreateAddressForm.street.$touched && editOrCreateAddressForm.street.$dirty"
         .field-error ng-show="editOrCreateAddressForm.street.$error.required"
@@ -84,7 +84,7 @@ div ng-repeat="alert in alerts"
           ' {{ "ERROR_STREET_LONG" | translate }}
 
     .field
-      input.form-control.span12(type="text" maxlength="9" name="house_num" placeholder="{{ 'HOUSE_NUM_PLACEHOLDER' | translate }}" ng-model="formData.address.house_num" ng-pattern="/^\d{1,4}([a-z]{1})?((-|\/)\d{1,4})?([a-z]{1})?$/" required)
+      input.form-control.span12(type="text" maxlength="9" name="house_num" placeholder="{{ 'HOUSE_NUM_PLACEHOLDER' | translate }}" ng-model="formData.address.house_num" ng-pattern="/^\d{1,4}([a-z]{1})?((-|\/)\d{1,4})?([a-z]{1})?$/" required tooltip="{{ 'HOUS_NUM_TOOLTIP' | translate }}" tooltip-trigger="focus" tooltip-placement="left")
 
       .errors ng-show="editOrCreateAddressForm.house_num.$touched && editOrCreateAddressForm.house_num.$dirty"
         .field-error ng-show="editOrCreateAddressForm.house_num.$error.required"
@@ -93,14 +93,14 @@ div ng-repeat="alert in alerts"
           ' {{ "ERROR_HOUSE_NUM_PATTERN" | translate }}
 
     .field
-      input.form-control.span12(type="text" name="town" ng-model="formData.address.town" placeholder="{{ 'TOWN_PLACEHOLDER' | translate }}" typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" required)
+      input.form-control.span12(type="text" name="town" ng-model="formData.address.town" placeholder="{{ 'TOWN_PLACEHOLDER' | translate }}" typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" required tooltip="{{ 'TOWN_TOOLTIP' | translate }}" tooltip-trigger="focus" tooltip-placement="left")
 
       .errors ng-show="editOrCreateAddressForm.town.$touched && editOrCreateAddressForm.town.$dirty"
         .field-error ng-show="editOrCreateAddressForm.town.$error.required"
           ' {{ "ERROR_TOWN_REQUIRED" | translate }}
 
     .field
-      input.form-control.span12(type="text" maxlength="6" name="postcode" placeholder="{{ 'POSTCODE_PLACEHOLDER' | translate }}" ng-model="formData.address.postcode" ng-pattern="/\d{2}-\d{3}/" ng-minlength='6' required)
+      input.form-control.span12(type="text" maxlength="6" name="postcode" placeholder="{{ 'POSTCODE_PLACEHOLDER' | translate }}" ng-model="formData.address.postcode" ng-pattern="/\d{2}-\d{3}/" ng-minlength='6' required tooltip="{{ 'POSTCODE_TOOLTIP' | translate }}" tooltip-trigger="focus" tooltip-placement="left")
 
       .errors ng-show="editOrCreateAddressForm.postcode.$touched && editOrCreateAddressForm.postcode.$dirty"
         .field-error ng-show="editOrCreateAddressForm.postcode.$error.required"

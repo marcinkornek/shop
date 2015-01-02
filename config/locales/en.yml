@@ -97,6 +97,22 @@ en:
   "USER_EDIT_CHANGE_PASSWORD_ALERT_SUCCESS": "Password has successfully changed"
   "USER_EDIT_CHANGE_PASSWORD_ALERT_FAILURE": "Current password is incorrect"
 
+  # TOOLTIPS
+
+  "FIRST_NAME_TOOLTIP": "First name*"
+  "LAST_NAME_TOOLTIP": "Last name*"
+  "EMAIL_TOOLTIP": "Email*"
+  "TEL_NUM_TOOLTIP": "Telephone number"
+  "BIRTH_DATE_TOOLTIP": "Birth date"
+  "TEL_NUM_REQ_TOOLTIP": "Telephone number*"
+  "STREET_TOOLTIP": "Street*"
+  "HOUS_NUM_TOOLTIP": "House number/Flat number*"
+  "TOWN_TOOLTIP": "Town*"
+  "POSTCODE_TOOLTIP": "Postcode*"
+  "OLD_PASSWORD_TOOLTIP": "Current password*"
+  "NEW_PASSWORD_TOOLTIP": "New password*"
+  "ONEW_PASSWORD_CONFIRMATION_TOOLTIP": "New password confirmation*"
+
   "NG_REALLY_MESSAGE": "Are you sure?"
 
   session_controller:

@@ -69,3 +69,8 @@ angular.module('shop').run([ "$rootScope", "$state", "$stateParams", "authorizat
   $rootScope.$on "$stateChangeSuccess", (event, toState, toParams, fromState, fromParams) ->
     # console.log 'success'
 ])
+
+ # ui-bootstrap tooltip animation is broken using angular 1.3
+angular.module("shop").config [ "$tooltipProvider", ($tooltipProvider) ->
+  $tooltipProvider.options animation: false
+]
