@@ -22,10 +22,6 @@ pl:
   "USER_NEW_LOGIN_TEXT": "Masz konto"
   "USER_NEW_NEW_LOGIN": "Zaloguj się"
 
-  "USER_EDIT_DATA_ALERT_SUCCESS": "Dane zostały pomyślnie zmienione"
-  "USER_EDIT_ADDRESS_ALERT_SUCCESS_ADD": "Adres został pomyślnie dodany"
-  "USER_EDIT_ADDRESS_ALERT_SUCCESS_EDIT": "Adres został pomyślnie zmieniony"
-  "USER_EDIT_ADDRESS_ALERT_SUCCESS_DESTROY": "Adres został pomyślnie usunięty"
   "USER_EDIT_TITLE": "Moje dane"
   "USER_EDIT_ADDRESS_NEW": "Nowy adres"
   "USER_EDIT_UPDATE": "Zapisz zmiany"
@@ -34,9 +30,13 @@ pl:
   "USER_EDIT_HEADING_USER_DATA": "Dane użytkownika"
   "USER_EDIT_HEADING_USER_ADDRESS": "Adres użytkownika"
   "USER_EDIT_HEADING_USER_PASSWORD": "Zmień hasło"
+  "USER_EDIT_CHANGE_PASSWORD_TITLE": "Zmień hasło"
 
   # PLACEHOLDERS
 
+  "OLD_PASSWORD_PLACEHOLDER": "Obecne hasło"
+  "NEW_PASSWORD_PLACEHOLDER": "Nowe hasło"
+  "NEW_PASSWORD_CONFIRMATION_PLACEHOLDER": "Potwierdzenie nowego hasła"
   "HEADER_SEARCH_PRODUCTS_PLACEHOLDER": "Szukaj produkty"
   "FIRST_NAME_PLACEHOLDER": "Imię*"
   "LAST_NAME_PLACEHOLDER": "Nazwisko*"
@@ -50,6 +50,7 @@ pl:
   "STREET_PLACEHOLDER": "Ulica*"
   "POSTCODE_PLACEHOLDER": "Kod pocztowy (00-000)*"
   "HOUSE_NUM_PLACEHOLDER": "Numer domu/numer mieszkania*"
+
 
   # ERRORS
 
@@ -81,6 +82,20 @@ pl:
   "ERROR_POSTCODE_SHORT": "Kod pocztowy jest zbyt krótki"
   "ERROR_HOUSE_NUM_REQUIRED": "Numer domu jest wymagany"
   "ERROR_HOUSE_NUM_PATTERN": "Numer domu jest nieprawidłowy"
+
+  "OLD_ERROR_PASSWORD_REQUIRED": "Obecne hasło jest wymagane"
+  "NEW_ERROR_PASSWORD_REQUIRED": "Nowe hasło jest wymagane"
+  "NEW_ERROR_PASSWORD_SHORT": "Nowe hasło jest zbyt krótkie"
+  "NEW_ERROR_PASSWORD_MISMATCH": "Potwierdzenie nowego hasła nie pasuje do hasła"
+
+  # ALERTS
+
+  "USER_EDIT_DATA_ALERT_SUCCESS": "Dane zostały pomyślnie zmienione"
+  "USER_EDIT_ADDRESS_ALERT_SUCCESS_ADD": "Adres został pomyślnie dodany"
+  "USER_EDIT_ADDRESS_ALERT_SUCCESS_EDIT": "Adres został pomyślnie zmieniony"
+  "USER_EDIT_ADDRESS_ALERT_SUCCESS_DESTROY": "Adres został pomyślnie usunięty"
+  "USER_EDIT_CHANGE_PASSWORD_ALERT_SUCCESS": "Hasło zostało pomyślnie zmienione"
+  "USER_EDIT_CHANGE_PASSWORD_ALERT_FAILURE": "Obecne hasło jest nieprawidłowe"
 
   "NG_REALLY_MESSAGE": "Jesteś pewny?"
 

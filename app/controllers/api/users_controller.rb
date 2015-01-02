@@ -60,6 +60,15 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def change_password
+    if User.authenticate(current_user.email, user_change_password_params[:old_password])
+      current_user.change_password!(user_change_password_params[:new_password])
+      render json: {}
+    else
+      render json: {error: 'old_password: wrong'}, status: :not_acceptable
+    end
+  end
+
   ###################################################
 
   private
@@ -70,6 +79,10 @@ class Api::UsersController < ApplicationController
 
   def user_create_params
     params.permit(:first_name, :last_name, :email, :tel_num, :birth_date, :password, :password_confirmation, :provider, :uid, :friendly_token)
+  end
+
+  def user_change_password_params
+    params.permit(:old_password, :new_password, :new_password_confirmation)
   end
 
   def user

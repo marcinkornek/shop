@@ -22,10 +22,6 @@ en:
   "USER_NEW_LOGIN_TEXT": "You have an account"
   "USER_NEW_NEW_LOGIN": "Login now"
 
-  "USER_EDIT_DATA_ALERT_SUCCESS": "Data have successfully updated"
-  "USER_EDIT_ADDRESS_ALERT_SUCCESS_ADD": "Address have successfully added"
-  "USER_EDIT_ADDRESS_ALERT_SUCCESS_EDIT": "Address have successfully updated"
-  "USER_EDIT_ADDRESS_ALERT_SUCCESS_DESTROY": "Address have successfully destroyed"
   "USER_EDIT_TITLE": "My data"
   "USER_EDIT_ADDRESS_NEW": "New address"
   "USER_EDIT_UPDATE": "Save changes"
@@ -34,9 +30,14 @@ en:
   "USER_EDIT_HEADING_USER_DATA": "User data"
   "USER_EDIT_HEADING_USER_ADDRESS": "User address"
   "USER_EDIT_HEADING_USER_PASSWORD": "Change password"
+  "USER_EDIT_CHANGE_PASSWORD_TITLE": "Change password"
+
 
   # PLACEHOLDERS
 
+  "OLD_PASSWORD_PLACEHOLDER": "Current password"
+  "NEW_PASSWORD_PLACEHOLDER": "New password"
+  "NEW_PASSWORD_CONFIRMATION_PLACEHOLDER": "New password confirmation"
   "HEADER_SEARCH_PRODUCTS_PLACEHOLDER": "Search products"
   "FIRST_NAME_PLACEHOLDER": "First name*"
   "LAST_NAME_PLACEHOLDER": "Last name*"
@@ -70,7 +71,7 @@ en:
   "ERROR_BIRTH_DATE_PATTERN": "Date format is invalid (YYYY-MM-DD)"
   "ERROR_PASSWORD_REQUIRED": "Password is required"
   "ERROR_PASSWORD_SHORT": "Password is too short"
-  "ERROR_PASSWORD_MISMATCH": "Password confirmation don't match password"
+  "ERROR_PASSWORD_MISMATCH": "Password confirmation doesn't match password"
   "ERROR_TOWN_REQUIRED": "Town is required"
   "ERROR_STREET_REQUIRED": "Street is required"
   "ERROR_STREET_PATTERN": "Street is invalid"
@@ -81,6 +82,20 @@ en:
   "ERROR_POSTCODE_SHORT": "Postcode is too short"
   "ERROR_HOUSE_NUM_REQUIRED": "House number is required"
   "ERROR_HOUSE_NUM_PATTERN": "House number is invalid"
+
+  "OLD_ERROR_PASSWORD_REQUIRED": "Current password is required"
+  "NEW_ERROR_PASSWORD_REQUIRED": "New password is required"
+  "NEW_ERROR_PASSWORD_SHORT": "New password is too short"
+  "NEW_ERROR_PASSWORD_MISMATCH": "New password confirmation doesn't match password"
+
+  # ALERTS
+
+  "USER_EDIT_DATA_ALERT_SUCCESS": "Data has successfully updated"
+  "USER_EDIT_ADDRESS_ALERT_SUCCESS_ADD": "Address has successfully added"
+  "USER_EDIT_ADDRESS_ALERT_SUCCESS_EDIT": "Address has successfully updated"
+  "USER_EDIT_ADDRESS_ALERT_SUCCESS_DESTROY": "Address has successfully destroyed"
+  "USER_EDIT_CHANGE_PASSWORD_ALERT_SUCCESS": "Password has successfully changed"
+  "USER_EDIT_CHANGE_PASSWORD_ALERT_FAILURE": "Current password is incorrect"
 
   "NG_REALLY_MESSAGE": "Are you sure?"
 
