@@ -16,6 +16,13 @@ UserEditDataCtrl = ($scope, $stateParams, $state, userData, addressData, $http) 
           $scope.formData.user_error = error.data.error
       )
 
+  # datepicker
+
+  $scope.open = ($event) ->
+    $event.preventDefault()
+    $event.stopPropagation()
+    $scope.opened = true
+
   # alerts
 
   $scope.alerts ||= []
