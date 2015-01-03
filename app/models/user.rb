@@ -45,6 +45,7 @@ class User < ActiveRecord::Base
                         password_confirmation:password,
                       )
         user.send_activation_email = false
+        user.activate!
         user.save
         user.activate!
         return user

@@ -118,3 +118,4 @@ en:
   session_controller:
     "activate_email": "Please check your email and activate account"
     "wrong_email_password": "Wrong email/username or password"
+    "register_with_omniauth": "You have already registered with %{provider}, in order to login, click 'login with %{provider}'"

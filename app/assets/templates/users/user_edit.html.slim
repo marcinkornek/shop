@@ -12,7 +12,7 @@
           a ng-click="tab = 2; closeAlert()"
             ' {{ 'USER_EDIT_HEADING_USER_ADDRESS' | translate }}
 
-        .headings ng-class="{active:tab === 3}"
+        .headings ng-class="{active:tab === 3}" ng-hide="formData.provider"
           a ng-click="tab = 3; closeAlert()"
             ' {{ 'USER_EDIT_HEADING_USER_PASSWORD' | translate }}
 

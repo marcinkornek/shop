@@ -9,6 +9,8 @@ class Api::SessionsController < ApplicationController
       @user = User.find_by(email: params[:email])
       if @user && @user.activation_state != 'active'
         render json: {error: t('session_controller.activate_email')}, status: :not_acceptable
+      elsif @user && @user.provider
+        render json: {error: t('session_controller.register_with_omniauth', :provider => @user.provider )}, status: :not_acceptable
       else
         render json: {error: t('session_controller.wrong_email_password')}, status: :not_acceptable
       end

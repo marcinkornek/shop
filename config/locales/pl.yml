@@ -117,3 +117,4 @@ pl:
   session_controller:
     "activate_email": "Proszę sprawdzić email i aktywować konto"
     "wrong_email_password": "Nieprawidłowy email/nick lub hasło"
+    "register_with_omniauth": "Zarejestowałeś się za pomocą %{provider}, aby się zalogować kliknij 'Zaloguj się z %{provider}'"

@@ -36,6 +36,7 @@ UserEditCtrl = ($scope, $stateParams, $state, userData, addressData, $http) ->
         $scope.formData.birth_date = user.user.birth_date
         $scope.formData.addresses_number = user.addresses_number
         $scope.formData.addresses = user.addresses
+        $scope.formData.provider = user.user.provider
         # console.log user.addresses
         if user.addresses_number > 0
           $scope.loadTemporaryAddress()
