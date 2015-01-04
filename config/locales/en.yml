@@ -83,10 +83,14 @@ en:
   "ERROR_HOUSE_NUM_REQUIRED": "House number is required"
   "ERROR_HOUSE_NUM_PATTERN": "House number is invalid"
 
-  "OLD_ERROR_PASSWORD_REQUIRED": "Current password is required"
-  "NEW_ERROR_PASSWORD_REQUIRED": "New password is required"
-  "NEW_ERROR_PASSWORD_SHORT": "New password is too short"
-  "NEW_ERROR_PASSWORD_MISMATCH": "New password confirmation doesn't match password"
+  "ERROR_OLD_PASSWORD_REQUIRED": "Current password is required"
+  "ERROR_NEW_PASSWORD_REQUIRED": "New password is required"
+  "ERROR_NEW_PASSWORD_SHORT": "New password is too short"
+  "ERROR_NEW_PASSWORD_MISMATCH": "New password confirmation doesn't match password"
+
+  "ERROR_ACTIVATE_EMAIL": "Please check your email and activate account"
+  "ERROR_WRONG_EMAIL_PASSWORD": "Wrong email/username or password"
+  "ERROR_REGISTER_WITH_OMNIAUTH": "You have already registered with {{provider}}, in order to login, click 'login with {{provider}}'"
 
   # ALERTS
 
@@ -115,7 +119,3 @@ en:
 
   "NG_REALLY_MESSAGE": "Are you sure?"
 
-  session_controller:
-    "activate_email": "Please check your email and activate account"
-    "wrong_email_password": "Wrong email/username or password"
-    "register_with_omniauth": "You have already registered with %{provider}, in order to login, click 'login with %{provider}'"

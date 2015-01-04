@@ -55,7 +55,7 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
         , (success) =>
           $scope.editOrCreateAddressForm.$setPristine()
           $scope.editOrCreateAddressForm.$setUntouched()
-          $scope.addAlert('success', 1)
+          $scope.addAlert('success', 'USER_EDIT_ADDRESS_ALERT_SUCCESS_ADD')
           $scope.formData.addresses.push(success)
           $scope.changeAddressesNumber('+')
           $scope.loadAddress(success.id)
@@ -74,7 +74,7 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
           $scope.editOrCreateAddressForm.$setUntouched()
           $scope.replaceAddress(success)
           $scope.loadAddress(success.id)
-          $scope.addAlert('success', 2)
+          $scope.addAlert('success', 'USER_EDIT_ADDRESS_ALERT_SUCCESS_EDIT')
           $scope.checked = success.id
         , (error) ->
           console.log 'error'
@@ -96,7 +96,7 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
     )
     $scope.changeAddressesNumber('-')
     $scope.loadFirstOrNew()
-    $scope.addAlert('success', 3)
+    $scope.addAlert('success', 'USER_EDIT_ADDRESS_ALERT_SUCCESS_DESTROY')
 
   $scope.changeAddressesNumber = (sign) ->
     switch sign
@@ -123,7 +123,6 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
   $scope.alerts ||= []
 
   $scope.addAlert = (type, message) ->
-    # console.log 'addAlert', type, message
     $scope.closeAlert()
     $scope.alerts.push { type: type, message: message }
 

@@ -1,10 +1,6 @@
 div ng-repeat="alert in alerts"
-  alert close='closeAlert($index)' type='{{alert.type}}' style='margin-bottom:0px;' ng-show='{{alert.message == 1}}'
-    ' {{ "USER_EDIT_ADDRESS_ALERT_SUCCESS_ADD" | translate }}
-  alert close='closeAlert($index)' type='{{alert.type}}' style='margin-bottom:0px;' ng-show='{{alert.message == 2}}'
-    ' {{ "USER_EDIT_ADDRESS_ALERT_SUCCESS_EDIT" | translate }}
-  alert close='closeAlert($index)' type='{{alert.type}}' style='margin-bottom:0px;' ng-show='{{alert.message == 3}}'
-    ' {{ "USER_EDIT_ADDRESS_ALERT_SUCCESS_DESTROY" | translate }}
+  alert close='closeAlert($index)' type='{{alert.type}}' style='margin-bottom:0px;'
+    .message translate="{{alert.message}}"
 
 .account-form style="width:100%;"
   h3.text-center.uppercase.uppercase style="margin-top:0px;"

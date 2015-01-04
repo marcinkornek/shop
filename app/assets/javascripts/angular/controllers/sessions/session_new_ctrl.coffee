@@ -27,14 +27,14 @@ SessionNewCtrl = ($scope, $state, sessionData, principal) ->
             $state.go('home')
         , (error) ->
           console.log 'error'
-          $scope.addAlert(error.data.error, 'danger') if error.data
+          $scope.addAlert('danger', error.data.error) if error.data
       )
 
-  $scope.alerts = []
+  $scope.alerts ||= []
 
-  $scope.addAlert = (alert, type) ->
+  $scope.addAlert = (type, message) ->
     $scope.closeAlert()
-    $scope.alerts.push {type: type, msg: alert}
+    $scope.alerts.push { type: type, error: message }
 
   $scope.closeAlert = (index) ->
     $scope.alerts.splice index, 1

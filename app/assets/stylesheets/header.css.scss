@@ -1,8 +1,11 @@
+// HEADER //
+
 header.main-header {
   z-index: 10000;
   position: fixed;
-  height: 60px;
+  top:0px;
   background: #fff;
+  height: 60px;
   width: 100%;
   border-bottom: 1px #ecebe8 solid;
 }

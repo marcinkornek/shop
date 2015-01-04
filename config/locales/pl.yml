@@ -82,10 +82,14 @@ pl:
   "ERROR_HOUSE_NUM_REQUIRED": "Numer domu jest wymagany"
   "ERROR_HOUSE_NUM_PATTERN": "Numer domu jest nieprawidłowy"
 
-  "OLD_ERROR_PASSWORD_REQUIRED": "Obecne hasło jest wymagane"
-  "NEW_ERROR_PASSWORD_REQUIRED": "Nowe hasło jest wymagane"
-  "NEW_ERROR_PASSWORD_SHORT": "Nowe hasło jest zbyt krótkie"
-  "NEW_ERROR_PASSWORD_MISMATCH": "Potwierdzenie nowego hasła nie pasuje do hasła"
+  "ERROR_OLD_PASSWORD_REQUIRED": "Obecne hasło jest wymagane"
+  "ERROR_NEW_PASSWORD_REQUIRED": "Nowe hasło jest wymagane"
+  "ERROR_NEW_PASSWORD_SHORT": "Nowe hasło jest zbyt krótkie"
+  "ERROR_NEW_PASSWORD_MISMATCH": "Potwierdzenie nowego hasła nie pasuje do hasła"
+
+  "ERROR_ACTIVATE_EMAIL": "Proszę sprawdzić email i aktywować konto"
+  "ERROR_WRONG_EMAIL_PASSWORD": "Nieprawidłowy email/nick lub hasło"
+  "ERROR_REGISTER_WITH_OMNIAUTH": "Zarejestowałeś się za pomocą {{provider}}, aby się zalogować kliknij 'Zaloguj się z {{provider}}'"
 
   # ALERTS
 
@@ -113,8 +117,3 @@ pl:
   "ONEW_PASSWORD_CONFIRMATION_TOOLTIP": "Potwierdzenie nowego hasła*"
 
   "NG_REALLY_MESSAGE": "Jesteś pewny?"
-
-  session_controller:
-    "activate_email": "Proszę sprawdzić email i aktywować konto"
-    "wrong_email_password": "Nieprawidłowy email/nick lub hasło"
-    "register_with_omniauth": "Zarejestowałeś się za pomocą %{provider}, aby się zalogować kliknij 'Zaloguj się z %{provider}'"

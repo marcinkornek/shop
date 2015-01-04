@@ -8,10 +8,10 @@ UserEditChangePasswordCtrl = ($scope, $state, userData) ->
       userData.change_password({}, password
         , (success) =>
           $scope.clearPasswordForm()
-          $scope.addAlert('success', 1)
+          $scope.addAlert('success', 'USER_EDIT_CHANGE_PASSWORD_ALERT_SUCCESS')
         , (error) ->
           console.log 'error'
-          $scope.addAlert('danger', 2)
+          $scope.addAlert('danger', 'USER_EDIT_CHANGE_PASSWORD_ALERT_FAILURE')
       )
 
   $scope.clearPasswordForm = ->

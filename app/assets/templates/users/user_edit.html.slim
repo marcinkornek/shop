@@ -1,21 +1,21 @@
 .background.clearfix style="background-image: url(https://s3-eu-west-1.amazonaws.com/ngshop/page/login/login_photo.jpg)"
 
-  .login.clearfix
-    .col-md-8.col-md-offset-2
+.login.clearfix
+  .col-md-8.col-md-offset-2
 
-      .tabset ng-init="tab = 1"
-        .headings ng-class="{active:tab === 1}"
-          a ng-click="tab = 1; closeAlert()"
-            ' {{ 'USER_EDIT_HEADING_USER_DATA' | translate }}
+    .tabset ng-init="tab = 1"
+      .headings ng-class="{active:tab === 1}"
+        a ng-click="tab = 1; closeAlert()"
+          ' {{ 'USER_EDIT_HEADING_USER_DATA' | translate }}
 
-        .headings ng-class="{active:tab === 2}"
-          a ng-click="tab = 2; closeAlert()"
-            ' {{ 'USER_EDIT_HEADING_USER_ADDRESS' | translate }}
+      .headings ng-class="{active:tab === 2}"
+        a ng-click="tab = 2; closeAlert()"
+          ' {{ 'USER_EDIT_HEADING_USER_ADDRESS' | translate }}
 
-        .headings ng-class="{active:tab === 3}" ng-hide="formData.provider"
-          a ng-click="tab = 3; closeAlert()"
-            ' {{ 'USER_EDIT_HEADING_USER_PASSWORD' | translate }}
+      .headings ng-class="{active:tab === 3}" ng-hide="formData.provider"
+        a ng-click="tab = 3; closeAlert()"
+          ' {{ 'USER_EDIT_HEADING_USER_PASSWORD' | translate }}
 
-      div ui-view="user_data" ng-show="tab === 1"
-      div ui-view="user_address" ng-show="tab === 2"
-      div ui-view="user_change_password" ng-show="tab === 3"
+    div ui-view="user_data" ng-show="tab === 1"
+    div ui-view="user_address" ng-show="tab === 2"
+    div ui-view="user_change_password" ng-show="tab === 3"
