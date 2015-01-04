@@ -8,11 +8,11 @@ class Api::SessionsController < ApplicationController
     else
       @user = User.find_by(email: params[:email])
       if @user && @user.activation_state != 'active'
-        render json: {error: {message: "ERROR_ACTIVATE_EMAIL"} }, status: :not_acceptable
+        render json: {error: {message: "ACTIVATE_EMAIL_DANGER"} }, status: :not_acceptable
       elsif @user && @user.provider
-        render json: {error: {message: "ERROR_REGISTER_WITH_OMNIAUTH", variable: @user.provider} }, status: :not_acceptable
+        render json: {error: {message: "REGISTER_WITH_OMNIAUTH_DANGER", variable: @user.provider} }, status: :not_acceptable
       else
-        render json: {error: {message: "ERROR_WRONG_EMAIL_PASSWORD"} }, status: :not_acceptable
+        render json: {error: {message: "WRONG_EMAIL_PASSWORD_DANGER"} }, status: :not_acceptable
       end
     end
   end

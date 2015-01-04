@@ -31,7 +31,7 @@ body li {
   }
 }
 
-a.btn {
+body a.btn {
   cursor: pointer;
   color: black;
   &:hover {
@@ -39,6 +39,16 @@ a.btn {
     text-decoration: none;
   }
 }
+
+body a {
+  cursor: pointer;
+  color: black;
+  &:hover {
+    color: gray;
+    text-decoration: none;
+  }
+}
+
 
 body .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
   background-color: #f4f3f1;

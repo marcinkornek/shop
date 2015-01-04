@@ -9,7 +9,7 @@
   .col-md-8.col-md-offset-2 style="display:table;"
     .login-form style="width:66.66%;"
       h3.text-center.uppercase.uppercase style="margin-top:0px;"
-        ' {{ "SESSION_NEW_SIGN_IN" | translate }}
+        ' {{ "SESSION_NEW_SIGN_IN_TITLE" | translate }}
 
       .oauth-login.text-center
         a href='/auth/facebook' class="btn btn-facebook width342" ng-click="$event.stopPropagation()"
@@ -37,6 +37,10 @@
           label for="session_remember_me"
             strong
               ' {{ "SESSION_NEW_REMEMBER_PASSWORD" | translate }}
+
+        div style="margin-bottom:10px;"
+          a ui-sref="user_reset_password"
+            ' {{ "SESSION_NEW_RESET_PASSWORD" | translate }}
 
         button.btn.btn-default(style="width:100%" ng-click="createSession()")
           ' {{ "SESSION_NEW_SIGN_IN" | translate }}

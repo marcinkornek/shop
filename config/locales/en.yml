@@ -4,6 +4,7 @@ en:
 
   # SESSIONS
 
+  "SESSION_NEW_SIGN_IN_TITLE": "Login"
   "SESSION_NEW_SIGN_IN": "Login"
   "SESSION_NEW_SIGN_IN_WITH_FACEBOOK": "Login with facebook"
   "SESSION_NEW_SIGN_IN_WITH_GOOGLE": "Login with google+"
@@ -13,6 +14,12 @@ en:
   "SESSION_NEW_SIGN_UP_TEXT": "I don't have an account"
   "SESSION_NEW_SIGN_UP": "Register now"
   "SESSION_NEW_OR": "or"
+  "SESSION_NEW_RESET_PASSWORD": "Forgot password?"
+
+  "SESSION_RESET_PASSWORD_TITLE": "Reset password"
+  "SESSION_RESET_PASSWORD": "Reset password"
+  "SESSION_EMAIL_RESET_PASSWORD": "Send email"
+  "SESSION_NEW_PASSWORD_TITLE": "New password"
 
   # USERS
 
@@ -31,7 +38,6 @@ en:
   "USER_EDIT_HEADING_USER_ADDRESS": "User address"
   "USER_EDIT_HEADING_USER_PASSWORD": "Change password"
   "USER_EDIT_CHANGE_PASSWORD_TITLE": "Change password"
-
 
   # PLACEHOLDERS
 
@@ -88,18 +94,21 @@ en:
   "ERROR_NEW_PASSWORD_SHORT": "New password is too short"
   "ERROR_NEW_PASSWORD_MISMATCH": "New password confirmation doesn't match password"
 
-  "ERROR_ACTIVATE_EMAIL": "Please check your email and activate account"
-  "ERROR_WRONG_EMAIL_PASSWORD": "Wrong email/username or password"
-  "ERROR_REGISTER_WITH_OMNIAUTH": "You have already registered with {{provider}}, in order to login, click 'login with {{provider}}'"
-
   # ALERTS
+
+  "ACTIVATE_EMAIL_DANGER": "Please check your email and activate account"
+  "WRONG_EMAIL_PASSWORD_DANGER": "Wrong email/username or password"
+  "REGISTER_WITH_OMNIAUTH_DANGER": "You have already registered with {{provider}}, in order to login, click 'login with {{provider}}'"
 
   "USER_EDIT_DATA_ALERT_SUCCESS": "Data has successfully updated"
   "USER_EDIT_ADDRESS_ALERT_SUCCESS_ADD": "Address has successfully added"
   "USER_EDIT_ADDRESS_ALERT_SUCCESS_EDIT": "Address has successfully updated"
   "USER_EDIT_ADDRESS_ALERT_SUCCESS_DESTROY": "Address has successfully destroyed"
   "USER_EDIT_CHANGE_PASSWORD_ALERT_SUCCESS": "Password has successfully changed"
-  "USER_EDIT_CHANGE_PASSWORD_ALERT_FAILURE": "Current password is incorrect"
+  "USER_EDIT_CHANGE_PASSWORD_ALERT_DANGER": "Current password is incorrect"
+  "PASSWORD_RESET_EMAIL_ALERT_SUCCESS": "Email with a link to reset your password has been sent"
+  "PASSWORD_RESET_ALERT_SUCCESS": "Password has successfully changed"
+  "PASSWORD_RESET_ALERT_DANGER": "Password reset token is incorrect"
 
   # TOOLTIPS
 

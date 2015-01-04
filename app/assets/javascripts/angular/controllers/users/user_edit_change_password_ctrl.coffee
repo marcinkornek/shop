@@ -11,7 +11,7 @@ UserEditChangePasswordCtrl = ($scope, $state, userData) ->
           $scope.addAlert('success', 'USER_EDIT_CHANGE_PASSWORD_ALERT_SUCCESS')
         , (error) ->
           console.log 'error'
-          $scope.addAlert('danger', 'USER_EDIT_CHANGE_PASSWORD_ALERT_FAILURE')
+          $scope.addAlert('danger', 'USER_EDIT_CHANGE_PASSWORD_ALERT_DANGER')
       )
 
   $scope.clearPasswordForm = ->

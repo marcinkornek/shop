@@ -48,3 +48,23 @@ angular.module('shop').config ($stateProvider, $urlRouterProvider) ->
         "user_change_password@user_edit": { controller: 'UserEditChangePasswordCtrl', templateUrl: 'users/user_edit.user_change_password.html' },
       }
     })
+    .state('user_reset_password', {
+      url: '/reset_password',
+      data: {
+        roles: []
+      },
+      views: {
+        "header":     { controller: 'GlobalHeaderCtrl',           templateUrl: 'global/header.html' },
+        "body":       { controller: 'SessionResetPasswordCtrl',   templateUrl: 'sessions/session_reset_password.html' },
+      }
+    })
+    .state('user_new_password', {
+      url: '/new_password/:token',
+      data: {
+        roles: []
+      },
+      views: {
+        "header":     { controller: 'GlobalHeaderCtrl',           templateUrl: 'global/header.html' },
+        "body":       { controller: 'SessionNewPasswordCtrl',     templateUrl: 'sessions/session_new_password.html' },
+      }
+    })

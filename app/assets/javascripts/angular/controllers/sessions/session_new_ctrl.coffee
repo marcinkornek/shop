@@ -3,13 +3,6 @@ SessionNewCtrl = ($scope, $state, sessionData, principal) ->
   # function
 
   $scope.principal = principal
-  $scope.show = false
-
-  $scope.showMe = ->
-    if $scope.show == false
-      $scope.show = true
-    else
-      $scope.show = false
 
   $scope.createSession = ->
     if $scope.formData.email && $scope.formData.password

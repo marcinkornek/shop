@@ -4,6 +4,7 @@ pl:
 
   # SESSIONS
 
+  "SESSION_NEW_SIGN_IN_TITLE": "Zaloguj się"
   "SESSION_NEW_SIGN_IN": "Zaloguj się"
   "SESSION_NEW_SIGN_IN_WITH_FACEBOOK": "Zaloguj się z facebook"
   "SESSION_NEW_SIGN_IN_WITH_GOOGLE": "Zaloguj się z google+"
@@ -13,6 +14,12 @@ pl:
   "SESSION_NEW_SIGN_UP_TEXT": "Nie mam konta"
   "SESSION_NEW_SIGN_UP": "Załóż teraz"
   "SESSION_NEW_OR": "lub"
+  "SESSION_NEW_RESET_PASSWORD": "Zapomniałeś hasła?"
+
+  "SESSION_RESET_PASSWORD_TITLE": "Zresetuj hasło"
+  "SESSION_RESET_PASSWORD": "Zresetuj hasło"
+  "SESSION_EMAIL_RESET_PASSWORD": "Wyślij email"
+  "SESSION_NEW_PASSWORD_TITLE": "Nowe hasło"
 
   # USERS
 
@@ -87,18 +94,21 @@ pl:
   "ERROR_NEW_PASSWORD_SHORT": "Nowe hasło jest zbyt krótkie"
   "ERROR_NEW_PASSWORD_MISMATCH": "Potwierdzenie nowego hasła nie pasuje do hasła"
 
-  "ERROR_ACTIVATE_EMAIL": "Proszę sprawdzić email i aktywować konto"
-  "ERROR_WRONG_EMAIL_PASSWORD": "Nieprawidłowy email/nick lub hasło"
-  "ERROR_REGISTER_WITH_OMNIAUTH": "Zarejestowałeś się za pomocą {{provider}}, aby się zalogować kliknij 'Zaloguj się z {{provider}}'"
-
   # ALERTS
+
+  "ACTIVATE_EMAIL_DANGER": "Proszę sprawdzić email i aktywować konto"
+  "WRONG_EMAIL_PASSWORD_DANGER": "Nieprawidłowy email/nick lub hasło"
+  "REGISTER_WITH_OMNIAUTH_DANGER": "Zarejestowałeś się za pomocą {{provider}}, aby się zalogować kliknij 'Zaloguj się z {{provider}}'"
 
   "USER_EDIT_DATA_ALERT_SUCCESS": "Dane zostały pomyślnie zmienione"
   "USER_EDIT_ADDRESS_ALERT_SUCCESS_ADD": "Adres został pomyślnie dodany"
   "USER_EDIT_ADDRESS_ALERT_SUCCESS_EDIT": "Adres został pomyślnie zmieniony"
   "USER_EDIT_ADDRESS_ALERT_SUCCESS_DESTROY": "Adres został pomyślnie usunięty"
   "USER_EDIT_CHANGE_PASSWORD_ALERT_SUCCESS": "Hasło zostało pomyślnie zmienione"
-  "USER_EDIT_CHANGE_PASSWORD_ALERT_FAILURE": "Obecne hasło jest nieprawidłowe"
+  "USER_EDIT_CHANGE_PASSWORD_ALERT_DANGER": "Obecne hasło jest nieprawidłowe"
+  "PASSWORD_RESET_EMAIL_ALERT_SUCCESS": "Email z linkiem do zresetowania hasła został wysłany"
+  "PASSWORD_RESET_ALERT_SUCCESS": "Hasło zostało zmienione"
+  "PASSWORD_RESET_ALERT_DANGER": "Token zmiany hasła jest nieprawidłowy"
 
   # TOOLTIPS
 
