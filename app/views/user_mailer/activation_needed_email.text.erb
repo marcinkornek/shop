@@ -1,5 +1,5 @@
-Witamy na naszej super stronie <%= @user.first_name %>
+<%= I18n.t('mailer.activation_needed_email.first_line') %> <%= @user.first_name %>
 ===============================================
-Witamy na stronie, <%= @user.first_name + ' ' + @user.last_name %>.
 
-Żeby potwierdzić rejestrację i zalogować się na stronie kliknij w link: <%= @url %>
+<%= I18n.t('mailer.activation_needed_email.second_line') %> <%= @user.first_name + ' ' + @user.last_name %>.
+<%= I18n.t('mailer.activation_needed_email.third_line') %> <%= @url %>

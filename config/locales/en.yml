@@ -128,3 +128,15 @@ en:
 
   "NG_REALLY_MESSAGE": "Are you sure?"
 
+  mailer:
+    activation_needed_email:
+      "subject": "Account activation"
+      "first_line": "Welcome to our great site"
+      "second_line": "Welcome,"
+      "third_line": "To confirm registration and login to the site, just follow this link:"
+    reset_password_email:
+      "subject": "Your password has been reset"
+      "first_line": "Hello,"
+      "second_line": "You have requested to reset your password."
+      "third_line": "To choose a new password, just follow this link:"
+      "fourth_line": "Have a great day!"

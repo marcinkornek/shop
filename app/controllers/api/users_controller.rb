@@ -44,7 +44,8 @@ class Api::UsersController < ApplicationController
   end
 
   def check_if_unique
-    if User.where(params['key'] => params['value']).exists?
+    user_id = current_user.try(:id)
+    if User.where(params['key'] => params['value']).where.not(id: user_id).exists?
       render json: {error: 'unique: false'}, status: :not_acceptable
     else
       render json: {unique: true}

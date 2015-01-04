@@ -127,3 +127,16 @@ pl:
   "ONEW_PASSWORD_CONFIRMATION_TOOLTIP": "Potwierdzenie nowego hasła*"
 
   "NG_REALLY_MESSAGE": "Jesteś pewny?"
+
+  mailer:
+    activation_needed_email:
+      "subject": "Aktywacja konta"
+      "first_line": "Witamy na naszej super stronie"
+      "second_line": "Witamy,"
+      "third_line": "Żeby potwierdzić rejestrację i zalogować się na stronie kliknij w link:"
+    reset_password_email:
+      "subject": "Twoje hasło zostało zresetowane"
+      "first_line": "Witamy,"
+      "second_line": "Zażądano, aby zresetować hasło."
+      "third_line": "Żeby wybrać nowe hasło, kliknij w link:"
+      "fourth_line": "Życzymy miłego dnia!"

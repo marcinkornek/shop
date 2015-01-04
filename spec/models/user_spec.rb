@@ -104,10 +104,10 @@ describe User do
 
     context "is with mixed case" do
       let(:mixed_case_first_name) { "aDaM adam" }
-      it "should be saved as titleize" do
+      it "should be saved as capitalize_words" do
         @user.first_name = mixed_case_first_name
         @user.save
-        expect(@user.reload.first_name).to eq mixed_case_first_name.titleize
+        expect(@user.reload.first_name).to eq mixed_case_first_name.capitalize_words
       end
     end
   end
@@ -151,10 +151,10 @@ describe User do
 
     context "is with mixed case" do
       let(:mixed_case_last_name) { "aDaM adam" }
-      it "should be saved as titleize" do
+      it "should be saved as capitalize_words" do
         @user.last_name = mixed_case_last_name
         @user.save
-        expect(@user.reload.last_name).to eq mixed_case_last_name.titleize
+        expect(@user.reload.last_name).to eq mixed_case_last_name.capitalize_words
       end
     end
   end

@@ -5,7 +5,7 @@ class UserMailer < ActionMailer::Base
     @user = user
     @url = activate_api_user_url(user.activation_token)
     mail(:to => user.email,
-         :subject => "Witamy na naszej super stronie"
+         :subject => t('mailer.activation_needed_email.subject')
         )
   end
 
@@ -13,7 +13,8 @@ class UserMailer < ActionMailer::Base
     @user = user
     @url = URI::join(root_url, "/new_password/#{user.reset_password_token}")
     mail(:to => user.email,
-         :subject => "Your password has been reset")
+         :subject => t('mailer.reset_password_email.subject')
+         )
   end
 
 end
