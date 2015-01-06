@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141230174304) do
+ActiveRecord::Schema.define(version: 20150106112817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,55 @@ ActiveRecord::Schema.define(version: 20141230174304) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "categories", force: true do |t|
+    t.string  "name"
+    t.integer "category_type_id"
+  end
+
+  add_index "categories", ["category_type_id", "name"], name: "index_categories_on_category_type_id_and_name", unique: true, using: :btree
+
+  create_table "category_types", force: true do |t|
+    t.string  "name"
+    t.integer "main_category_id"
+  end
+
+  add_index "category_types", ["main_category_id", "name"], name: "index_category_types_on_main_category_id_and_name", unique: true, using: :btree
+
+  create_table "main_categories", force: true do |t|
+    t.string "name"
+  end
+
+  add_index "main_categories", ["name"], name: "index_main_categories_on_name", unique: true, using: :btree
+
+  create_table "product_colors", force: true do |t|
+    t.string   "color"
+    t.string   "image"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "product_sizes", force: true do |t|
+    t.string   "size"
+    t.string   "quantity"
+    t.integer  "product_color_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "products", force: true do |t|
+    t.string   "name"
+    t.string   "code",        null: false
+    t.decimal  "price"
+    t.string   "composition"
+    t.json     "images"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "products", ["code"], name: "index_products_on_code", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email"

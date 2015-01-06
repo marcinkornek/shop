@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resource :session, only: [:create, :destroy]
     resources :addresses
+    resources :products
     resources :users do
       member do
         get :activate
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
   put   '/api/change_password'           => 'api/users#change_password'
   put   '/api/reset_password'            => 'api/users#reset_password'
   put   '/api/new_password'              => 'api/users#set_new_password'
+  get   '/api/categories'                => 'api/categories#index'
 
   constraints format: 'html' do
     get '*path', controller: 'home', action: 'index'
