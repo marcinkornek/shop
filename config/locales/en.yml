@@ -127,6 +127,7 @@ en:
   "ONEW_PASSWORD_CONFIRMATION_TOOLTIP": "New password confirmation*"
 
   "NG_REALLY_MESSAGE": "Are you sure?"
+  "CURRENCY": 'pln'
 
   mailer:
     activation_needed_email:

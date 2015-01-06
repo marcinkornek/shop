@@ -55,7 +55,7 @@ li.header {
     display: inline-block;
     width: 150px;
   }
-  a:hover:after {
+  a:hover:after, a:active:after {
     font-family: FontAwesome;
     content: "\f178";
     display: inline-block;
