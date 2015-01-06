@@ -1,3 +1,14 @@
+GIT
+  remote: git://github.com/carrierwaveuploader/carrierwave.git
+  revision: 56873b07105396e0f1cfdd5e38be930dc3dcd362
+  branch: master
+  specs:
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -171,6 +182,7 @@ GEM
       multi_json
       nokogiri
       uber
+    rmagick (2.13.2)
     roar (0.12.9)
       representable (>= 1.6.0, < 2.0.0)
     roar-rails (0.1.6)
@@ -246,6 +258,7 @@ DEPENDENCIES
   autoprefixer-rails
   better_errors
   capybara
+  carrierwave!
   coffee-rails
   coffee-rails-source-maps
   execjs
@@ -273,6 +286,7 @@ DEPENDENCIES
   rails-assets-bootstrap
   rails-assets-lodash
   rails_12factor
+  rmagick
   roar-rails (~> 0.1.6)
   rspec-rails (~> 2.14.0.rc1)
   sass-rails
