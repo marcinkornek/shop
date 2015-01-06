@@ -1,67 +1,69 @@
-# namespace :db do
-#   desc "Fill database with sample data"
-#   task populate: :environment do
-#     Rake::Task["db:reset"].invoke if Rails.env.development?
-#     make_users
-    # make_posts
-    # make_comments
-  # end
+namespace :db do
+  desc "Fill database with sample data"
+  task populate: :environment do
+    Rake::Task["db:reset"].invoke if Rails.env.development?
+    make_woman_products
+  end
 
-  # def make_users
-  #   puts "---------creating users--------------------"
-  #   user = User.new(
-  #                username: "mars124",
-  #                email: "mars124@o2.pl",
-  #                password: "asdasdasd",
-  #                password_confirmation: "asdasdasd",
-  #                )
-  #   user.send_activation_email = false
-  #   user.save
-  #   user.activate!
 
-  #   99.times do |n|
-  #     username  = "test#{n+1}"
-  #     email = "test#{n+1}@o3.pl"
-  #     password  = "asdasdasd"
-  #     user = User.new(
-  #                  username: username,
-  #                  email: email,
-  #                  password: password,
-  #                  password_confirmation: password,
-  #                  )
-  #     user.send_activation_email = false
-  #     user.save
-  #     user.activate!
-  #   end
-  # end
 
-  # def make_posts
-  #   puts "---------creating posts---------------"
-  #   users = User.all.order(:id).limit(6)
-  #   50.times do
-  #     title = Faker::Address.country
-  #     contents = Faker::Lorem.sentence(20)
-  #     users.each { |user| user.posts.create!(
-  #                                           title: title,
-  #                                           contents: "Post #{contents}"
-  #                                           ) }
-  #   end
-  # end
+  def make_woman_products
+    woman_clothes_categories = %w[outerwear jackets sweaters sweatshirts blouses shirts t-shirts dresses skirts trousers jeans shorts lingerie]
+    woman_accessories_categories = %w[bags shoes hats scarves belts gloves sunglasses jewellery]
 
-  # def make_comments
-  #   puts "---------creating comments---------------"
-  #   users = User.all.order(:id).limit(6)
-  #   # puts users.pluck(:id)
+    man_clothes_categories = %w[outerwear jackets sweaters sweatshirts shirts t-shirts polos trousers jeans shorts lingerie]
+    man_accessories_categories = %w[bags shoes hats scarves ties belts gloves sunglasses jewellery]
 
-  #   21.times do |n|
-  #     n += 1
-  #     contents = Faker::Lorem.sentence(30)
-  #     users.each { |user| user.posts.each {|post| post.comments.create!(
-  #                                                       contents: "Comment #{contents}",
-  #                                                       user_id: n
-  #                                                       ) }
-  #                 }
-  #   end
-  # end
+    if Rails.env.production?
+    else
+      p '-------make woman products---------'
+      woman_clothes_categories.each do |cat|
+        category = Category.joins(category_type: :main_category).where(main_categories: {name: 'woman'}).where(category_types: {name: 'clothes'}).where(name: cat).first
 
-# end
+        cat = cat.gsub(/-/, '')
+        2.times do |n|
+          n += 1
+          product = Product.new(name: cat+'_'+n.to_s, price: rand(10..100), composition: "100% cotton", category: category)
+          product.images = [File.open('/home/mars/ruby/shop_pic/woman/clothes/'+cat+'/'+cat+'_'+n.to_s+'.1.jpg'), File.open('/home/mars/ruby/shop_pic/woman/clothes/'+cat+'/'+cat+'_'+n.to_s+'.2.jpg')]
+          product.save
+        end
+      end
+      woman_accessories_categories.each do |cat|
+        category = Category.joins(category_type: :main_category).where(main_categories: {name: 'woman'}).where(category_types: {name: 'accessories'}).where(name: cat).first
+
+        cat = cat.gsub(/-/, '')
+        2.times do |n|
+          n += 1
+          product = Product.new(name: cat+'_'+n.to_s, price: rand(10..100), composition: "100% cotton", category: category)
+          product.images = [File.open('/home/mars/ruby/shop_pic/woman/accessories/'+cat+'/'+cat+'_'+n.to_s+'.1.jpg'), File.open('/home/mars/ruby/shop_pic/woman/accessories/'+cat+'/'+cat+'_'+n.to_s+'.2.jpg')]
+          product.save
+        end
+      end
+
+      p '-------make man products---------'
+      man_clothes_categories.each do |cat|
+        category = Category.joins(category_type: :main_category).where(main_categories: {name: 'man'}).where(category_types: {name: 'clothes'}).where(name: cat).first
+
+        cat = cat.gsub(/-/, '')
+        2.times do |n|
+          n += 1
+          product = Product.new(name: cat+'_'+n.to_s, price: rand(10..100), composition: "100% cotton", category: category)
+          product.images = [File.open('/home/mars/ruby/shop_pic/man/clothes/'+cat+'/'+cat+'_'+n.to_s+'.1.jpg'), File.open('/home/mars/ruby/shop_pic/man/clothes/'+cat+'/'+cat+'_'+n.to_s+'.2.jpg')]
+          product.save
+        end
+      end
+      man_accessories_categories.each do |cat|
+        category = Category.joins(category_type: :main_category).where(main_categories: {name: 'man'}).where(category_types: {name: 'accessories'}).where(name: cat).first
+
+        cat = cat.gsub(/-/, '')
+        2.times do |n|
+          n += 1
+          product = Product.new(name: cat+'_'+n.to_s, price: rand(10..100), composition: "100% cotton", category: category)
+          product.images = [File.open('/home/mars/ruby/shop_pic/man/accessories/'+cat+'/'+cat+'_'+n.to_s+'.1.jpg'), File.open('/home/mars/ruby/shop_pic/man/accessories/'+cat+'/'+cat+'_'+n.to_s+'.2.jpg')]
+          product.save
+        end
+      end
+    end
+  end
+
+end
