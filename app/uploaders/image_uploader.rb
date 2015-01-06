@@ -7,9 +7,14 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
+  if Rails.env.production?
+    storage :fog
+  else
+    storage :file
+  end
 
+  include CarrierWave::MimeTypes
+  process :set_content_type
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
@@ -26,6 +31,17 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   # process :scale => [200, 300]
+  version :normal do
+    process :resize_to_fill => [240, 240, gravity=::Magick::WestGravity]
+  end
+
+  version :thumb do
+    process :resize_to_fill => [100, 100, gravity=::Magick::WestGravity]
+  end
+
+  version :mini do
+    process :resize_to_fill => [40, 40, gravity=::Magick::WestGravity]
+  end
   #
   # def scale(width, height)
   #   # do something

@@ -14,6 +14,7 @@ gem 'roar-rails', '~> 0.1.6' # representer - extends/fits json files
 gem 'jquery-rails'
 gem 'carrierwave', :git => "git://github.com/carrierwaveuploader/carrierwave.git", :branch => "master"
 gem 'rmagick'
+gem 'fog' # Ruby cloud services library
 
 # assets processors
 gem 'sass-rails'
