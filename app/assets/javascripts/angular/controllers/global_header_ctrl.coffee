@@ -4,6 +4,9 @@ GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies, sessionD
 
   $scope.formData = {}
 
+  $scope.loadCategories = ->
+    $scope.data.categories = window.categories if window.categories
+
   $scope.loadSearchQuery = ->
     $scope.formData.search_query = $stateParams.searchQuery
 
@@ -44,9 +47,9 @@ GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies, sessionD
   # loading data 2/2
 
   $scope.loadData = ->
-    $scope.data = {}
     $scope.data.user =  window.currentUser
     $scope.data.locale = $cookies.locale || 'pl'
+    $scope.loadCategories()
 
   $scope.loadData()
 

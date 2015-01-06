@@ -4,68 +4,22 @@ figure.logo ui-sref="home"
 
 nav.main-nav
   ul.menu
-    li.header
-      a.title.top-border href="#"  Hyperlink 2
+    li.header ng-repeat="main_cat in data.categories"
 
-      .submenu-with-banner style="background-image: url(https://s3.amazonaws.com/bartender-app-heroku/category_images/food.jpg);background-size:200px;"
+      a.title.top-border href="#"
+        ' {{ main_cat.main_cat }}
+
+      .submenu-with-banner style="background-image: url({{ main_cat.main_cat_img.url }});background-size:340px;"
         .columns
-          ul.links
-            li
-              a
-                ' Hyperlink 2.1
-            li
-              a
-                ' Hyperlink 2.2
-            li
-              a
-                ' Hyperlink 2.3
-            li
-              a
-                ' Hyperlink 2.4
-            li
-              a
-                ' Hyperlink 2.5
-            li
-              a
-                ' Hyperlink 2.6
-          ul.links
-            li
-              a
-                ' Hyperlink 2.1
-            li
-              a
-                ' Hyperlink 2.2
-            li
-              a
-                ' Hyperlink 2.3
-          ul.links
-            li
-              a
-                ' Hyperlink 2.1
-            li
-              a
-                ' Hyperlink 2.2
-            li
-              a
-                ' Hyperlink 2.3
-            li
-              a
-                ' Hyperlink 2.4
-      li.header
-        a.title.top-border href="#"  Hyperlink 3
-
-        .submenu-with-banner style="background-image: url(https://s3.amazonaws.com/bartender-app-heroku/category_images/drinks.jpg);background-size:150px;"
-          .columns
-            ul.links
-              li
+          ul.links ng-repeat="category_types in main_cat.category_types"
+            .category-type
+              li ui-sref="products_index({ main_category: main_cat.main_cat, category_type: category_types.category_type, category: '' })"
                 a
-                  ' Hyperlink 3.1
-              li
+                  ' {{ category_types.category_type }}
+            .categories
+              li ng-repeat="category in category_types.categories" ui-sref="products_index({ main_category: main_cat.main_cat, category_type: category_types.category_type, category: category.name })"
                 a
-                  ' Hyperlink 3.2
-              li
-                a
-                  ' Hyperlink 3.3
+                  ' {{ category.name }}
 
 nav.right-nav
   ul.menu

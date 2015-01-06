@@ -68,3 +68,15 @@ angular.module('shop').config ($stateProvider, $urlRouterProvider) ->
         "body":       { controller: 'SessionNewPasswordCtrl',     templateUrl: 'sessions/session_new_password.html' },
       }
     })
+
+    # User
+    .state('products_index', {
+      url: '/:main_category/:category_type/:category',
+      data: {
+        roles: []
+      },
+      views: {
+        "header":     { controller: 'GlobalHeaderCtrl',           templateUrl: 'global/header.html' },
+        "body":       { controller: 'ProductsIndexCtrl',     templateUrl: 'products/products_index.html' },
+      }
+    })

@@ -11,12 +11,15 @@ html ng-app="shop"
     - if logged_in?
          javascript:
            window.currentUser = #{ raw current_user.extend(HeaderUserRepresenter).to_json}
+           window.categories = #{ raw MainCategory.all.extend(MainCategoriesRepresenter).to_json}
     - else
       javascript:
         window.currentUser = {}
+        window.categories = #{ raw MainCategory.all.extend(MainCategoriesRepresenter).to_json}
 
   body
     = yield
 
     = javascript_include_tag 'application'
     = js_env
+

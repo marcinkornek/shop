@@ -8,7 +8,12 @@ man_accessories_categories = %w[bags shoes hats scarves ties belts gloves sungla
 
 
 p '-------make women---------'
-mc = MainCategory.create(name: 'woman')
+mcn = 'woman'
+mc = MainCategory.new(name: mcn)
+if Rails.env.production?
+else
+  mc.image = File.open('/home/mars/ruby/shop_pic/'+mcn+'/'+mcn+'.jpg')
+end
 
 ct = CategoryType.create(name: 'clothes', main_category: mc)
 woman_clothes_categories.each do |cat|
@@ -22,7 +27,12 @@ end
 
 
 p '-------make men---------'
-mc = MainCategory.create(name: 'man')
+mcn = 'man'
+mc = MainCategory.new(name: mcn)
+if Rails.env.production?
+else
+  mc.image = File.open('/home/mars/ruby/shop_pic/'+mcn+'/'+mcn+'.jpg')
+end
 
 ct = CategoryType.create(name: 'clothes', main_category: mc)
 man_clothes_categories.each do |cat|
