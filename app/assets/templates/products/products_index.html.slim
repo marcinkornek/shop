@@ -1,19 +1,23 @@
 .products
-    div ng-repeat="product in data.products" class="product product-{{product.id}}" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"
-      .products-images style="position:relative"
-        img(ng-src="{{product.images[0].normal.url}}")
+  div ng-repeat="product in data.products" class="product product-{{product.id}}" style="position:relative" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"
 
-        .options.alpha60white ng-click="navProductEdit(product.category, product.id, product.parameterize)" ng-show="hoverEdit" class="animate-show"
-          .colors
-            ' colors
+    ul.image rn-carousel="" rn-carousel-index="products"
+      li ng-repeat="color in product.product_colors"
 
-          .add-to-cart.alpha60black
-            ' to cart
+        .bgimage ng-style="{'background-image': 'url(' + color.product_images[0].normal.url + ')'}"
 
-      .basic-info
-        p.name
-          ' {{ product.name }}
-        p.price
-          ' {{ product.price }}
-          ' {{ "CURRENCY" | translate }}
+    .options.alpha60white ng-show="hoverEdit" class="animate-show"
+      .colors.rn-carousel-indicator rn-carousel-index="products"
+        img ng-repeat="color in product.product_colors" ng-src="{{ color.color_image.mini.url }}" ng-click="$parent.products = $index" ng-class="{active: $index==$parent.products}"
+          ' {{ color_id }}
+          ' {{ color.color_id }}
 
+      .add-to-cart.alpha60black
+        ' to cart
+
+    .basic-info
+      p.price
+        ' {{ product.price }}
+        ' {{ "CURRENCY" | translate }}
+      p.name
+        ' {{ product.name }}

@@ -40,7 +40,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :mini do
-    process :resize_to_fill => [40, 40, gravity=::Magick::WestGravity]
+    process :resize_to_fill => [20, 20, gravity=::Magick::WestGravity]
   end
   #
   # def scale(width, height)

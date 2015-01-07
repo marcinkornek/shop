@@ -6,7 +6,7 @@ class Api::ProductsController < ApplicationController
     else
       @products = Product.joins(category: [{category_type: :main_category}]).where(main_categories: {name: params[:main_category]}).where(  category_types: {name: params[:category_type]})
     end
-    render json: @products
+    render json: @products.extend(ProductsIndexRepresenter)
   end
 
 end
