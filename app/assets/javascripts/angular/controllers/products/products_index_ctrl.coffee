@@ -2,24 +2,24 @@ ProductsIndexCtrl = ($scope, $stateParams, $state, productData) ->
 
   # loading data
 
-  $scope.loadProduct = ->
-    category = $stateParams.category
-    main_category = $stateParams.main_category
-    category_type = $stateParams.category_type
+  $scope.loadProducts = ->
     $scope.data = {}
+    $scope.data.category = category = $stateParams.category
+    $scope.data.main_category = main_category = $stateParams.main_category
+    $scope.data.category_type = category_type = $stateParams.category_type
     console.log 'loadProduct'
     productData.query({category: category, category_type: category_type, main_category: main_category}
-      , (product) ->
-        console.log 'product'
-        console.log product
-        $scope.data.products = product
+      , (products) ->
+        console.log 'products'
+        console.log products.products
+        $scope.data.products = products.products
       , (error) ->
         console.log 'error'
         console.log error.status
-        $scope.formData.error = 'There is no such product'
+        $scope.formData.error = 'There is no such products'
     )
 
-  $scope.loadProduct()
+  $scope.loadProducts()
 
   # functions
 
@@ -28,6 +28,9 @@ ProductsIndexCtrl = ($scope, $stateParams, $state, productData) ->
 
   $scope.hoverOut = ->
     @hoverEdit = false
+
+  $scope.saveColor = (color_name) ->
+    console.log color_name
 
 angular.module("shop").controller "ProductsIndexCtrl", ProductsIndexCtrl
 ProductsIndexCtrl.$inject = ["$scope", "$stateParams", "$state", "productData"]

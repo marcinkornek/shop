@@ -2,15 +2,12 @@
   div ng-repeat="product in data.products" class="product product-{{product.id}}" style="position:relative" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"
 
     ul.image rn-carousel="" rn-carousel-index="products"
-      li ng-repeat="color in product.product_colors"
-
+      li ng-repeat="color in product.product_colors" ui-sref="products_show({ main_category: data.main_category, category_type: data.category_type, category: product.category.name, code: color.code  })"
         .bgimage ng-style="{'background-image': 'url(' + color.product_images[0].normal.url + ')'}"
 
     .options.alpha60white ng-show="hoverEdit" class="animate-show"
       .colors.rn-carousel-indicator rn-carousel-index="products"
-        img ng-repeat="color in product.product_colors" ng-src="{{ color.color_image.mini.url }}" ng-click="$parent.products = $index" ng-class="{active: $index==$parent.products}"
-          ' {{ color_id }}
-          ' {{ color.color_id }}
+        img ng-repeat="color in product.product_colors" ng-src="{{ color.color_image.mini.url }}" ng-click="$parent.products = $index; saveColor(color.code)" ng-class="{active: $index==$parent.products}"
 
       .add-to-cart.alpha60black
         ' to cart

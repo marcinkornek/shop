@@ -1,7 +1,8 @@
 angular.module('shop').factory "productData", ($resource) ->
-  $resource("/api/products/:id", {id: "@id"},
+  $resource("/api/product_colors/:id", {id: "@id"},
     {
       update:           {method: "PUT"},
-      query:            {method: "GET", isArray: true},
+      query:            {method: "GET", isArray: false},
+      get:              {method: "GET", isArray: false, url: '/api/product_colors/:code'},
     }
   )

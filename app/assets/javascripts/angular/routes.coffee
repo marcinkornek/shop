@@ -54,8 +54,8 @@ angular.module('shop').config ($stateProvider, $urlRouterProvider) ->
         roles: []
       },
       views: {
-        "header":     { controller: 'GlobalHeaderCtrl',           templateUrl: 'global/header.html' },
-        "body":       { controller: 'SessionResetPasswordCtrl',   templateUrl: 'sessions/session_reset_password.html' },
+        "header":     { controller: 'GlobalHeaderCtrl',         templateUrl: 'global/header.html' },
+        "body":       { controller: 'SessionResetPasswordCtrl', templateUrl: 'sessions/session_reset_password.html' },
       }
     })
     .state('user_new_password', {
@@ -64,19 +64,19 @@ angular.module('shop').config ($stateProvider, $urlRouterProvider) ->
         roles: []
       },
       views: {
-        "header":     { controller: 'GlobalHeaderCtrl',           templateUrl: 'global/header.html' },
-        "body":       { controller: 'SessionNewPasswordCtrl',     templateUrl: 'sessions/session_new_password.html' },
+        "header":     { controller: 'GlobalHeaderCtrl',       templateUrl: 'global/header.html' },
+        "body":       { controller: 'SessionNewPasswordCtrl', templateUrl: 'sessions/session_new_password.html' },
       }
     })
 
-    # User
+    # Products
     .state('products_index', {
       url: '/:main_category/:category_type/:category',
       data: {
         roles: []
       },
       views: {
-        "header":     { controller: 'GlobalHeaderCtrl',           templateUrl: 'global/header.html' },
-        "body":       { controller: 'ProductsIndexCtrl',     templateUrl: 'products/products_index.html' },
+        "header":     { controller: 'GlobalHeaderCtrl',  templateUrl: 'global/header.html' },
+        "body":       { controller: 'ProductsIndexCtrl', templateUrl: 'products/products_index.html' },
       }
     })
