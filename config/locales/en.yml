@@ -41,6 +41,8 @@ en:
 
   # PRODUCTS
 
+  "PRODUCTS_SEARCH_NO_RESULTS": "There are no products matching the selection."
+
   "PRODUCT_SHOW_BACK": "Back to category"
   "PRODUCT_SHOW_COMPOSITION": "Composition"
   "PRODUCT_SHOW_RETURN": "Return"

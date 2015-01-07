@@ -50,6 +50,8 @@ GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies, sessionD
     $scope.data.user =  window.currentUser
     $scope.data.locale = $cookies.locale || 'pl'
     $scope.loadCategories()
+    if $stateParams.searchQuery
+      $scope.data.search = 1
 
   $scope.loadData()
 
