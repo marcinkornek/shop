@@ -20,13 +20,29 @@
       ' {{ data.pr.price }}
       ' {{ "CURRENCY" | translate }}
 
-    .product-colors ng-repeat="color in data.pr.product_colors"
-      img ng-src="{{ color.color_image.mini.url }}" ui-sref="products_show({ main_category: data.main_category, category_type: data.category_type, category: data.category, code: color.code  })"
+    .product-colors ng-repeat="color in data.pr.product_colors" style="position:relative;"
+      img ng-src="{{ color.color_image.mini.url }}" ui-sref="products_show({ main_category: data.main_category, category_type: data.category_type, category: data.category, code: color.code })"
+        .color-check.fa.fa-check ng-show="color.code == data.code"
     br
 
     .product-sizes ng-repeat="size in data.pr_det.product_sizes"
       div class="size size-{{size.size}}"
         ' {{ size.size }}
 
-    .product-composition
-      ' {{ data.pr.composition }}
+    .product-info-collapse ng-click="isCollapsed = !isCollapsed"
+      p
+        ' {{ "PRODUCT_SHOW_COMPOSITION" | translate }}
+      .product-composition collapse="isCollapsed"
+        ' {{ data.pr.composition }}
+
+    .product-info-collapse ng-click="isCollapsed2 = !isCollapsed2"
+      p
+        ' {{ "PRODUCT_SHOW_RETURN" | translate }}
+      .product-return collapse="isCollapsed2"
+        ' {{ "PRODUCT_SHOW_RETURN_TEXT" | translate }}
+
+    .product-info-collapse ng-click="isCollapsed3 = !isCollapsed3"
+      p
+        ' {{ "PRODUCT_SHOW_SHIPPING" | translate }}
+      .product-shipping collapse="isCollapsed3"
+        ' {{ "PRODUCT_SHOW_SHIPPING_TEXT" | translate }}

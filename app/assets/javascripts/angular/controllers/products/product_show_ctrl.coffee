@@ -8,7 +8,7 @@ ProductShowCtrl = ($scope, $stateParams, $state, productData) ->
     $scope.data.main_category = main_category = $stateParams.main_category
     console.log category
     $scope.data.category_type = category_type = $stateParams.category_type
-    code = $stateParams.code
+    $scope.data.code = code = $stateParams.code
     # console.log 'loadProduct'
     productData.get({code: code}
       , (product) ->
@@ -31,6 +31,8 @@ ProductShowCtrl = ($scope, $stateParams, $state, productData) ->
 
   $scope.hoverOut = ->
     @hoverEdit = false
+
+  $scope.isCollapsed = $scope.isCollapsed2 = $scope.isCollapsed3 = true
 
 angular.module("shop").controller "ProductShowCtrl", ProductShowCtrl
 ProductShowCtrl.$inject = ["$scope", "$stateParams", "$state", "productData"]

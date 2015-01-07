@@ -42,6 +42,11 @@ en:
   # PRODUCTS
 
   "PRODUCT_SHOW_BACK": "Back to category"
+  "PRODUCT_SHOW_COMPOSITION": "Composition"
+  "PRODUCT_SHOW_RETURN": "Return"
+  "PRODUCT_SHOW_RETURN_TEXT": "Return within 30 days"
+  "PRODUCT_SHOW_SHIPPING": "Shipping"
+  "PRODUCT_SHOW_SHIPPING_TEXT": "pick up in store - 0.00 PLN"
 
   # PLACEHOLDERS
 

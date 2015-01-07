@@ -116,6 +116,7 @@ p.name {
 }
 
 .product-colors {
+  cursor: pointer;
   margin-top: 20px;
   display: inline-block;
   margin-right: 2px;
@@ -123,24 +124,39 @@ p.name {
   border: 1px solid black;
 }
 
+.color-check {
+  color: white;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+}
+
 .product-sizes {
   margin-top: 20px;
   display: inline-block;
   .size {
+    cursor: pointer;
     text-align: center;
     font-size: 14px;
     display: block;
     padding:5px;
     width: 35px;
     margin: 2px;
-    border: 1px solid black;
+    &:hover, &:active {
+      border: 1px solid black;
+    }
   }
 }
 
 .product-images {
   z-index: 8000;
-
 }
+
 .product-info {
   z-index: 10000;
   position: absolute;
@@ -171,4 +187,21 @@ p.name {
 .product-show {
   margin-left: 0px;
   margin-right: 0px;
+}
+
+.product-info-collapse {
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-size: 13px;
+  p:before {
+    font-family: FontAwesome;
+    content: "\f104";
+    display: inline-block;
+    padding-right: 6px;
+  }
+}
+
+.product-composition, .product-return, .product-shipping {
+  margin-top: -5px;
+  font-size: 11px;
 }

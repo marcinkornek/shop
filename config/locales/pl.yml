@@ -42,6 +42,11 @@ pl:
   # PRODUCTS
 
   "PRODUCT_SHOW_BACK": "Wróć do kategorii"
+  "PRODUCT_SHOW_COMPOSITION": "Skład"
+  "PRODUCT_SHOW_RETURN": "Zwroty"
+  "PRODUCT_SHOW_RETURN_TEXT": "Zwroty możliwe w ciągu 30 dni"
+  "PRODUCT_SHOW_SHIPPING": "Wysyłka"
+  "PRODUCT_SHOW_SHIPPING_TEXT": "Odbiór w sklepie - 0.00 PLN"
 
   # PLACEHOLDERS
 
