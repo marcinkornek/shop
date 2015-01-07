@@ -5,7 +5,7 @@ module ProductIndexRepresenter
   property :name
   property :composition
   property :price
-  property :category, extend: CategoryRepresenter
+  property :category, extend: CategoryIndexRepresenter
   collection :product_colors, extend: ProductColorRepresenter
 
 end

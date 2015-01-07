@@ -21,7 +21,7 @@ GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies, sessionD
       $scope.data.search = 1
 
   $scope.searchQuery = ->
-    console.log $scope.formData.search_query
+    $state.go('products_search', {searchQuery: $scope.formData.search_query})
 
   $scope.destroySession = ->
     sessionData.delete((response) ->

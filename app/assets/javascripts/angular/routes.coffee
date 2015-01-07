@@ -90,3 +90,13 @@ angular.module('shop').config ($stateProvider, $urlRouterProvider) ->
         "body":       { controller: 'ProductShowCtrl',  templateUrl: 'products/product_show.html' },
       }
     })
+    .state('products_search', {
+      url: '/search/:searchQuery',
+      data: {
+        roles: []
+      },
+      views: {
+        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'global/header.html' }
+        "body":       { controller: 'ProductsSearchCtrl',  templateUrl: 'products/products_index.html' }
+      }
+    })

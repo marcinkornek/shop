@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   put   '/api/reset_password'            => 'api/users#reset_password'
   put   '/api/new_password'              => 'api/users#set_new_password'
   get   '/api/categories'                => 'api/categories#index'
+  get   '/api/products_search'           => 'api/product_colors#products_search'
 
   constraints format: 'html' do
     get '*path', controller: 'home', action: 'index'

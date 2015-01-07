@@ -6,7 +6,7 @@ class Api::ProductColorsController < ApplicationController
     else
       @products = Product.joins(category: [{category_type: :main_category}]).where(main_categories: {name: params[:main_category]}).where(  category_types: {name: params[:category_type]})
     end
-    render json: { products: @products.extend(ProductsIndexRepresenter).to_hash, category_type: params[:category_type], main_category: params[:main_category] }
+    render json: { products: @products.extend(ProductsIndexRepresenter).to_hash }
   end
 
   def show
@@ -15,6 +15,14 @@ class Api::ProductColorsController < ApplicationController
     p pc.product.extend(ProductIndexRepresenter)
     p '-----------------'
     render json: { pr_det: pc.extend(ProductColorRepresenter).to_hash, pr: pc.product.extend(ProductIndexRepresenter).to_hash }
+  end
+
+  def products_search
+    p '-----------------'
+    p params
+    p '-----------------'
+    @products = Product.search(params[:search_query])
+    render json: { products: @products.extend(ProductsIndexRepresenter).to_hash }
   end
 
 end
