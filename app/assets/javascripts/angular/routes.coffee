@@ -80,3 +80,13 @@ angular.module('shop').config ($stateProvider, $urlRouterProvider) ->
         "body":       { controller: 'ProductsIndexCtrl', templateUrl: 'products/products_index.html' },
       }
     })
+    .state('products_show', {
+      url: '/:main_category/:category_type/:category/:code/:color',
+      data: {
+        roles: []
+      },
+      views: {
+        "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'global/header.html' },
+        "body":       { controller: 'ProductShowCtrl',  templateUrl: 'products/product_show.html' },
+      }
+    })

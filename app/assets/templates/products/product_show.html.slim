@@ -1,0 +1,31 @@
+.product
+  / ' {{ data.pr }}
+
+
+  .product-images
+    carousel interval='10000000' disable-animation="true"
+      slide ng-repeat="image in data.pr_det.product_images"
+        img ng-src="{{image.url}}" style="margin:auto;"
+
+  .product-info
+
+    .product-name
+      ' {{ data.pr.name }}
+
+    .product-code
+      ' {{ data.pr_det.code }}
+
+    .product-price
+      ' {{ data.pr.price }}
+      ' {{ "CURRENCY" | translate }}
+
+    .product-colors ng-repeat="color in data.pr.product_colors"
+      img ng-src="{{ color.color_image.mini.url }}" ui-sref="products_show({ main_category: data.main_category, category_type: data.category_type, category: data.category, code: color.code  })"
+    br
+
+    .product-sizes ng-repeat="size in data.pr_det.product_sizes"
+      div class="size size-{{size.size}}"
+        ' {{ size.size }}
+
+    .product-composition
+      ' {{ data.pr.composition }}
