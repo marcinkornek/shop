@@ -39,6 +39,10 @@ en:
   "USER_EDIT_HEADING_USER_PASSWORD": "Change password"
   "USER_EDIT_CHANGE_PASSWORD_TITLE": "Change password"
 
+  # PRODUCTS
+
+  "PRODUCT_SHOW_BACK": "Back to category"
+
   # PLACEHOLDERS
 
   "OLD_PASSWORD_PLACEHOLDER": "Current password"

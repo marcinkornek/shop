@@ -39,6 +39,10 @@ pl:
   "USER_EDIT_HEADING_USER_PASSWORD": "Zmień hasło"
   "USER_EDIT_CHANGE_PASSWORD_TITLE": "Zmień hasło"
 
+  # PRODUCTS
+
+  "PRODUCT_SHOW_BACK": "Wróć do kategorii"
+
   # PLACEHOLDERS
 
   "OLD_PASSWORD_PLACEHOLDER": "Obecne hasło"
