@@ -4,11 +4,13 @@
 //= require angular
 //= require angular-bootstrap
 //= require angular-animate
+//= require angular-touch
 //= require angular-cookies
 //= require angular-cache
 //= require angular-ui-router
 //= require angular-translate
 //= require angular-resource
+//= require angular-carousel
 //
 //= require ./angular/init
 //= require ./angular/routes

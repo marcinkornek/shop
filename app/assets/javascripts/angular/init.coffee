@@ -6,6 +6,8 @@ angular.module('shop', [
   'ui.bootstrap',
   'ngAnimate',
   'ngCookies',
+  'ngTouch',
+  'angular-carousel',
 ])
   .factory 'railsLocalesLoader', ($http) ->
     (options) ->

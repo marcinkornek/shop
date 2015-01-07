@@ -33,10 +33,12 @@ gem 'rails-assets-angular-ui-router'
 gem 'rails-assets-angular-resource'
 gem 'rails-assets-angular-translate'
 gem 'rails-assets-angular-animate'
+gem 'rails-assets-angular-touch'
 gem 'rails-assets-angular-bootstrap'
 gem 'rails-assets-bootstrap'
 gem 'rails-assets-Font-Awesome'
 gem 'rails-assets-angular-cookies'
+gem 'rails-assets-angular-carousel'
 
 group :development, :test do
   gem 'spring'
