@@ -16,6 +16,7 @@ ProductShowCtrl = ($scope, $stateParams, $state, productData) ->
         # console.log product
         $scope.data.pr_det = product.pr_det
         $scope.data.pr = product.pr
+        $scope.data.items = product
       , (error) ->
         console.log 'error'
         console.log error.status

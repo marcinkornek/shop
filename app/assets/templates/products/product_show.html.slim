@@ -1,7 +1,17 @@
 .product-show
-  .product-back
-    a ui-sref="products_index({ main_category: data.main_category, category_type: data.category_type, category: data.category })"
-      ' {{ "PRODUCT_SHOW_BACK" | translate }}
+  .product-top-bar
+    .product-back
+      a ui-sref="products_index({ main_category: data.main_category, category_type: data.category_type, category: data.category })"
+        ' {{ "PRODUCT_SHOW_BACK" | translate }}
+    .products-indicator
+      a ui-sref="products_show({ main_category: data.main_category, category_type: data.category_type, category: data.category, code: data.items.pr_prev })" ng-hide="data.items.pr_numb==1"
+        i.fa.fa-long-arrow-left
+      .counter
+        ' {{ data.items.pr_numb }}
+        ' /
+        ' {{ data.items.prs_numb }}
+      a ui-sref="products_show({ main_category: data.main_category, category_type: data.category_type, category: data.category, code: data.items.pr_next })" ng-hide="data.items.pr_numb==data.items.prs_numb"
+        i.fa.fa-long-arrow-right
 
   .product-images
     carousel interval='10000000' disable-animation="true"
