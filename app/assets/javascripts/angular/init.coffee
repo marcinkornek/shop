@@ -8,6 +8,7 @@ angular.module('shop', [
   'ngCookies',
   'ngTouch',
   'angular-carousel',
+  'infinite-scroll',
 ])
   .factory 'railsLocalesLoader', ($http) ->
     (options) ->

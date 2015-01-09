@@ -11,6 +11,7 @@
 //= require angular-translate
 //= require angular-resource
 //= require angular-carousel
+//= require ngInfiniteScroll
 //
 //= require ./angular/init
 //= require ./angular/routes

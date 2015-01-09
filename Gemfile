@@ -25,6 +25,7 @@ gem 'coffee-rails-source-maps'
 gem 'execjs'
 gem 'ngannotate-rails'
 gem 'autoprefixer-rails'
+gem 'will_paginate'
 
 # assets
 gem 'rails-assets-lodash'
@@ -40,6 +41,7 @@ gem 'rails-assets-bootstrap'
 gem 'rails-assets-Font-Awesome'
 gem 'rails-assets-angular-cookies'
 gem 'rails-assets-angular-carousel'
+gem 'rails-assets-ngInfiniteScroll'
 
 group :development, :test do
   gem 'spring'

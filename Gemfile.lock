@@ -214,6 +214,8 @@ GEM
       rails-assets-jquery (>= 1.9.0)
     rails-assets-jquery (2.1.3)
     rails-assets-lodash (2.4.1)
+    rails-assets-ngInfiniteScroll (1.2.0)
+      rails-assets-angular (>= 1.2.0)
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
@@ -294,6 +296,7 @@ GEM
     uglifier (2.6.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    will_paginate (3.0.7)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -335,6 +338,7 @@ DEPENDENCIES
   rails-assets-angular-ui-router
   rails-assets-bootstrap
   rails-assets-lodash
+  rails-assets-ngInfiniteScroll
   rails_12factor
   rmagick
   roar-rails (~> 0.1.6)
@@ -344,3 +348,4 @@ DEPENDENCIES
   sorcery (~> 0.8.6)
   spring
   uglifier
+  will_paginate
