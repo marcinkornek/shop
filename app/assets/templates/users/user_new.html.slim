@@ -1,92 +1,93 @@
 .background.clearfix style="background-image: url(https://s3-eu-west-1.amazonaws.com/ngshop/page/login/login_photo.jpg)"
-  .login.clearfix
-    .col-md-8.col-md-offset-2 style="display:table;"
-      .register-form style="width:66.66%"
-        h3.text-center.uppercase.uppercase style="margin-top:0px;"
+
+.login.clearfix
+  .col-md-8.col-md-offset-2 style="display:table;"
+    .register-form style="width:66.66%"
+      h3.text-center.uppercase.uppercase style="margin-top:0px;"
+        ' {{ "USER_NEW_SIGN_UP" | translate }}
+
+      form(style='width:50%;margin-left:auto;margin-right:auto' name='signupForm')
+        .field
+          input.form-control.span12(type="text" maxlength="30" name="first_name" placeholder="{{ 'FIRST_NAME_PLACEHOLDER' | translate }}" ng-model="formData.first_name" required ng-pattern="/^[a-zA-ZàáâäãåąčćśęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/" ng-minlength='3' ng-maxlength='30')
+
+          .errors ng-show="signupForm.first_name.$touched && signupForm.first_name.$dirty"
+            .field-error ng-show="signupForm.first_name.$error.required"
+              ' {{ "ERROR_FIRST_NAME_REQUIRED" | translate }}
+            .field-error ng-show="signupForm.first_name.$error.pattern"
+              ' {{ "ERROR_FIRST_NAME_PATTERN" | translate }}
+            .field-error ng-show="signupForm.first_name.$error.minlength"
+              ' {{ "ERROR_FIRST_NAME_SHORT" | translate }}
+            .field-error ng-show="signupForm.first_name.$error.maxlength"
+              ' {{ "ERROR_FIRST_NAME_LONG" | translate }}
+
+        .field
+          input.form-control.span12(type="text" maxlength="30" name="last_name" placeholder="{{ 'LAST_NAME_PLACEHOLDER' | translate }}" ng-model="formData.last_name" required ng-pattern="/^[a-zA-ZàáâäãåąčćśęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/" ng-minlength='3' ng-maxlength='30')
+
+          .errors ng-show="signupForm.last_name.$touched && signupForm.last_name.$dirty"
+            .field-error ng-show="signupForm.last_name.$error.required"
+              ' {{ "ERROR_LAST_NAME_REQUIRED" | translate }}
+            .field-error ng-show="signupForm.last_name.$error.pattern"
+              ' {{ "ERROR_LAST_NAME_PATTERN" | translate }}
+            .field-error ng-show="signupForm.last_name.$error.minlength"
+              ' {{ "ERROR_LAST_NAME_SHORT" | translate }}
+            .field-error ng-show="signupForm.last_name.$error.maxlength"
+              ' {{ "ERROR_LAST_NAME_LONG" | translate }}
+
+        .field
+          input.form-control.span12(type="text" maxlength="60" name="email" placeholder="{{ 'EMAIL_PLACEHOLDER' | translate }}" ng-model="formData.email" required ng-pattern="/^[\w+\-.]+@[a-zA-Z\d\-]+(?:\.[a-zA-Z\d\-]+)*\.[a-zA-Z]+$/" ng-unique="email")
+
+          .errors ng-show="signupForm.email.$touched && signupForm.email.$dirty"
+            .field-error ng-show="signupForm.email.$error.required"
+              ' {{ "ERROR_EMAIL_REQUIRED" | translate }}
+            .field-error ng-show="signupForm.email.$error.pattern"
+              ' {{ "ERROR_EMAIL_INVALID" | translate }}
+            .field-error ng-show="signupForm.email.$error.unique"
+              ' {{ "ERROR_EMAIL_EXISTS" | translate }}
+
+        .field
+          input.form-control.span12(type="text" maxlength="9" name="tel_num" placeholder="{{ 'TEL_NUM_PLACEHOLDER' | translate }}" ng-model="formData.tel_num" ng-pattern="/[0-9]{9}/" ng-minlength='9')
+
+          .errors ng-show="signupForm.tel_num.$touched && signupForm.tel_num.$dirty"
+            .field-error ng-show="signupForm.tel_num.$error.minlength"
+              ' {{ "ERROR_TEL_NUM_SHORT" | translate }}
+            .field-error ng-show="signupForm.tel_num.$error.pattern"
+              ' {{ "ERROR_TEL_NUM_PATTERN" | translate }}
+
+        .field
+          .input-group
+            input.form-control(placeholder="{{ 'BIRTH_DATE_PLACEHOLDER' | translate }}" id="birth_date" name="birth_date" close-text="Close" date-disabled="disabled(date, mode)" datepicker-options="dateOptions" datepicker-popup="{{format}}" is-open="opened" max-date="maxDate" min-date="minDate" ng-model="formData.birth_date" type="text" style="margin-bottom:0px;margin-top:0px;")
+            span.input-group-btn
+              button.btn.btn-default ng-click="open($event)" type="button"
+                i.glyphicon.glyphicon-calendar
+
+          / .errors ng-show="signupForm.birth_date.$touched && signupForm.birth_date.$dirty"
+          /   .field-error ng-show="signupForm.birth_date.$error.pattern"
+          /     ' {{ "ERROR_BIRTH_DATE_PATTERN" | translate }}
+
+        .field
+          input.form-control.span12(type="password" maxlength="60" placeholder="{{ 'PASSWORD_PLACEHOLDER' | translate }}" ng-model="formData.password" required id='pw1' name='pw1' ng-minlength='6')
+
+          .errors ng-show="signupForm.pw1.$touched && signupForm.pw1.$dirty"
+            .field-error ng-show="signupForm.pw1.$error.required && signupForm.pw1.$dirty"
+              ' {{ "ERROR_PASSWORD_REQUIRED" | translate }}
+            .field-error ng-show="signupForm.pw1.$error.minlength"
+              ' {{ "ERROR_PASSWORD_SHORT" | translate }}
+
+        .field
+          input.form-control.span12(type="password" maxlength="60" placeholder="{{ 'PASSWORD_CONFIRMATION_PLACEHOLDER' | translate }}" ng-model="formData.password_confirmation" required id='pw2' name='pw2' pw-check="pw1")
+
+          .errors ng-show="signupForm.pw2.$touched && signupForm.pw2.$dirty"
+            .field-error ng-show="signupForm.pw2.$error.pwmatch && signupForm.pw2.$dirty"
+              ' {{ "ERROR_PASSWORD_MISMATCH" | translate }}
+
+        button.btn.btn-default(style='width:100%' ng-click="createUser()")
           ' {{ "USER_NEW_SIGN_UP" | translate }}
+      p
+        ' {{ "USER_NEW_REQUIRED" | translate }}
 
-        form(style='width:50%;margin-left:auto;margin-right:auto' name='signupForm')
-          .field
-            input.form-control.span12(type="text" maxlength="30" name="first_name" placeholder="{{ 'FIRST_NAME_PLACEHOLDER' | translate }}" ng-model="formData.first_name" required ng-pattern="/^[a-zA-ZàáâäãåąčćśęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/" ng-minlength='3' ng-maxlength='30')
+    .login-form style="width:33.33%;"
+      h3.text-center.uppercase style="margin-top:0px;"
+        ' {{ "USER_NEW_LOGIN_TEXT" | translate }}
 
-            .errors ng-show="signupForm.first_name.$touched && signupForm.first_name.$dirty"
-              .field-error ng-show="signupForm.first_name.$error.required"
-                ' {{ "ERROR_FIRST_NAME_REQUIRED" | translate }}
-              .field-error ng-show="signupForm.first_name.$error.pattern"
-                ' {{ "ERROR_FIRST_NAME_PATTERN" | translate }}
-              .field-error ng-show="signupForm.first_name.$error.minlength"
-                ' {{ "ERROR_FIRST_NAME_SHORT" | translate }}
-              .field-error ng-show="signupForm.first_name.$error.maxlength"
-                ' {{ "ERROR_FIRST_NAME_LONG" | translate }}
-
-          .field
-            input.form-control.span12(type="text" maxlength="30" name="last_name" placeholder="{{ 'LAST_NAME_PLACEHOLDER' | translate }}" ng-model="formData.last_name" required ng-pattern="/^[a-zA-ZàáâäãåąčćśęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/" ng-minlength='3' ng-maxlength='30')
-
-            .errors ng-show="signupForm.last_name.$touched && signupForm.last_name.$dirty"
-              .field-error ng-show="signupForm.last_name.$error.required"
-                ' {{ "ERROR_LAST_NAME_REQUIRED" | translate }}
-              .field-error ng-show="signupForm.last_name.$error.pattern"
-                ' {{ "ERROR_LAST_NAME_PATTERN" | translate }}
-              .field-error ng-show="signupForm.last_name.$error.minlength"
-                ' {{ "ERROR_LAST_NAME_SHORT" | translate }}
-              .field-error ng-show="signupForm.last_name.$error.maxlength"
-                ' {{ "ERROR_LAST_NAME_LONG" | translate }}
-
-          .field
-            input.form-control.span12(type="text" maxlength="60" name="email" placeholder="{{ 'EMAIL_PLACEHOLDER' | translate }}" ng-model="formData.email" required ng-pattern="/^[\w+\-.]+@[a-zA-Z\d\-]+(?:\.[a-zA-Z\d\-]+)*\.[a-zA-Z]+$/" ng-unique="email")
-
-            .errors ng-show="signupForm.email.$touched && signupForm.email.$dirty"
-              .field-error ng-show="signupForm.email.$error.required"
-                ' {{ "ERROR_EMAIL_REQUIRED" | translate }}
-              .field-error ng-show="signupForm.email.$error.pattern"
-                ' {{ "ERROR_EMAIL_INVALID" | translate }}
-              .field-error ng-show="signupForm.email.$error.unique"
-                ' {{ "ERROR_EMAIL_EXISTS" | translate }}
-
-          .field
-            input.form-control.span12(type="text" maxlength="9" name="tel_num" placeholder="{{ 'TEL_NUM_PLACEHOLDER' | translate }}" ng-model="formData.tel_num" ng-pattern="/[0-9]{9}/" ng-minlength='9')
-
-            .errors ng-show="signupForm.tel_num.$touched && signupForm.tel_num.$dirty"
-              .field-error ng-show="signupForm.tel_num.$error.minlength"
-                ' {{ "ERROR_TEL_NUM_SHORT" | translate }}
-              .field-error ng-show="signupForm.tel_num.$error.pattern"
-                ' {{ "ERROR_TEL_NUM_PATTERN" | translate }}
-
-          .field
-            .input-group
-              input.form-control(placeholder="{{ 'BIRTH_DATE_PLACEHOLDER' | translate }}" id="birth_date" name="birth_date" close-text="Close" date-disabled="disabled(date, mode)" datepicker-options="dateOptions" datepicker-popup="{{format}}" is-open="opened" max-date="maxDate" min-date="minDate" ng-model="formData.birth_date" type="text" style="margin-bottom:0px;margin-top:0px;")
-              span.input-group-btn
-                button.btn.btn-default ng-click="open($event)" type="button"
-                  i.glyphicon.glyphicon-calendar
-
-            / .errors ng-show="signupForm.birth_date.$touched && signupForm.birth_date.$dirty"
-            /   .field-error ng-show="signupForm.birth_date.$error.pattern"
-            /     ' {{ "ERROR_BIRTH_DATE_PATTERN" | translate }}
-
-          .field
-            input.form-control.span12(type="password" maxlength="60" placeholder="{{ 'PASSWORD_PLACEHOLDER' | translate }}" ng-model="formData.password" required id='pw1' name='pw1' ng-minlength='6')
-
-            .errors ng-show="signupForm.pw1.$touched && signupForm.pw1.$dirty"
-              .field-error ng-show="signupForm.pw1.$error.required && signupForm.pw1.$dirty"
-                ' {{ "ERROR_PASSWORD_REQUIRED" | translate }}
-              .field-error ng-show="signupForm.pw1.$error.minlength"
-                ' {{ "ERROR_PASSWORD_SHORT" | translate }}
-
-          .field
-            input.form-control.span12(type="password" maxlength="60" placeholder="{{ 'PASSWORD_CONFIRMATION_PLACEHOLDER' | translate }}" ng-model="formData.password_confirmation" required id='pw2' name='pw2' pw-check="pw1")
-
-            .errors ng-show="signupForm.pw2.$touched && signupForm.pw2.$dirty"
-              .field-error ng-show="signupForm.pw2.$error.pwmatch && signupForm.pw2.$dirty"
-                ' {{ "ERROR_PASSWORD_MISMATCH" | translate }}
-
-          button.btn.btn-default(style='width:100%' ng-click="createUser()")
-            ' {{ "USER_NEW_SIGN_UP" | translate }}
-        p
-          ' {{ "USER_NEW_REQUIRED" | translate }}
-
-      .login-form style="width:33.33%;"
-        h3.text-center.uppercase style="margin-top:0px;"
-          ' {{ "USER_NEW_LOGIN_TEXT" | translate }}
-
-        a class="btn login-button" style="width:100%" ui-sref="login"
-          ' {{ "USER_NEW_NEW_LOGIN" | translate }}
+      a class="btn login-button" style="width:100%" ui-sref="login"
+        ' {{ "USER_NEW_NEW_LOGIN" | translate }}
