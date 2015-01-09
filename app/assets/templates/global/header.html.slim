@@ -43,7 +43,7 @@ nav.right-nav
         i.fa.fa-shopping-cart
 
     li.search
-      input(id="search" placeholder="{{ 'HEADER_SEARCH_PRODUCTS_PLACEHOLDER' | translate }}" type="text" ng-model="formData.search_query" ng-show="data.search == 1" class="animate-show")
+      input(id="search" placeholder="{{ 'HEADER_SEARCH_PRODUCTS_PLACEHOLDER' | translate }}" type="text" ng-model="formData.search_query" ng-show="data.search == 1" class="animate-show" ng-enter="searchShow()")
       a ng-click="searchShow()"
         i.fa.fa-search
 
