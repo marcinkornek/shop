@@ -55,7 +55,7 @@ li.header {
     display: inline-block;
     width: 150px;
   }
-  a:hover:after, a:active:after {
+  a:hover:after, a.active:after {
     font-family: FontAwesome;
     content: "\f178";
     display: inline-block;
@@ -235,7 +235,21 @@ nav li:hover div {
   display: block;
 }
 
-li:hover > a.title.top-border {
+li:hover > a.title.top-border, a.title.top-border.active {
   border-top: 3px black solid;
   color: black;
+}
+
+.categories, .category-type {
+  li {
+    a.active {
+      color: black;
+      &:after {
+        font-family: FontAwesome;
+        content: "\f178";
+        display: inline-block;
+        padding-left: 3px;
+      }
+    }
+  }
 }

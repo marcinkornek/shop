@@ -6,6 +6,9 @@ GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies, sessionD
 
   $scope.loadCategories = ->
     $scope.data.categories = window.categories if window.categories
+    $scope.data.main_category = $stateParams.main_category
+    $scope.data.category_type = $stateParams.category_type
+    $scope.data.category = $stateParams.category
 
   $scope.loadSearchQuery = ->
     $scope.formData.search_query = $stateParams.searchQuery
