@@ -1,3 +1,7 @@
+# ###
+# https://github.com/angular-ui/bootstrap/issues/1350
+# ###
+
 angular.module("shop").directive "disableAnimation", ($animate) ->
   restrict: "A"
   link: ($scope, $element, $attrs) ->

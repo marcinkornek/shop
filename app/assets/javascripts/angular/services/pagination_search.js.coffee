@@ -1,3 +1,7 @@
+# ###
+# https://github.com/sroze/ngInfiniteScroll/issues/63
+# ###
+
 angular.module('shop').factory "PaginationSearch", (productData) ->
   console.log 'PaginationSearch'
   PaginationSearch = ->

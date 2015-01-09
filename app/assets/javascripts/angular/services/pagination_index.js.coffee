@@ -1,3 +1,7 @@
+# ###
+# https://github.com/sroze/ngInfiniteScroll/issues/63
+# ###
+
 angular.module('shop').factory "PaginationIndex", (productData) ->
   console.log 'PaginationIndex'
   PaginationIndex = ->
