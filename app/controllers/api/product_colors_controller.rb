@@ -1,12 +1,17 @@
 class Api::ProductColorsController < ApplicationController
 
   def index
-    if !params[:category].blank?
-      @products = Product.joins(category: [{category_type: :main_category}]).where(main_categories: {name: params[:main_category]}).where(  category_types: {name: params[:category_type]}).where(categories: {name: params[:category]})
+    per_page = 4
+    page = (params[:item].to_f/per_page).to_i + 1
+    @products =if !params[:category].blank?
+       Product.joins(category: [{category_type: :main_category}]).where(main_categories: {name: params[:main_category]}).where(  category_types: {name: params[:category_type]}).where(categories: {name: params[:category]})
     else
-      @products = Product.joins(category: [{category_type: :main_category}]).where(main_categories: {name: params[:main_category]}).where(  category_types: {name: params[:category_type]})
+      Product.joins(category: [{category_type: :main_category}]).where(main_categories: {name: params[:main_category]}).where(  category_types: {name: params[:category_type]})
     end
-    render json: { products: @products.extend(ProductsIndexRepresenter).to_hash }
+
+    paginate_prod_or_nil(params[:item], page, per_page)
+
+    render json: { products: @products }
   end
 
   def show
@@ -30,8 +35,23 @@ class Api::ProductColorsController < ApplicationController
   end
 
   def products_search
+    per_page = 4
+    page = (params[:item].to_f/per_page).to_i + 1
     @products = Product.search(params[:search_query])
-    render json: { products: @products.extend(ProductsIndexRepresenter).to_hash }
+
+    paginate_prod_or_nil(params[:item], page, per_page)
+
+    render json: { products: @products }
+  end
+
+  private
+
+  def paginate_prod_or_nil(item, page, per_page)
+    @products =if item.to_i != @products.count
+      @products.paginate(page: page, per_page: per_page).extend(ProductsIndexRepresenter).to_hash
+    else
+      nil
+    end
   end
 
 end

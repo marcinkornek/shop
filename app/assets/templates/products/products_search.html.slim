@@ -1,5 +1,5 @@
 .products
-  div infinite-scroll="pagination.nextPage(data.category, data.main_category, data.category_type)" infinite-scroll-distance="1" infinite-scroll-disabled="pagination.busy"
+  div infinite-scroll="pagination.nextPage(data.search_query)" infinite-scroll-distance="1" infinite-scroll-disabled="pagination.busy"
     div ng-repeat="product in pagination.products" class="product product-{{product.id}}" style="position:relative" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"
       ul.image rn-carousel="" rn-carousel-index="products"
         li ng-repeat="color in product.product_colors" ui-sref="products_show({ main_category: product.category.category_type.main_category.name, category_type: product.category.category_type.name, category: product.category.name, code: color.code  })"

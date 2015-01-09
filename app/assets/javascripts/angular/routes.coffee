@@ -97,6 +97,6 @@ angular.module('shop').config ($stateProvider, $urlRouterProvider) ->
       },
       views: {
         "header":     { controller: 'GlobalHeaderCtrl', templateUrl: 'global/header.html' }
-        "body":       { controller: 'ProductsSearchCtrl',  templateUrl: 'products/products_index.html' }
+        "body":       { controller: 'ProductsSearchCtrl',  templateUrl: 'products/products_search.html' }
       }
     })

@@ -1,25 +1,16 @@
-ProductsIndexCtrl = ($scope, $stateParams, $state, productData) ->
+ProductsIndexCtrl = ($scope, $stateParams, $state, PaginationIndex) ->
 
   # loading data
 
-  $scope.loadProductsSearch = ->
+  $scope.loadProducts = ->
     $scope.data = {}
     $scope.data.category = category = $stateParams.category
     $scope.data.main_category = main_category = $stateParams.main_category
     $scope.data.category_type = category_type = $stateParams.category_type
-    console.log 'loadProductSearch'
-    productData.query({category: category, category_type: category_type, main_category: main_category}
-      , (products) ->
-        console.log 'products'
-        console.log products.products
-        $scope.data.products = products.products
-      , (error) ->
-        console.log 'error'
-        console.log error.status
-        $scope.formData.error = 'There is no such products'
-    )
+    console.log 'loadProduct'
+    $scope.pagination = new PaginationIndex()
 
-  $scope.loadProductsSearch()
+  $scope.loadProducts()
 
   # functions
 
@@ -30,4 +21,4 @@ ProductsIndexCtrl = ($scope, $stateParams, $state, productData) ->
     @hoverEdit = false
 
 angular.module("shop").controller "ProductsIndexCtrl", ProductsIndexCtrl
-ProductsIndexCtrl.$inject = ["$scope", "$stateParams", "$state", "productData"]
+ProductsIndexCtrl.$inject = ["$scope", "$stateParams", "$state", "PaginationIndex"]
