@@ -42,9 +42,9 @@ body a.btn {
 
 body a {
   cursor: pointer;
-  color: black;
+  color: gray;
   &:hover {
-    color: gray;
+    color: black;
     text-decoration: none;
   }
 }

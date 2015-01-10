@@ -41,6 +41,23 @@ en:
 
   # PRODUCTS
 
+  "PRODUCTS_INDEX_SORT": "Sort results"
+  "PRODUCTS_INDEX_FILTER": "Filter"
+  "PRODUCTS_INDEX_VIEW": "View"
+  "PRODUCTS_INDEX_SORT_LOWEST_PRICE": "From lowest price"
+  "PRODUCTS_INDEX_SORT_HIGHEST_PRICE": "From highest price"
+  "PRODUCTS_INDEX_SORT_NEWEST": "From newest"
+  "PRODUCTS_INDEX_FILTER_COLOUR": "Colour"
+  "PRODUCTS_INDEX_FILTER_SIZE": "Size"
+  "PRODUCTS_INDEX_FILTER_PRICE": "Price"
+  "PRODUCTS_INDEX_FILTER_PRICE_FROM": "From"
+  "PRODUCTS_INDEX_FILTER_PRICE_TO": "To"
+  "PRODUCTS_INDEX_FILTER_BUTTON": "Filter"
+  "PRODUCTS_INDEX_FILTER_CANCEL": "Cancel"
+  "low": "From lowest price"
+  "high": "From highest price"
+  "new": "From newest"
+
   "PRODUCTS_SEARCH_NO_RESULTS": "There are no products matching the selection."
 
   "PRODUCT_SHOW_BACK": "Back to category"

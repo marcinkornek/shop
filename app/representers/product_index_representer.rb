@@ -3,6 +3,7 @@ module ProductIndexRepresenter
 
   property :id
   property :name
+  property :created_at, as: :date
   property :composition
   property :price
   property :category, extend: CategoryIndexRepresenter

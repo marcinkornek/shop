@@ -41,6 +41,23 @@ pl:
 
   # PRODUCTS
 
+  "PRODUCTS_INDEX_SORT": "Sortuj wyniki"
+  "PRODUCTS_INDEX_FILTER": "Filtruj"
+  "PRODUCTS_INDEX_VIEW": "Widok"
+  "PRODUCTS_INDEX_SORT_LOWEST_PRICE": "Od najtańszych"
+  "PRODUCTS_INDEX_SORT_HIGHEST_PRICE": "Od najdroższych"
+  "PRODUCTS_INDEX_SORT_NEWEST": "Od najnowszych"
+  "PRODUCTS_INDEX_FILTER_COLOUR": "Kolor"
+  "PRODUCTS_INDEX_FILTER_SIZE": "Rozmiar"
+  "PRODUCTS_INDEX_FILTER_PRICE": "Cena"
+  "PRODUCTS_INDEX_FILTER_BUTTON": "Filtruj"
+  "PRODUCTS_INDEX_FILTER_PRICE_FROM": "Od"
+  "PRODUCTS_INDEX_FILTER_PRICE_TO": "Do"
+  "PRODUCTS_INDEX_FILTER_CANCEL": "Anuluj"
+  "low": "Od najtańszych"
+  "high": "Od najdroższych"
+  "new": "Od najnowszych"
+
   "PRODUCTS_SEARCH_NO_RESULTS": "Brak produktów spełniających wyszukiwanie."
 
   "PRODUCT_SHOW_BACK": "Wróć do kategorii"

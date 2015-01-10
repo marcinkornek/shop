@@ -1,7 +1,157 @@
+// BOTH //
+
+.product-top-bar {
+  height: 40px;
+  display: block;
+  background: white;
+  text-transform: uppercase;
+  color: gray;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.animate-show {
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+  opacity: 1;
+}
+
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+  display: inline-block !important;
+}
+.animate-show.ng-hide {
+  opacity: 0;
+}
+
+// INDEX //
+
+body .products-sort, .products-filter {
+  background-color: white;
+  z-index: 9999;
+  position: relative;
+  width: 120px;
+  float: left;
+  cursor: pointer;
+  &:hover {
+    color: black;
+  }
+  &.active {
+    color: black;
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+    border-left: 1px solid gray;
+    padding-bottom: 9px;
+  }
+}
+
+.products-sort-active {
+  text-align: right;
+  padding-top: 2px;
+  z-index: 9999;
+  width: 150px;
+  float: left;
+  font-size: 12px;
+}
+
+.top-bar-dropdown {
+  z-index: 9500;
+  position: absolute;
+  top: 99px;
+  left: 0px;
+  display: block;
+  text-align: left;
+  background: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  font-size: 12px;
+  border: 1px solid gray;
+  .close {
+    font-size: 10px;
+    margin-top: 5px;
+    margin-right: -8px;
+    padding: 5px;
+  }
+}
+
+.sort-dropdown {
+  width: 200px;
+  a {
+    display: block;
+    padding-top: 5px;
+    margin-right: 15px;
+    &.active {
+      color: black;
+      &:after {
+        font-family: FontAwesome;
+        content: "\f00c";
+        display: inline-block;
+        padding-left: 3px;
+      }
+    }
+  }
+}
+
+.filter-dropdown{
+  form {
+    width: 400px;
+  }
+  .filter-dropdown-column {
+    vertical-align: top;
+    display: inline-block;
+    .title {
+      font-weight: bold;
+      text-align: center;
+      padding-bottom: 15px;
+      padding-top: 5px;
+    }
+    ul {
+      padding-left: 0px;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.filter-dropdown-column {
+  input[type=text] {
+    width: 45px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+  }
+  label {
+    cursor: pointer;
+  }
+}
+
+.left-label {
+  display: inline-block;
+  width: 40px;
+  padding: 0px;
+  text-align: right;
+}
+
+.right-label {
+  display: inline-block;
+  width: 40px;
+  padding: 0px;
+  text-align: left;
+}
+
+.products-category {
+  margin-right: 131px;
+  display: inline-block;
+}
+.products-view {
+  width: 60px;
+  float: right;
+  cursor: pointer;
+}
+
 .product {
   cursor: pointer;
   display: inline-block;
-  margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 10px;
   margin-right: 10px;
@@ -70,19 +220,6 @@ p.name {
   height: 60px;
 }
 
-.animate-show {
-  -webkit-transition: all linear 0.5s;
-  transition: all linear 0.5s;
-  opacity: 1;
-}
-
-.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
-  display: inline-block !important;
-}
-.animate-show.ng-hide {
-  opacity: 0;
-}
-
 .bgimage {
   text-align: right;
   color: white;
@@ -97,6 +234,42 @@ p.name {
     width: 240px;
     height: 240px;
   }
+}
+
+// SHOW //
+
+.product-back {
+  float: left;
+  a {
+    display: block;
+    width: 200px;
+    &:before {
+      font-family: FontAwesome;
+      content: "\f177";
+      display: inline-block;
+      padding-right: 6px;
+    }
+  }
+}
+
+.products-indicator {
+  float: right;
+  .counter {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
+
+.product-images {
+  z-index: 8000;
+}
+
+.product-info {
+  z-index: 9000;
+  position: absolute;
+  top: 130px;
+  right: 300px;
 }
 
 .product-name  {
@@ -150,50 +323,6 @@ p.name {
     &:hover, &:active {
       border: 1px solid black;
     }
-  }
-}
-
-.product-images {
-  z-index: 8000;
-}
-
-.product-info {
-  z-index: 9000;
-  position: absolute;
-  top: 130px;
-  right: 300px;
-}
-
-.product-top-bar {
-  height: 40px;
-  display: block;
-  background: white;
-  text-transform: uppercase;
-  color: gray;
-  padding: 10px;
-  font-size: 14px;
-}
-
-.product-back {
-  float: left;
-  a {
-    display: block;
-    width: 200px;
-    &:before {
-      font-family: FontAwesome;
-      content: "\f177";
-      display: inline-block;
-      padding-right: 6px;
-    }
-  }
-}
-
-.products-indicator {
-  float: right;
-  .counter {
-    display: inline-block;
-    padding-right: 5px;
-    padding-left: 5px;
   }
 }
 
