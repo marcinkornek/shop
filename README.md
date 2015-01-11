@@ -25,14 +25,24 @@ I am going to make simple shop website
 
 
 ## Used plugins/frameworks
+I use [*rails-assets*](https://rails-assets.org/) to load the plugins - it automatically converts the packaged components into gems
+
+* [*angular-ui-router*](https://github.com/angular-ui/ui-router)- routing framework for AngularJS, better than 'ngRoute', allows named states, nested and parallel views..
+
+* [*angular-resource*](https://docs.angularjs.org/api/ngResource/service/$resource) - to interact with Rails server
+
+* [*angular-animate*](https://docs.angularjs.org/api/ngAnimate) - to automaticaly animations in 'ngShow', 'ngHide', 'ngView','ngClass', etc. - more info on site
+
+* [*angular-cookies*](https://docs.angularjs.org/api/ngCookies) - to write and read cookies
+
+* [*angular-bootstrap*](http://angular-ui.github.io/bootstrap/) - 'bootstrap' for AngularJS - many useful directives. There is also carousel but it's not as configurable as in 'angular-carousel' plugin, to work it needs [*bootstrap*](http://getbootstrap.com/) CSS (no bootstrap or jQuery js required)
+
+* [*angular-translate*](https://github.com/angular-translate/angular-translate) - i18n for Angular with custom loader - from [*codetunes*](http://codetunes.com/2014/5-tips-on-how-to-use-angularjs-with-rails-that-changed-how-we-work/)
+
+* [*ngInfiniteScroll*](https://github.com/sroze/ngInfiniteScroll) - infinite scroll plugin for AngularJS - very useful but it's not so easy to configure it with $resource (in example it is $http), on server side to split records I use gem [*will_paginate*](https://github.com/mislav/will_paginate)
+
 * [*angular-carousel*](https://github.com/revolunet/angular-carousel) - great carousel for AngularJS, but has problems with Angular 1.3 :/ it has to be fixed height and width in css, without this it has height = width = 0, carousel uses Angular-touch so carousels can be switched with touch
 ul[rn-carousel] {
   width: 300px;
   height: 300px;
 }
-
-* [*angular-bootstrap*](http://angular-ui.github.io/bootstrap/) - 'bootstrap' for AngularJS - many useful directives. There is also carousel but it's not as configurable as in 'angular-carousel' plugin,
-
-* [*ngInfiniteScroll*](https://github.com/sroze/ngInfiniteScroll) - infinite scroll plugin for AngularJS - very useful but it's not so easy to configure it with $resource (in example it is $http), on server side to split records I use gem [*will_paginate*](https://github.com/mislav/will_paginate)
-
-* [*angular-ui-router*](https://github.com/angular-ui/ui-router)- routing framework for AngularJS, better than 'ngRoute', allows named states, nested and parallel views..
