@@ -1,5 +1,5 @@
 .products
-  div infinite-scroll="pagination.nextPage(data.category, data.main_category, data.category_type, formData, sort)" infinite-scroll-distance="1" infinite-scroll-disabled="pagination.busy"
+  div infinite-scroll="pagination.nextPage(data.category, data.main_category, data.category_type, formData, sort, search_query)" infinite-scroll-distance="1" infinite-scroll-disabled="pagination.busy"
 
     .product-top-bar
       .products-sort ng-class="{active:dropdownSort}" ng-click="toggleDropdownSort()"
@@ -14,7 +14,7 @@
         a ng-class="{active:sortProd.class=='new'}" ng-click="sortProd('new')"
           ' {{ "PRODUCTS_INDEX_SORT_NEWEST" | translate }}
 
-      .products-filter ng-class="{active:dropdownFilter}" ng-click="toggleDropdownFilter()"
+      .products-filter ng-class="{active:dropdownFilter}" ng-click="toggleDropdownFilter()" ng-show="pagination.count"
         ' {{ "PRODUCTS_INDEX_FILTER" | translate }}
         | [{{ pagination.count }}]
       .top-bar-dropdown.filter-dropdown ng-show="dropdownFilter"

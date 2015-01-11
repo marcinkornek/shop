@@ -1,29 +1,17 @@
 class Api::ProductColorsController < ApplicationController
 
   def index
-    # p '-----------------'
-    # p params[:item]
-    # p '-----------------'
-    @products = Product.joins(category: [{category_type: :main_category}]).where(main_categories: {name: params[:main_category]}).where(  category_types: {name: params[:category_type]})
-
-    if !params[:category].blank?
-      @products = @products.where(categories: {name: params[:category]})
-    end
+    @products = Product.filter_prod_by_category(params[:main_category], params[:category_type], params[:category])
 
     if params[:item] == '0' || nil
-      product_colors = ProductColor.all.where(product_id: @products.map(&:id))
-      colors = product_colors.map(&:color).uniq
-      product_sizes = ProductSize.all.where(product_color_id: product_colors.map(&:id))
-      sizes = product_sizes.map(&:size).uniq
-      count = @products.count
+      products_details = Product.products_count_colors_sizes(@products)
     end
 
     per_page = 4
     page = (params[:item].to_f/per_page).to_i + 1
-    sort_prod(params[:sort])
-    paginate_prod_or_nil(params[:item], page, per_page)
-
-    render json: { products: @products_pag, count: count, colors: colors, sizes: sizes }
+    @products = sort_prod(@products, params[:sort]) if params[:sort]
+    @products = paginate_prod_or_nil(@products, params[:item], page, per_page)
+    render json: {products: @products, products_details: products_details}
   end
 
   def show
@@ -45,37 +33,43 @@ class Api::ProductColorsController < ApplicationController
       pr_numb: index + 1,
       prs_numb: codes.length,
     }
-    render json: { pr_det: pc.extend(ProductColorRepresenter).to_hash, pr: pc.product.extend(ProductIndexRepresenter).to_hash}.merge(items)
+    render json: {pr_det: pc.extend(ProductColorRepresenter).to_hash, pr: pc.product.extend(ProductIndexRepresenter).to_hash}.merge(items)
   end
 
   def products_search
-    per_page = 4
-    page = (params[:item].to_f/per_page).to_i + 1
     @products = Product.search(params[:search_query])
 
-    paginate_prod_or_nil(params[:item], page, per_page)
+    if params[:item] == '0' || nil
+      products_details = Product.products_count_colors_sizes(@products)
+    end
 
-    render json: { products: @products_pag, count: @products.count }
+    per_page = 4
+    page = (params[:item].to_f/per_page).to_i + 1
+    @products = sort_prod(@products, params[:sort]) if params[:sort]
+    @products = paginate_prod_or_nil(@products, params[:item], page, per_page)
+    render json: {products: @products, products_details: products_details}
   end
 
   private
 
-  def paginate_prod_or_nil(item, page, per_page)
+  def paginate_prod_or_nil(products, item, page, per_page)
     if item == '0' || nil
-      @products_pag = @products.paginate(page: page, per_page: per_page*4).extend(ProductsIndexRepresenter).to_hash
+      products.paginate(page: page, per_page: per_page * 4).extend(ProductsIndexRepresenter).to_hash
     elsif item.to_i != @products.count
-      @products_pag = @products.paginate(page: page, per_page: per_page).extend(ProductsIndexRepresenter).to_hash
+      products.paginate(page: page, per_page: per_page).extend(ProductsIndexRepresenter).to_hash
+    else
+      nil
     end
   end
 
-  def sort_prod(sort)
+  def sort_prod(products, sort)
     case sort
     when 'high'
-      @products = @products.order(price: :desc)
+      products.order(price: :desc)
     when 'low'
-      @products = @products.order(price: :asc)
+      products.order(price: :asc)
     when 'new'
-      @products = @products.order(created_at: :desc)
+      products.order(created_at: :desc)
     end
   end
 

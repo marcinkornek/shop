@@ -3,17 +3,12 @@
 # ###
 
 angular.module('shop').factory "PaginationIndex", (productData) ->
-  console.log 'PaginationIndex'
   PaginationIndex = ->
     @products = []
-    @count = {}
-    @colors = {}
-    @sizes = {}
-
     @busy = false
 
-  PaginationIndex::nextPage = (category, main_category, category_type, filter, sort) ->
-    console.log 'filter-', filter, ', sort-', sort, 'busy-', @busy
+  PaginationIndex::nextPage = (category, main_category, category_type, filter, sort, search_query) ->
+    # console.log 'filter-', filter, ', sort-', sort, 'busy-', @busy
     return if @busy
     @busy = true
     self = this
@@ -23,10 +18,9 @@ angular.module('shop').factory "PaginationIndex", (productData) ->
         product = data.products
 
         if self.products.length == 0
-          self.count = data.count
-          self.colors = data.colors
-          self.sizes = data.sizes
-        # console.log product
+          self.count = data.products_details.count
+          self.colors = data.products_details.colors
+          self.sizes = data.products_details.sizes
         i = 0
 
         if product

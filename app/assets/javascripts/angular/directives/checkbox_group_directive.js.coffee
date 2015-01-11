@@ -6,8 +6,6 @@ angular.module('shop').directive "checkboxGroup", ->
   restrict: "A"
   link: (scope, elem, attrs) ->
 
-    # console.log scope.item
-    console.log attrs.checkboxGroup
     # Determine initial checked boxes
     arrayName = "array#{attrs.checkboxGroup}"
     elem[0].checked = true  if scope[arrayName].indexOf(scope.item) isnt -1

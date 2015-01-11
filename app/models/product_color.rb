@@ -18,6 +18,10 @@ class ProductColor < ActiveRecord::Base
   validates :images,          presence: true
   validates :product,         presence: true
 
+  # def filter(key, value)
+  #   self.where(key => value)
+  # end
+
   private
 
   def add_code

@@ -4,7 +4,7 @@ ProductsIndexCtrl = ($scope, $stateParams, $state, productData, PaginationIndex)
 
   $scope.loadProducts = ->
     $scope.data = {}
-    $scope.data.category = category = $stateParams.category
+    $scope.data.category = category = $stateParams.category || null
     $scope.data.main_category = main_category = $stateParams.main_category
     $scope.data.category_type = category_type = $stateParams.category_type
     $scope.pagination = new PaginationIndex()

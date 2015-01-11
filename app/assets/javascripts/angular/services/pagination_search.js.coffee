@@ -3,19 +3,25 @@
 # ###
 
 angular.module('shop').factory "PaginationSearch", (productData) ->
-  console.log 'PaginationSearch'
   PaginationSearch = ->
     @products = []
     @busy = false
 
-  PaginationSearch::nextPage = (search_query) ->
+  PaginationSearch::nextPage = (category, main_category, category_type, filter, sort, search_query) ->
+    # console.log 'filter-', filter, ', sort-', sort, 'busy-', @busy
     return if @busy
     @busy = true
     self = this
 
-    items = productData.search({item: @products.length, search_query: search_query}
+    items = productData.search({item: @products.length, search_query: search_query, filter: filter, sort: sort}
       , (data) ->
         product = data.products
+        i = 0
+
+        if self.products.length == 0
+          self.count = data.products_details.count
+          self.colors = data.products_details.colors
+          self.sizes = data.products_details.sizes
         i = 0
 
         if product
