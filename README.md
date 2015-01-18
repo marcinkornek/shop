@@ -1,6 +1,9 @@
 ## Ruby on Rails + AngularJS app
 I am going to make simple shop website
 
+## My ngShop app on heroku
+[*ngShop*](https://ngshop.herokuapp.com)
+
 ## Used gems
 
 * [*slim-rails*](https://github.com/slim-template/slim-rails) - to use slim-template
