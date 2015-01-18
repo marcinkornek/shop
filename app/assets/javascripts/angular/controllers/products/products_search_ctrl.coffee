@@ -29,6 +29,18 @@ ProductsSearchCtrl = ($scope, $stateParams, $state, PaginationSearch) ->
   $scope.arraycolor = []
   $scope.arraysize = []
 
+  $scope.filterProd = ->
+    $scope.formData.colors = $scope.arraycolor
+    $scope.formData.sizes = $scope.arraysize
+    $scope.toggleDropdownFilter()
+    $scope.clearProducts()
+
+  $scope.cancelForm = ->
+    $scope.formData = {}
+    $scope.arraycolor = []
+    $scope.arraysize = []
+    $scope.toggleDropdownFilter()
+
   $scope.sortProd = (type) ->
     $scope.sort = type
     $scope.sortProd.class = type
@@ -43,7 +55,7 @@ ProductsSearchCtrl = ($scope, $stateParams, $state, PaginationSearch) ->
   $scope.clearProducts = ->
     $scope.pagination.products = []
     $scope.pagination.busy = false
-    $scope.pagination.nextPage($scope.data.category, $scope.data.main_category, $scope.data.category_type, $scope.formData, $scope.sort)
+    $scope.pagination.nextPage($scope.data.category, $scope.data.main_category, $scope.data.category_type, $scope.formData, $scope.sort, $stateParams.searchQuery)
 
 angular.module("shop").controller "ProductsSearchCtrl", ProductsSearchCtrl
 ProductsSearchCtrl.$inject = ["$scope", "$stateParams", "$state", "PaginationSearch"]

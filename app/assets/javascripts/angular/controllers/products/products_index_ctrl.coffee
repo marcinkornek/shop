@@ -34,7 +34,8 @@ ProductsIndexCtrl = ($scope, $stateParams, $state, productData, PaginationIndex)
   $scope.filterProd = ->
     $scope.formData.colors = $scope.arraycolor
     $scope.formData.sizes = $scope.arraysize
-    console.log $scope.formData
+    $scope.toggleDropdownFilter()
+    $scope.clearProducts()
 
   $scope.cancelForm = ->
     $scope.formData = {}

@@ -14,7 +14,7 @@
         a ng-class="{active:sortProd.class=='new'}" ng-click="sortProd('new')"
           ' {{ "PRODUCTS_INDEX_SORT_NEWEST" | translate }}
 
-      .products-filter ng-class="{active:dropdownFilter}" ng-click="toggleDropdownFilter()" ng-show="pagination.count"
+      .products-filter ng-class="{active:dropdownFilter}" ng-click="toggleDropdownFilter()"
         ' {{ "PRODUCTS_INDEX_FILTER" | translate }}
         | [{{ pagination.count }}]
       .top-bar-dropdown.filter-dropdown ng-show="dropdownFilter"
@@ -95,3 +95,7 @@
           ' {{ "CURRENCY" | translate }}
         p.name
           ' {{ product.name }}
+
+  div ng-show="pagination.products.length==0"
+    h3.text-center style="text-transform: uppercase; margin-top: 150px"
+      ' {{ "PRODUCTS_SEARCH_NO_RESULTS" | translate }}

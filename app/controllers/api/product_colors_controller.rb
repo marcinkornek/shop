@@ -1,17 +1,19 @@
 class Api::ProductColorsController < ApplicationController
 
   def index
-    @products = Product.filter_prod_by_category(params[:main_category], params[:category_type], params[:category])
-
-    if params[:item] == '0' || nil
-      products_details = Product.products_count_colors_sizes(@products)
-    end
-
+    all_products = products = Product.filter_prod_by_category(params[:main_category], params[:category_type], params[:category])
+    filter = JSON.parse(params[:filter]) if params[:filter] != "{}"
     per_page = 4
     page = (params[:item].to_f/per_page).to_i + 1
-    @products = sort_prod(@products, params[:sort]) if params[:sort]
-    @products = paginate_prod_or_nil(@products, params[:item], page, per_page)
-    render json: {products: @products, products_details: products_details}
+    count = products.count
+    products = filter_prod(products, filter) if filter
+    products = sort_prod(products, params[:sort]) if params[:sort]
+    if params[:item] == '0' || nil
+      products_details = Product.products_colors_sizes(all_products).merge(count: products.count)
+    end
+    products = paginate_prod_or_nil(products, params[:item], page, per_page)
+
+    render json: {products: products, products_details: products_details}
   end
 
   def show
@@ -37,17 +39,18 @@ class Api::ProductColorsController < ApplicationController
   end
 
   def products_search
-    @products = Product.search(params[:search_query])
-
-    if params[:item] == '0' || nil
-      products_details = Product.products_count_colors_sizes(@products)
-    end
-
+    all_products = products = Product.search(params[:search_query])
+    filter = JSON.parse(params[:filter]) if params[:filter] != "{}"
     per_page = 4
     page = (params[:item].to_f/per_page).to_i + 1
-    @products = sort_prod(@products, params[:sort]) if params[:sort]
-    @products = paginate_prod_or_nil(@products, params[:item], page, per_page)
-    render json: {products: @products, products_details: products_details}
+    count = products.count
+    products = filter_prod(products, filter) if filter
+    products = sort_prod(products, params[:sort]) if params[:sort]
+    if params[:item] == '0' || nil
+      products_details = Product.products_colors_sizes(all_products).merge(count: products.count)
+    end
+    products = paginate_prod_or_nil(products, params[:item], page, per_page)
+    render json: {products: products, products_details: products_details}
   end
 
   private
@@ -55,7 +58,7 @@ class Api::ProductColorsController < ApplicationController
   def paginate_prod_or_nil(products, item, page, per_page)
     if item == '0' || nil
       products.paginate(page: page, per_page: per_page * 4).extend(ProductsIndexRepresenter).to_hash
-    elsif item.to_i != @products.count
+    elsif item.to_i != products.count
       products.paginate(page: page, per_page: per_page).extend(ProductsIndexRepresenter).to_hash
     else
       nil
@@ -71,6 +74,10 @@ class Api::ProductColorsController < ApplicationController
     when 'new'
       products.order(created_at: :desc)
     end
+  end
+
+  def filter_prod(products, filter)
+    Product.filter(products, filter['colors'], filter['sizes'], filter['price_from'], filter['price_to'])
   end
 
 end

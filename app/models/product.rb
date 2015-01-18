@@ -11,8 +11,12 @@ class Product < ActiveRecord::Base
     where("name ilike ?", "%#{query}%")
   end
 
-  def self.join_category
-    self.joins(category: [{category_type: :main_category}])
+  def self.filter(products, colors = nil, sizes = nil, min = nil, max = nil)
+    products = self.join_colors_sizes.where(product_colors: {product: products})
+    products = self.filter_colors(products, colors) if colors.present?
+    products = self.filter_sizes(products, sizes) if sizes.present?
+    products = self.filter_price(products, min, max) if min.present? || max.present?
+    products.distinct
   end
 
   def self.filter_prod_by_category(main_category, category_type, category = nil)
@@ -24,17 +28,39 @@ class Product < ActiveRecord::Base
     end
   end
 
-  def self.products_count_colors_sizes(products)
+  def self.products_colors_sizes(products)
     product_colors = ProductColor.where(product: products)
     colors = product_colors.map(&:color).uniq
     product_sizes = ProductSize.where(product_color: product_colors)
     sizes = product_sizes.map(&:size).uniq
-    count = products.count
     products_details = {
       colors: colors,
       sizes: sizes,
-      count: count,
     }
+  end
+
+  private
+
+  def self.join_category
+    self.joins(category: [{category_type: :main_category}])
+  end
+
+  def self.join_colors_sizes
+    self.joins(product_colors: :product_sizes)
+  end
+
+  def self.filter_colors(products, colors)
+    products.where(product_colors: {color: colors})
+  end
+
+  def self.filter_sizes(products, sizes)
+    products.where(product_sizes: {size: sizes})
+  end
+
+  def self.filter_price(products, min, max)
+    products = products.where("price > ?", min) if min.present?
+    products = products.where("price < ?", max) if max.present?
+    products
   end
 
 end

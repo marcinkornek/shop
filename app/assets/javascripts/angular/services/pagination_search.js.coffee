@@ -8,7 +8,7 @@ angular.module('shop').factory "PaginationSearch", (productData) ->
     @busy = false
 
   PaginationSearch::nextPage = (category, main_category, category_type, filter, sort, search_query) ->
-    # console.log 'filter-', filter, ', sort-', sort, 'busy-', @busy
+    # console.log 'filter-', filter, ', sort-', sort, 'busy-', @busy, 'search_query-', search_query
     return if @busy
     @busy = true
     self = this
