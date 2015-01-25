@@ -35,24 +35,30 @@
         .color-check.fa.fa-check ng-show="color.code == data.code"
     br
 
-    .product-sizes ng-repeat="size in data.pr_det.product_sizes"
-      div class="size size-{{size.size}}"
-        ' {{ size.size }}
+    .product-sizes
+      div ng-repeat="size in data.pr_det.product_sizes" class="size size-{{size.size}}" ng-class="{active: size.id == formData.size_id}"
+        div ng-click="chooseSize(size.id)"
+          ' {{ size.size }}
 
-    .product-info-collapse ng-click="isCollapsed = !isCollapsed"
-      p
-        ' {{ "PRODUCT_SHOW_COMPOSITION" | translate }}
-      .product-composition collapse="isCollapsed"
-        ' {{ data.pr.composition }}
+    .add-to-cart-button
+      a ng-click="addToCart()"
+        ' {{ "PRODUCT_SHOW_ADD_TO_CART" | translate }}
 
-    .product-info-collapse ng-click="isCollapsed2 = !isCollapsed2"
-      p
-        ' {{ "PRODUCT_SHOW_RETURN" | translate }}
-      .product-return collapse="isCollapsed2"
-        ' {{ "PRODUCT_SHOW_RETURN_TEXT" | translate }}
+    .product-info-show
+      .product-info-collapse ng-click="isCollapsed = !isCollapsed"
+        p
+          ' {{ "PRODUCT_SHOW_COMPOSITION" | translate }}
+        .product-composition collapse="isCollapsed"
+          ' {{ data.pr.composition }}
 
-    .product-info-collapse ng-click="isCollapsed3 = !isCollapsed3"
-      p
-        ' {{ "PRODUCT_SHOW_SHIPPING" | translate }}
-      .product-shipping collapse="isCollapsed3"
-        ' {{ "PRODUCT_SHOW_SHIPPING_TEXT" | translate }}
+      .product-info-collapse ng-click="isCollapsed2 = !isCollapsed2"
+        p
+          ' {{ "PRODUCT_SHOW_RETURN" | translate }}
+        .product-return collapse="isCollapsed2"
+          ' {{ "PRODUCT_SHOW_RETURN_TEXT" | translate }}
+
+      .product-info-collapse ng-click="isCollapsed3 = !isCollapsed3"
+        p
+          ' {{ "PRODUCT_SHOW_SHIPPING" | translate }}
+        .product-shipping collapse="isCollapsed3"
+          ' {{ "PRODUCT_SHOW_SHIPPING_TEXT" | translate }}

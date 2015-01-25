@@ -34,6 +34,16 @@ GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies, sessionD
       $state.go('home', {}, {reload: true})
     )
 
+  $scope.loadCartItems = ->
+    items_in_cart = JSON.parse($cookies.cart || '[]')
+    total_price = $cookies.total_price
+
+    $scope.formData.car_items_number = items_in_cart.length
+    $scope.formData.car_items = items_in_cart
+    $scope.formData.total_price = total_price
+
+  $scope.loadCartItems()
+
   # language
 
   $scope.setLanguage = ->
