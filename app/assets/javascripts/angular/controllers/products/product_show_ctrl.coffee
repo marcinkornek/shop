@@ -1,8 +1,10 @@
-ProductShowCtrl = ($scope, $stateParams, $state, productData, $cookies) ->
+ProductShowCtrl = ($scope, $stateParams, $state, productData, $cookies, orderDetailData) ->
 
   # loading data
 
   $scope.formData = {}
+
+  $scope.formData.order = orderDetailData
 
   $scope.loadProduct = ->
     $scope.data = {}
@@ -36,21 +38,22 @@ ProductShowCtrl = ($scope, $stateParams, $state, productData, $cookies) ->
   $scope.hoverOut = ->
     @hoverEdit = false
 
-
   $scope.addToCart = ->
     if $scope.formData.size_id
       $saveTotalPriceToCookies()
       $saveItemsToCookie()
 
   $saveTotalPriceToCookies = ->
-    array = JSON.parse($cookies.cart || '[]')
-    array.push $scope.formData.size_id
-    $cookies.cart = JSON.stringify(array)
-
-  $saveItemsToCookie = ->
     total_price = $cookies.total_price || 0
     total_price = parseFloat(total_price) + parseFloat($scope.data.pr.price)
     $cookies.total_price = total_price
+    $scope.formData.order.total_price = total_price
+
+  $saveItemsToCookie = ->
+    array = JSON.parse($cookies.cart || '[]')
+    array.push $scope.formData.size_id
+    $cookies.cart = JSON.stringify(array)
+    $scope.formData.order.car_items_number = array.length
 
   $scope.chooseSize = (size_id) ->
     $scope.formData.size_id = size_id
@@ -64,4 +67,4 @@ ProductShowCtrl = ($scope, $stateParams, $state, productData, $cookies) ->
   $scope.isCollapsed = $scope.isCollapsed2 = $scope.isCollapsed3 = true
 
 angular.module("shop").controller "ProductShowCtrl", ProductShowCtrl
-ProductShowCtrl.$inject = ["$scope", "$stateParams", "$state", "productData", "$cookies"]
+ProductShowCtrl.$inject = ["$scope", "$stateParams", "$state", "productData", "$cookies", "orderDetailData"]

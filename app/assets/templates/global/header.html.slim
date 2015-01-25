@@ -41,12 +41,12 @@ nav.right-nav
     li.cart
       a
         i.fa.fa-shopping-cart
-        .cart-items-header ng-show="formData.car_items_number"
+        .cart-items-header ng-show="formData.order.car_items_number"
           .total-price-header
-            ' {{ formData.total_price }}
+            ' {{ formData.order.total_price }}
             ' {{ "CURRENCY" | translate }}
           .cart-count-header
-            ' {{ formData.car_items_number }}
+            ' {{ formData.order.car_items_number }}
 
     li.search
       input(id="search" placeholder="{{ 'HEADER_SEARCH_PRODUCTS_PLACEHOLDER' | translate }}" type="text" ng-model="formData.search_query" ng-show="data.search == 1" class="animate-show" ng-enter="searchShow()" focus-me="focusInput")
