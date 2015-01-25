@@ -7,10 +7,8 @@ describe Product do
   end
 
   it { expect(@product).to respond_to(:name) }
-  it { expect(@product).to respond_to(:code) }
   it { expect(@product).to respond_to(:price) }
   it { expect(@product).to respond_to(:composition) }
-  it { expect(@product).to respond_to(:images) }
   it { expect(@product).to respond_to(:category) }
   it { expect(@product).to respond_to(:product_colors) }
 
@@ -24,36 +22,9 @@ describe Product do
   end
 
 
-  describe "when code" do
-    # context "is not present" do
-    #   before do
-    #     @product.code = ''
-    #     @product.send(:create_without_callbacks)
-    #   end
-    #   it { expect(@product).not_to be_valid }
-    # end
-    context "is already taken" do
-      before do
-        product_with_same_code = @product.dup
-        product_with_same_code.save
-        @product.save
-      end
-      it { should_not be_valid }
-    end
-  end
-
-
   describe "when composition" do
     context "is not present" do
       before { @product.composition = ''}
-      it { expect(@product).not_to be_valid }
-    end
-  end
-
-
-  describe "when image" do
-    context "is not present" do
-      before { @product.remove_images! }
       it { expect(@product).not_to be_valid }
     end
   end

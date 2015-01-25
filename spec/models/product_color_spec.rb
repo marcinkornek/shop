@@ -36,4 +36,16 @@ describe ProductColor do
     end
   end
 
+
+  describe "when code" do
+    context "is already taken" do
+      before do
+        product_with_same_code = @product_col.dup
+        product_with_same_code.save
+        @product_col.save
+      end
+      it { should_not be_valid }
+    end
+  end
+
 end
