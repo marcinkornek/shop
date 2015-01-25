@@ -13,12 +13,12 @@ nav.main-nav
         .columns
           ul.links ng-repeat="category_types in main_cat.category_types"
             .category-type
-              li ui-sref="products_index({ main_category: main_cat.main_cat, category_type: category_types.category_type, category: '' })"
-                a ng-class="{active: data.main_category==main_cat.main_cat && data.category_type==category_types.category_type && data.category==''}"
+              li
+                a ng-class="{active: data.main_category==main_cat.main_cat && data.category_type==category_types.category_type && data.category==''}" ui-sref="products_index({ main_category: main_cat.main_cat, category_type: category_types.category_type, category: '' })"
                   ' {{ category_types.category_type }}
             .categories
-              li ng-repeat="category in category_types.categories" ui-sref="products_index({ main_category: main_cat.main_cat, category_type: category_types.category_type, category: category.name })"
-                a ng-class="{active: data.main_category==main_cat.main_cat && data.category==category.name }"
+              li ng-repeat="category in category_types.categories"
+                a ng-class="{active: data.main_category==main_cat.main_cat && data.category==category.name }" ui-sref="products_index({ main_category: main_cat.main_cat, category_type: category_types.category_type, category: category.name })"
                   ' {{ category.name }}
 
 nav.right-nav

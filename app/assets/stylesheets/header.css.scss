@@ -68,13 +68,11 @@ li.header {
     text-transform: uppercase;
     font-weight: bold;
   }
-  .categories {
-    li {
-      padding-top: 3px;
-      a {
-        display: block;
-        width: 150px;
-      }
+  li {
+    padding-top: 3px;
+    a {
+      display: block;
+      width: 150px;
     }
   }
 }
