@@ -1,4 +1,4 @@
-angular.module('shop').factory "productData", ($resource) ->
+angular.module('shop').factory "productColorData", ($resource) ->
   $resource("/api/product_colors/:id", {id: "@id"},
     {
       update:           {method: "PUT"},

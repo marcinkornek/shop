@@ -1,4 +1,4 @@
-ProductShowCtrl = ($scope, $stateParams, $state, productData, $cookies, orderDetailData) ->
+ProductShowCtrl = ($scope, $stateParams, $state, productColorData, $cookies, orderDetailData) ->
 
   # loading data
 
@@ -10,14 +10,11 @@ ProductShowCtrl = ($scope, $stateParams, $state, productData, $cookies, orderDet
     $scope.data = {}
     $scope.data.category = category = $stateParams.category
     $scope.data.main_category = main_category = $stateParams.main_category
-    # console.log category
     $scope.data.category_type = category_type = $stateParams.category_type
     $scope.data.code = code = $stateParams.code
-    # console.log 'loadProduct'
-    productData.get({code: code}
+    productColorData.get({code: code}
       , (product) ->
-        # console.log 'product'
-        # console.log product
+        console.log product
         $scope.data.pr_det = product.pr_det
         $scope.data.pr = product.pr
         $scope.data.items = product
@@ -67,4 +64,4 @@ ProductShowCtrl = ($scope, $stateParams, $state, productData, $cookies, orderDet
   $scope.isCollapsed = $scope.isCollapsed2 = $scope.isCollapsed3 = true
 
 angular.module("shop").controller "ProductShowCtrl", ProductShowCtrl
-ProductShowCtrl.$inject = ["$scope", "$stateParams", "$state", "productData", "$cookies", "orderDetailData"]
+ProductShowCtrl.$inject = ["$scope", "$stateParams", "$state", "productColorData", "$cookies", "orderDetailData"]

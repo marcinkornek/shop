@@ -1,4 +1,4 @@
-ProductsIndexCtrl = ($scope, $stateParams, $state, productData, PaginationIndex) ->
+ProductsIndexCtrl = ($scope, $stateParams, $state, productColorData, PaginationIndex) ->
 
   # loading data
 
@@ -60,4 +60,4 @@ ProductsIndexCtrl = ($scope, $stateParams, $state, productData, PaginationIndex)
     $scope.pagination.nextPage($scope.data.category, $scope.data.main_category, $scope.data.category_type, $scope.formData, $scope.sort)
 
 angular.module("shop").controller "ProductsIndexCtrl", ProductsIndexCtrl
-ProductsIndexCtrl.$inject = ["$scope", "$stateParams", "$state", "productData", "PaginationIndex"]
+ProductsIndexCtrl.$inject = ["$scope", "$stateParams", "$state", "productColorData", "PaginationIndex"]

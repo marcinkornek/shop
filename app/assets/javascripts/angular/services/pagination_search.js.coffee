@@ -2,7 +2,7 @@
 # https://github.com/sroze/ngInfiniteScroll/issues/63
 # ###
 
-angular.module('shop').factory "PaginationSearch", (productData) ->
+angular.module('shop').factory "PaginationSearch", (productColorData) ->
   PaginationSearch = ->
     @products = []
     @busy = false
@@ -13,7 +13,7 @@ angular.module('shop').factory "PaginationSearch", (productData) ->
     @busy = true
     self = this
 
-    items = productData.search({item: @products.length, search_query: search_query, filter: filter, sort: sort}
+    items = productColorData.search({item: @products.length, search_query: search_query, filter: filter, sort: sort}
       , (data) ->
         product = data.products
         i = 0
