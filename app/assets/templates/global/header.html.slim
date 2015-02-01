@@ -54,13 +54,14 @@ nav.right-nav
               ' {{ "HEADER_ORDER_NAME" | translate }}:
               ' {{ product.product_color.product.name }},
               ' {{ "HEADER_ORDER_PRICE" | translate }}:
-              ' {{ product.product_color.product.price }},
+              ' {{ product.product_color.product.price }}
+              ' {{ "CURRENCY" | translate }},
               ' {{ "HEADER_ORDER_SIZE" | translate }}:
               ' {{ product.size }},
               ' {{ "HEADER_ORDER_COLOR" | translate }}:
               ' {{ product.product_color.color }},
               ' {{ "HEADER_ORDER_AMOUNT" | translate }}:
-              ' {{ product.amount }},
+              ' {{ product.amount }}
 
     li.search
       input(id="search" placeholder="{{ 'HEADER_SEARCH_PRODUCTS_PLACEHOLDER' | translate }}" type="text" ng-model="formData.search_query" ng-show="data.search == 1" class="animate-show" ng-enter="searchShow()" focus-me="focusInput")

@@ -1,4 +1,4 @@
-GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies, sessionData, principal, orderDetailData, productSizeData) ->
+GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies, sessionData, principal, orderDetailData) ->
 
   # loading data 1/2
 
@@ -36,23 +36,10 @@ GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies, sessionD
       $state.go('home', {}, {reload: true})
     )
 
-  $scope.loadCartItemsFromServer = (ids) ->
-    productSizeData.query({ids: ids.toString()}
-      , (products) ->
-        console.log products
-        $scope.formData.order.products = products
-      , (error) ->
-        console.log 'error'
-        console.log error.status
-    )
-
   $scope.loadCartItemsFromCookie = ->
-    items_in_cart = JSON.parse($cookies.items_in_cart || '[]')
-    total_price = $cookies.total_price
-    $scope.formData.order.car_items_number = items_in_cart.length
-    $scope.formData.order.car_items = items_in_cart
-    $scope.formData.order.total_price = total_price
-    $scope.loadCartItemsFromServer(items_in_cart)
+    $scope.formData.order.car_items_number = orderDetailData.loadCartItemsCountFromCookie()
+    $scope.formData.order.total_price = orderDetailData.loadCartItemsTotalPriceFromCookie()
+    $scope.formData.order.products = orderDetailData.loadCartItemsFromServer()
 
   $scope.loadCartItemsFromCookie()
 
@@ -82,4 +69,4 @@ GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies, sessionD
   $scope.loadData()
 
 angular.module("shop").controller "GlobalHeaderCtrl", GlobalHeaderCtrl
-GlobalHeaderCtrl.$inject = ["$scope", "$state", "$translate", "$stateParams", "$cookies", "sessionData", "principal", "orderDetailData", "productSizeData"]
+GlobalHeaderCtrl.$inject = ["$scope", "$state", "$translate", "$stateParams", "$cookies", "sessionData", "principal", "orderDetailData"]

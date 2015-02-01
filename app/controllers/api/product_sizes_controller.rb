@@ -8,7 +8,6 @@ class Api::ProductSizesController < ApplicationController
       ProductSize.find(k).extend(ProductSizeOrderRepresenter).to_hash.merge(amount: v)
     end
     render json: array_new
-
   end
 
 end

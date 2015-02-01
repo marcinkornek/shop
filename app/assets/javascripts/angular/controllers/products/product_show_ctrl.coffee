@@ -14,7 +14,6 @@ ProductShowCtrl = ($scope, $stateParams, $state, productColorData, $cookies, ord
     $scope.data.code = code = $stateParams.code
     productColorData.get({code: code}
       , (product) ->
-        console.log product
         $scope.data.pr_det = product.pr_det
         $scope.data.pr = product.pr
         $scope.data.items = product
@@ -39,39 +38,23 @@ ProductShowCtrl = ($scope, $stateParams, $state, productColorData, $cookies, ord
     if $scope.formData.size_id
       $saveTotalPriceToCookies()
       $saveItemsToCookie()
-      $addProductToOrderProducts()
+      ps = orderDetailData.loadCartItemsFromServer()
+      $scope.formData.order.products = ps
 
   $saveTotalPriceToCookies = ->
     total_price = $cookies.total_price || 0
     total_price = parseFloat(total_price) + parseFloat($scope.data.pr.price)
     $cookies.total_price = total_price
-    $scope.formData.order.total_price = total_price
+    $scope.formData.order.total_price = orderDetailData.loadCartItemsTotalPriceFromCookie()
 
   $saveItemsToCookie = ->
     items_in_cart = JSON.parse($cookies.items_in_cart || '[]')
     items_in_cart.push $scope.formData.size_id
     $cookies.items_in_cart = JSON.stringify(items_in_cart)
-    $scope.formData.order.car_items_number = items_in_cart.length
-    $scope.formData.order.items_in_cart = items_in_cart
+    $scope.formData.order.car_items_number = orderDetailData.loadCartItemsCountFromCookie()
 
-  $addProductToOrderProducts = ->
-    $scope.formData.order.products.push {
-      amount: 1,
-      size_id: $scope.formData.size_id,
-      size: $scope.formData.size,
-      product_color: {
-        color: $scope.data.pr_det.color,
-        product_images: $scope.data.pr_det.product_images,
-        product: {
-          name: $scope.data.pr.name
-          price: $scope.data.pr.price
-        }
-      }
-    }
-
-  $scope.chooseSize = (size_id, size) ->
+  $scope.chooseSize = (size_id) ->
     $scope.formData.size_id = size_id
-    $scope.formData.size = size
 
   $scope.setSizeIfOne = ->
     pr_sizes = $scope.data.pr_det.product_sizes
