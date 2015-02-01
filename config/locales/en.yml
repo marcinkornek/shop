@@ -1,6 +1,11 @@
 en:
   "HEADER_LOGO": "Shop"
   "HEADER_ACCOUNT": "Your account"
+  "HEADER_ORDER_NAME": "name"
+  "HEADER_ORDER_PRICE": "price"
+  "HEADER_ORDER_SIZE": "size"
+  "HEADER_ORDER_COLOR": "color"
+  "HEADER_ORDER_AMOUNT": "amount"
 
   # SESSIONS
 

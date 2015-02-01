@@ -47,6 +47,20 @@ nav.right-nav
             ' {{ "CURRENCY" | translate }}
           .cart-count-header
             ' {{ formData.order.car_items_number }}
+          .cart-list-header
+            .cart-list-item-header ng-repeat="product in formData.order.products"
+              .cart-list-image-header
+                img ng-src="{{product.product_color.product_images[0].thumb.url}}"
+              ' {{ "HEADER_ORDER_NAME" | translate }}:
+              ' {{ product.product_color.product.name }},
+              ' {{ "HEADER_ORDER_PRICE" | translate }}:
+              ' {{ product.product_color.product.price }},
+              ' {{ "HEADER_ORDER_SIZE" | translate }}:
+              ' {{ product.size }},
+              ' {{ "HEADER_ORDER_COLOR" | translate }}:
+              ' {{ product.product_color.color }},
+              ' {{ "HEADER_ORDER_AMOUNT" | translate }}:
+              ' {{ product.amount }},
 
     li.search
       input(id="search" placeholder="{{ 'HEADER_SEARCH_PRODUCTS_PLACEHOLDER' | translate }}" type="text" ng-model="formData.search_query" ng-show="data.search == 1" class="animate-show" ng-enter="searchShow()" focus-me="focusInput")

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :addresses
     resources :orders
     resources :product_colors
+    resources :product_sizes
     resources :users do
       member do
         get :activate

@@ -187,6 +187,34 @@ input {
   }
 }
 
+.cart-list-header {
+  position: absolute;
+  top: 60px;
+  left: -300px;
+  right: -60px;
+  background: black;
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .cart-list-item-header {
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+  }
+  .cart-list-item-header:last-child {
+    padding-bottom: 0px;
+  }
+}
+
+.cart-list-image-header {
+  display: inline-block;
+  img {
+    height: 40px;
+    margin-right: 10px;
+  }
+}
+
 .logout {
   float: right;
   border-left: 1px #ecebe8 solid;
@@ -246,13 +274,15 @@ input {
 }
 
 nav li div {
-  &.submenu-with-banner, &.submenu-small {
+  &.submenu-with-banner, &.submenu-small, &.cart-list-header {
     display: none;
   }
 }
 
 nav li:hover div {
-  display: block;
+  &.submenu-with-banner, &.submenu-small, &.cart-list-header {
+    display: block;
+  }
 }
 
 li:hover > a.title.top-border, a.title.top-border.active {
