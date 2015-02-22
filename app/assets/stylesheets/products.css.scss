@@ -28,7 +28,7 @@
 
 body .products-sort, .products-filter {
   background-color: white;
-  z-index: 9999;
+  z-index: 90;
   position: relative;
   width: 120px;
   float: left;
@@ -48,14 +48,14 @@ body .products-sort, .products-filter {
 .products-sort-active {
   text-align: right;
   padding-top: 2px;
-  z-index: 9999;
+  z-index: 90;
   width: 150px;
   float: left;
   font-size: 12px;
 }
 
 .top-bar-dropdown {
-  z-index: 9500;
+  z-index: 95;
   position: absolute;
   top: 99px;
   left: 0px;
@@ -262,11 +262,11 @@ p.name {
 }
 
 .product-images {
-  z-index: 8000;
+  z-index: 80;
 }
 
 .product-info {
-  z-index: 9000;
+  z-index: 90;
   position: absolute;
   top: 130px;
   right: 300px;

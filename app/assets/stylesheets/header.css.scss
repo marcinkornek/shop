@@ -1,7 +1,7 @@
 // HEADER //
 
 header.main-header {
-  z-index: 10000;
+  z-index: 100;
   position: fixed;
   top:0px;
   background: #fff;
@@ -243,7 +243,7 @@ input {
 }
 
 .submenu-with-banner {
-  z-index: 9999;
+  z-index: 90;
   position: absolute;
   top: 39px;
   left: 0px;
@@ -257,7 +257,7 @@ input {
 }
 
 .submenu-small {
-  z-index: 9999;
+  z-index: 90;
   position: absolute;
   top: 59px;
   right: 0px;
