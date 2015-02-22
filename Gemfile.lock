@@ -325,20 +325,20 @@ DEPENDENCIES
   pry-rails
   quiet_assets
   rails (= 4.1.8)
-  rails-assets-Font-Awesome
-  rails-assets-angular
-  rails-assets-angular-animate
-  rails-assets-angular-bootstrap
-  rails-assets-angular-cache (~> 2.3.4)
-  rails-assets-angular-carousel
-  rails-assets-angular-cookies
-  rails-assets-angular-resource
-  rails-assets-angular-touch
-  rails-assets-angular-translate
-  rails-assets-angular-ui-router
-  rails-assets-bootstrap
-  rails-assets-lodash
-  rails-assets-ngInfiniteScroll
+  rails-assets-Font-Awesome!
+  rails-assets-angular!
+  rails-assets-angular-animate!
+  rails-assets-angular-bootstrap!
+  rails-assets-angular-cache (~> 2.3.4)!
+  rails-assets-angular-carousel!
+  rails-assets-angular-cookies!
+  rails-assets-angular-resource!
+  rails-assets-angular-touch!
+  rails-assets-angular-translate!
+  rails-assets-angular-ui-router!
+  rails-assets-bootstrap!
+  rails-assets-lodash!
+  rails-assets-ngInfiniteScroll!
   rails_12factor
   rmagick
   roar-rails (~> 0.1.6)

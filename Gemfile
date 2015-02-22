@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-source 'https://rails-assets.org'
 ruby '2.1.4'
 
 gem 'rails', '4.1.8'
@@ -28,20 +27,22 @@ gem 'autoprefixer-rails'
 gem 'will_paginate'
 
 # assets
-gem 'rails-assets-lodash'
-gem 'rails-assets-angular'
-gem 'rails-assets-angular-cache', '~> 2.3.4'
-gem 'rails-assets-angular-ui-router'
-gem 'rails-assets-angular-resource'
-gem 'rails-assets-angular-translate'
-gem 'rails-assets-angular-animate'
-gem 'rails-assets-angular-touch'
-gem 'rails-assets-angular-bootstrap'
-gem 'rails-assets-bootstrap'
-gem 'rails-assets-Font-Awesome'
-gem 'rails-assets-angular-cookies'
-gem 'rails-assets-angular-carousel'
-gem 'rails-assets-ngInfiniteScroll'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-lodash'
+  gem 'rails-assets-angular'
+  gem 'rails-assets-angular-cache', '~> 2.3.4'
+  gem 'rails-assets-angular-ui-router'
+  gem 'rails-assets-angular-resource'
+  gem 'rails-assets-angular-translate'
+  gem 'rails-assets-angular-animate'
+  gem 'rails-assets-angular-touch'
+  gem 'rails-assets-angular-bootstrap'
+  gem 'rails-assets-bootstrap'
+  gem 'rails-assets-Font-Awesome'
+  gem 'rails-assets-angular-cookies'
+  gem 'rails-assets-angular-carousel'
+  gem 'rails-assets-ngInfiniteScroll'
+end
 
 group :development, :test do
   gem 'spring'
