@@ -39,6 +39,16 @@
       div ng-repeat="size in data.pr_det.product_sizes" class="size size-{{size.size}}" ng-class="{active: size.id == formData.size_id}" ng-click="chooseSize(size.id)"
         ' {{ size.size }}
 
+    .modal-product-sizes ng-show="sizeModal"
+      .modal-background ng-click="sizeModal = 0"
+      .modal-sizes
+        .modal-close ng-click="sizeModal = 0"
+          ' x
+        p
+          ' {{ "PRODUCT_SHOW_CHOOSE_SIZE" | translate }}
+        div ng-repeat="size in data.pr_det.product_sizes" class="size size-{{size.size}}" ng-class="{active: size.id == formData.size_id}" ng-click="chooseSize(size.id)"
+          ' {{ size.size }}
+
     .add-to-cart-button
       a ng-click="addToCart()"
         ' {{ "PRODUCT_SHOW_ADD_TO_CART" | translate }}

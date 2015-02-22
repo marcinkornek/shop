@@ -66,6 +66,7 @@ pl:
   "PRODUCTS_SEARCH_NO_RESULTS": "Brak produktów spełniających wyszukiwanie."
 
   "PRODUCT_SHOW_BACK": "Wróć do kategorii"
+  "PRODUCT_SHOW_CHOOSE_SIZE": "Wybierz rozmiar"
   "PRODUCT_SHOW_ADD_TO_CART": "Do koszyka"
   "PRODUCT_SHOW_COMPOSITION": "Skład"
   "PRODUCT_SHOW_RETURN": "Zwroty"

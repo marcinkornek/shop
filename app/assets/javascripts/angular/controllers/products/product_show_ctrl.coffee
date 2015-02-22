@@ -40,6 +40,8 @@ ProductShowCtrl = ($scope, $stateParams, $state, productColorData, $cookies, ord
       $saveItemsToCookie()
       ps = orderDetailData.loadCartItemsFromServer()
       $scope.formData.order.products = ps
+    else
+      $scope.sizeModal = 1
 
   $saveTotalPriceToCookies = ->
     total_price = $cookies.total_price || 0
@@ -55,6 +57,7 @@ ProductShowCtrl = ($scope, $stateParams, $state, productColorData, $cookies, ord
 
   $scope.chooseSize = (size_id) ->
     $scope.formData.size_id = size_id
+    $scope.sizeModal = 0 if $scope.sizeModal
 
   $scope.setSizeIfOne = ->
     pr_sizes = $scope.data.pr_det.product_sizes
