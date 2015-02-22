@@ -77,25 +77,8 @@
       .products-view
         ' {{ "PRODUCTS_INDEX_VIEW" | translate }}
 
-    div ng-repeat="product in pagination.products" class="product product-{{product.id}}" style="position:relative" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"
-      ul.image rn-carousel="" rn-carousel-index="products"
-        li ng-repeat="color in product.product_colors"
-          a ui-sref="products_show({ main_category: product.category.category_type.main_category.name, category_type: product.category.category_type.name, category: product.category.name, code: color.code })"
-            .bgimage ng-style="{'background-image': 'url(' + color.product_images[0].normal.url + ')'}"
-
-      .options.alpha60white ng-show="hoverEdit" class="animate-show"
-        .colors.rn-carousel-indicator rn-carousel-index="products"
-          img ng-repeat="color in product.product_colors" ng-src="{{ color.color_image.mini.url }}" ng-click="$parent.products = $index; saveColor(color.code)" ng-class="{active: $index==$parent.products}"
-
-        .add-to-cart.alpha60black
-          ' to cart
-
-      .basic-info
-        p.price
-          ' {{ product.price }}
-          ' {{ "CURRENCY" | translate }}
-        p.name
-          ' {{ product.name }}
+    div ng-repeat="product in pagination.products" class="product product-{{product.id}}" style="position:relative"
+      product product="product"
 
   div ng-show="pagination.products.length==0"
     h3.text-center style="text-transform: uppercase; margin-top: 150px"
