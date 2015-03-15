@@ -13,12 +13,6 @@ ProductsIndexCtrl = ($scope, $stateParams, $state, productColorData, PaginationI
 
   # functions
 
-  $scope.hoverIn = ->
-    @hoverEdit = true
-
-  $scope.hoverOut = ->
-    @hoverEdit = false
-
   $scope.toggleDropdownSort = ->
     $scope.dropdownSort=!$scope.dropdownSort
     $scope.dropdownFilter = false
