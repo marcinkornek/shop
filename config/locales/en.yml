@@ -162,6 +162,9 @@ en:
   "ONEW_PASSWORD_CONFIRMATION_TOOLTIP": "New password confirmation*"
 
   "NG_REALLY_MESSAGE": "Are you sure?"
+  "MODAL_DELETE_CONFIRMATION_MESSAGE": "Are you sure?"
+  "MODAL_DELETE_CONFIRMATION_YES": "Yes"
+  "MODAL_DELETE_CONFIRMATION_CANCEL": "Cancel"
   "CURRENCY": 'pln'
 
   mailer:

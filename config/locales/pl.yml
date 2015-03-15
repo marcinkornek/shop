@@ -162,6 +162,9 @@ pl:
   "ONEW_PASSWORD_CONFIRMATION_TOOLTIP": "Potwierdzenie nowego hasła*"
 
   "NG_REALLY_MESSAGE": "Jesteś pewny?"
+  "MODAL_DELETE_CONFIRMATION_MESSAGE": "Jesteś pewny?"
+  "MODAL_DELETE_CONFIRMATION_YES": "Tak"
+  "MODAL_DELETE_CONFIRMATION_CANCEL": "Anuluj"
   "CURRENCY": 'pln'
 
   mailer:

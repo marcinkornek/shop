@@ -89,6 +89,9 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
     $scope.formData.addresses.push(address)
     $scope.formData.addresses = _.sortBy($scope.formData.addresses, 'id')
 
+  $scope.openDeleteConfirmationModal = ->
+    $scope.deleteConfirmation = 1
+
   $scope.destroyAddress = (addressId) ->
     addressData.delete(id: addressId)
     $scope.formData.addresses = _.filter($scope.formData.addresses, (item) ->
@@ -101,13 +104,9 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
   $scope.changeAddressesNumber = (sign) ->
     switch sign
       when '+'
-        # console.log 'before', $scope.formData.addresses_number
         $scope.formData.addresses_number = $scope.formData.addresses_number + 1
-        # console.log 'after', $scope.formData.addresses_number
       when '-'
-        # console.log 'before', $scope.formData.addresses_number
         $scope.formData.addresses_number = $scope.formData.addresses_number - 1
-        # console.log 'after', $scope.formData.addresses_number
 
   $scope.loadFirstOrNew = ->
     switch $scope.formData.addresses_number

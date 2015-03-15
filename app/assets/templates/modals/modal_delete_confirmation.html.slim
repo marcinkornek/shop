@@ -1,0 +1,13 @@
+.modal-layout ng-show="deleteConfirmation"
+  .modal-background ng-click="closeModal()"
+  .modal-sizes
+    .modal-close ng-click="closeModal()"
+      ' x
+    p
+      ' {{ 'MODAL_DELETE_CONFIRMATION_MESSAGE' | translate }}
+
+    button.btn.btn-default.confirm-button ng-click="confirm();closeModal()"
+      ' {{ 'MODAL_DELETE_CONFIRMATION_YES' | translate }}
+
+    button.btn.btn-default.cancel-button ng-click="closeModal()"
+      ' {{ 'MODAL_DELETE_CONFIRMATION_CANCEL' | translate }}
