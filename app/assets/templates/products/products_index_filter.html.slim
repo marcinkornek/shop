@@ -1,0 +1,51 @@
+.products-filter ng-class="{active:dropdownFilter}" ng-click="toggleDropdownFilter()"
+  ' {{ "PRODUCTS_INDEX_FILTER" | translate }}
+  | [{{ pagination.count }}]
+.top-bar-dropdown.filter-dropdown ng-show="dropdownFilter"
+  .close ng-click="toggleDropdownFilter()"
+    ' x
+  form name='filterForm'
+    .filter-dropdown-column style="width:120px;"
+      .title
+        ' {{ "PRODUCTS_INDEX_FILTER_COLOUR" | translate }}
+      ul ng-repeat="item in pagination.colors" style="margin-left:30px;"
+        label style="font-weight:normal"
+          input type="checkbox" checkbox-group="color"
+            ' {{item}}
+
+    .filter-dropdown-column style="width:120px;"
+      .title
+        ' {{ "PRODUCTS_INDEX_FILTER_SIZE" | translate }}
+      ul ng-repeat="item in pagination.sizes" style="margin-left:40px;"
+        label style="font-weight:normal"
+          input type="checkbox" checkbox-group="size"
+            ' {{item}}
+
+    .filter-dropdown-column style="width:140px;"
+      .title
+        ' {{ "PRODUCTS_INDEX_FILTER_PRICE" | translate }}
+      ul
+        .left-label
+          ' {{ "PRODUCTS_INDEX_FILTER_PRICE_FROM" | translate }}
+        input type="text" ng-model="formData.price_from"
+        .right-label
+          ' {{ "CURRENCY" | translate }}
+        .errors ng-show="filterForm.price_from.$touched && filterForm.price_from.$dirty"
+          .field-error ng-show="filterForm.price_from.$error.pattern"
+            ' {{ "ERROR_PRICE_FROM_PATTERN" | translate }}
+
+      ul
+        .left-label
+          ' {{ "PRODUCTS_INDEX_FILTER_PRICE_TO" | translate }}
+        input type="text" ng-model="formData.price_to"
+        .right-label
+          ' {{ "CURRENCY" | translate }}
+        .errors ng-show="filterForm.price_to.$touched && filterForm.price_to.$dirty"
+          .field-error ng-show="filterForm.price_to.$error.pattern"
+            ' {{ "ERROR_PRICE_TO_PATTERN" | translate }}
+
+    .dropdown-buttons
+      button.btn.btn-default ng-click="filterProd()"
+        ' {{ "PRODUCTS_INDEX_FILTER_BUTTON" | translate }}
+      button.btn.btn-default ng-click="cancelForm()"
+        ' {{ "PRODUCTS_INDEX_FILTER_CANCEL" | translate }}

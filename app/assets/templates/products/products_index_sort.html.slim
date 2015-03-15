@@ -1,0 +1,11 @@
+.products-sort ng-class="{active:dropdownSort}" ng-click="toggleDropdownSort()"
+  ' {{ "PRODUCTS_INDEX_SORT" | translate }}
+.top-bar-dropdown.sort-dropdown ng-show="dropdownSort"
+  .close ng-click="toggleDropdownSort()"
+    ' x
+  a ng-class="{active:sortProd.class=='low'}" ng-click="sortProd('low');"
+    ' {{ "PRODUCTS_INDEX_SORT_LOWEST_PRICE" | translate }}
+  a ng-class="{active:sortProd.class=='high'}" ng-click="sortProd('high')"
+    ' {{ "PRODUCTS_INDEX_SORT_HIGHEST_PRICE" | translate }}
+  a ng-class="{active:sortProd.class=='new'}" ng-click="sortProd('new')"
+    ' {{ "PRODUCTS_INDEX_SORT_NEWEST" | translate }}
