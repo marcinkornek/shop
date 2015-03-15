@@ -48,7 +48,7 @@ ProductShowCtrl = ($scope, $stateParams, $state, productColorData, $cookies, ord
     $scope.modalSize = 1
 
   $scope.resetSize = ->
-    $scope.formData.size_id = {}
+    $scope.formData.size_id = undefined
 
   $saveTotalPriceToCookies = ->
     total_price = $cookies.total_price || 0
@@ -67,6 +67,9 @@ ProductShowCtrl = ($scope, $stateParams, $state, productColorData, $cookies, ord
     if pr_sizes.length == 1
       size_id = pr_sizes[0].id
       $scope.chooseSize(size_id)
+
+  $scope.chooseSize = (size_id) ->
+    $scope.formData.size_id = size_id
 
   $scope.isCollapsed = $scope.isCollapsed2 = $scope.isCollapsed3 = true
 

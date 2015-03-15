@@ -1,7 +1,7 @@
 ModalSizeCtrl = ($scope) ->
 
   $scope.chooseSize = (size_id) ->
-    $scope.formData.size_id = size_id
+    $scope.sizeId = size_id
     $scope.closeModal() if $scope.modalSize
 
   $scope.closeModal = ->

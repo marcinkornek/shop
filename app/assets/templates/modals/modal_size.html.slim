@@ -5,5 +5,5 @@
       ' x
     p
       ' {{ "PRODUCT_SHOW_CHOOSE_SIZE" | translate }}
-    div ng-repeat="size in data.pr_det.product_sizes" class="size size-{{size.size}}" ng-class="{active: size.id == formData.size_id}" ng-click="chooseSize(size.id)"
+    div ng-repeat="size in sizes" class="size size-{{size.size}}" ng-class="{active: size.id == formData.size_id}" ng-click="chooseSize(size.id)"
       ' {{ size.size }}
