@@ -1,4 +1,4 @@
-ProductsIndexItemCtrl = ($scope, $stateParams, $state, productColorData, PaginationIndex) ->
+ProductsIndexItemCtrl = ($scope) ->
 
   $scope.hoverIn = ->
     @hoverEdit = true
@@ -7,4 +7,4 @@ ProductsIndexItemCtrl = ($scope, $stateParams, $state, productColorData, Paginat
     @hoverEdit = false
 
 angular.module("shop").controller "ProductsIndexItemCtrl", ProductsIndexItemCtrl
-ProductsIndexItemCtrl.$inject = ["$scope", "$stateParams", "$state", "productColorData", "PaginationIndex"]
+ProductsIndexItemCtrl.$inject = ["$scope"]
