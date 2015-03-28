@@ -49,3 +49,7 @@ ul[rn-carousel] {
   width: 300px;
   height: 300px;
 }
+
+* [*ngDialog*](https://github.com/likeastore/ngDialog) - Modals and popups provider for Angular
+
+* [*ui-utils*](http://angular-ui.github.io/ui-utils/) - plenty of tools for angular such as Keypress binding, Unique filter, Validate directive and much more

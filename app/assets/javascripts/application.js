@@ -12,6 +12,8 @@
 //= require angular-resource
 //= require angular-carousel
 //= require ngInfiniteScroll
+//= require ui-utils
+//= require ngDialog
 //
 //= require ./angular/init
 //= require ./angular/routes

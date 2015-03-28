@@ -42,6 +42,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-angular-cookies'
   gem 'rails-assets-angular-carousel'
   gem 'rails-assets-ngInfiniteScroll'
+  gem 'rails-assets-ui-utils'
+  gem 'rails-assets-ngDialog'
 end
 
 group :development, :test do

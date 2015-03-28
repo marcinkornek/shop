@@ -9,6 +9,7 @@ angular.module('shop', [
   'ngTouch',
   'angular-carousel',
   'infinite-scroll',
+  'ngDialog',
 ])
   .factory 'railsLocalesLoader', ($http) ->
     (options) ->
