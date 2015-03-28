@@ -1,4 +1,4 @@
-UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $http) ->
+UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $http, ngDialog) ->
 
   # temporary data
 
@@ -38,6 +38,14 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
     )
 
   # functions
+
+  $scope.clickToOpen = (id) ->
+    dialog = ngDialog.open
+      template: 'modals/modal_delete_confirmation.html'
+
+    dialog.closePromise.then((data) ->
+      $scope.destroyAddress(id) if data.value == 1
+    )
 
   $scope.editOrCreateAddress = (addressId) ->
     switch addressId
@@ -140,4 +148,4 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
         item.formatted_address
 
 angular.module("shop").controller "UserEditAddressCtrl", UserEditAddressCtrl
-UserEditAddressCtrl.$inject = ["$scope", "$stateParams", "$state", "userData", "addressData", "$http"]
+UserEditAddressCtrl.$inject = ["$scope", "$stateParams", "$state", "userData", "addressData", "$http", "ngDialog"]
