@@ -109,5 +109,5 @@ div ng-repeat="alert in alerts"
     button.btn.btn-default(style='width:100%;margin-top:10px;' ng-click="editOrCreateAddress(formData.address.id)")
       ' {{ "USER_EDIT_UPDATE" | translate }}
 
-    button.btn.btn-default(style='width:100%;margin-top:10px;' ng-show="formData.address.id" ng-click='clickToOpen(formData.address.id)')
+    button.btn.btn-default(style='width:100%;margin-top:10px;' ng-show="formData.address.id" ng-click='modalDeleteConfirmation(formData.address.id)')
       ' {{ "USER_EDIT_DELETE_ADDRESS" | translate }}

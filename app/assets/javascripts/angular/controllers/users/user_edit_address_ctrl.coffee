@@ -39,7 +39,7 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
 
   # functions
 
-  $scope.clickToOpen = (id) ->
+  $scope.modalDeleteConfirmation = (id) ->
     dialog = ngDialog.open
       template: 'modals/modal_delete_confirmation.html'
 
@@ -96,9 +96,6 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
     )
     $scope.formData.addresses.push(address)
     $scope.formData.addresses = _.sortBy($scope.formData.addresses, 'id')
-
-  $scope.openDeleteConfirmationModal = ->
-    $scope.deleteConfirmation = 1
 
   $scope.destroyAddress = (addressId) ->
     addressData.delete(id: addressId)
