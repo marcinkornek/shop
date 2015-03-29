@@ -1,4 +1,4 @@
-ProductShowCtrl = ($scope, $stateParams, $state, productColorData, $cookies, orderDetailData) ->
+ProductShowCtrl = ($scope, $stateParams, $state, productColorData, $cookies, orderDetailData, ngDialog) ->
 
   # loading data
 
@@ -42,10 +42,12 @@ ProductShowCtrl = ($scope, $stateParams, $state, productColorData, $cookies, ord
       $scope.formData.order.products = ps
       $scope.resetSize()
     else
-      $scope.showModal()
+      $scope.modalSetSize()
 
-  $scope.showModal = ->
-    $scope.modalSize = 1
+  $scope.modalSetSize = ->
+    dialog = ngDialog.open
+      template: 'modals/modal_size.html',
+      scope: $scope
 
   $scope.resetSize = ->
     $scope.formData.size_id = undefined
@@ -74,4 +76,4 @@ ProductShowCtrl = ($scope, $stateParams, $state, productColorData, $cookies, ord
   $scope.isCollapsed = $scope.isCollapsed2 = $scope.isCollapsed3 = true
 
 angular.module("shop").controller "ProductShowCtrl", ProductShowCtrl
-ProductShowCtrl.$inject = ["$scope", "$stateParams", "$state", "productColorData", "$cookies", "orderDetailData"]
+ProductShowCtrl.$inject = ["$scope", "$stateParams", "$state", "productColorData", "$cookies", "orderDetailData", "ngDialog"]

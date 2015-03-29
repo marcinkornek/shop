@@ -327,52 +327,25 @@ p.name {
   }
 }
 
-.modal-layout {
 
-  .modal-background {
-    z-index: 110;
-    position: fixed;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    background-color:rgba(255,255,255,0.6);
+.modal-layout {
+  padding: 10px;
+
+  p {
+    text-transform: uppercase;
   }
 
-  .modal-sizes {
-    position: relative;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: 30px;
-    margin-left: -150px;
-    width: 300px;
-    z-index: 120;
-    background: LightGray;
-    padding: 10px;
-
-    .modal-close {
-      position: absolute;
-      top: 0px;
-      right: 10px;
-    }
-
-    p {
-      text-transform: uppercase;
-    }
-
-    .size {
-      border: 1px solid transparent;
-      display: inline-block;
-      cursor: pointer;
-      text-align: center;
-      font-size: 14px;
-      padding:5px;
-      width: 35px;
-      margin: 2px;
-      &:hover, &.active {
-        border: 1px solid black;
-      }
+  .size {
+    border: 1px solid transparent;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    padding:5px;
+    width: 35px;
+    margin: 2px;
+    &:hover, &.active {
+      border: 1px solid black;
     }
   }
 }

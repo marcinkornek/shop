@@ -1,9 +1,5 @@
-.modal-layout ng-show="modalSize"
-  .modal-background ng-click="closeModal()"
-  .modal-sizes
-    .modal-close ng-click="closeModal()"
-      ' x
-    p
-      ' {{ "PRODUCT_SHOW_CHOOSE_SIZE" | translate }}
-    div ng-repeat="size in sizes" class="size size-{{size.size}}" ng-class="{active: size.id == formData.size_id}" ng-click="chooseSize(size.id)"
-      ' {{ size.size }}
+.modal-layout
+  p
+    ' {{ "PRODUCT_SHOW_CHOOSE_SIZE" | translate }}
+  div ng-repeat="size in data.pr_det.product_sizes" class="size size-{{size.size}}" ng-class="{active: size.id == formData.size_id}" ng-click="chooseSize(size.id);closeThisDialog(1)"
+    ' {{ size.size }}
