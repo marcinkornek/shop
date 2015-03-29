@@ -1,0 +1,29 @@
+.modal-layout
+
+  .modal-add-to-cart style="positon: relative"
+    .modal-product-image style="display: inline-block"
+      img ng-src="{{data.pr_det.product_images[0].url}}"
+
+    .modal-product-info ng-show="data.pr"
+      .product-name
+        ' {{ data.pr.name }}
+
+      .product-code
+        ' {{ data.pr_det.code }}
+
+      .product-price
+        ' {{ data.pr.price }}
+        ' {{ "CURRENCY" | translate }}
+
+      .product-colors ng-repeat="color in data.pr.product_colors" style="position:relative;"
+        img ng-src="{{ color.color_image.mini.url }}" ng-click="loadProduct(color.code)"
+          .color-check.fa.fa-check ng-show="color.code == data.code"
+      br
+
+      .product-sizes
+        div ng-repeat="size in data.pr_det.product_sizes" class="size size-{{size.size}}" ng-class="{active: size.id == formData.size_id}" ng-click="chooseSize(size.id)"
+          ' {{ size.size }}
+
+      .add-to-cart-button
+        a ng-click="addToCart()"
+          ' {{ "PRODUCT_SHOW_ADD_TO_CART" | translate }}

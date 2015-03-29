@@ -1,0 +1,47 @@
+.ngdialog.ngdialog-theme-default {
+  &.ngdialog-theme-width800 .ngdialog-content {
+    width: 800px;
+  }
+
+  &.ngdialog-theme-height410 .ngdialog-content {
+    height: 410px;
+  }
+}
+
+.modal-layout {
+  padding: 10px;
+
+  p {
+    text-transform: uppercase;
+  }
+
+  .size {
+    border: 1px solid transparent;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    padding:5px;
+    width: 35px;
+    margin: 2px;
+    &:hover, &.active {
+      border: 1px solid black;
+    }
+  }
+}
+
+.modal-product-image {
+  height: 400px;
+  width: 350px;
+  overflow: hidden;
+
+  img {
+    width: 800px;
+  }
+}
+
+.modal-product-info {
+  position: absolute;
+  right: 80px;
+  top: 80px;
+}

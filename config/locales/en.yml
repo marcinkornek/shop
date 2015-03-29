@@ -46,6 +46,7 @@ en:
 
   # PRODUCTS
 
+  "PRODUCTS_INDEX_ADD_TO_CART": "To cart"
   "PRODUCTS_INDEX_SORT": "Sort results"
   "PRODUCTS_INDEX_FILTER": "Filter"
   "PRODUCTS_INDEX_VIEW": "View"

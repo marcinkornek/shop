@@ -46,6 +46,7 @@ pl:
 
   # PRODUCTS
 
+  "PRODUCTS_INDEX_ADD_TO_CART": "Do koszyka"
   "PRODUCTS_INDEX_SORT": "Sortuj wyniki"
   "PRODUCTS_INDEX_FILTER": "Filtruj"
   "PRODUCTS_INDEX_VIEW": "Widok"

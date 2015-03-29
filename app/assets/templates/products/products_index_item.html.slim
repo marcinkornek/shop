@@ -6,10 +6,10 @@ div ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"
 
   .options.alpha60white ng-show="hoverEdit" class="animate-show"
     .colors.rn-carousel-indicator rn-carousel-index="products"
-      img ng-repeat="color in product.product_colors" ng-src="{{ color.color_image.mini.url }}" ng-click="$parent.products = $index; saveColor(color.code)" ng-class="{active: $index==$parent.products}"
+      img ng-repeat="color in product.product_colors" ng-src="{{ color.color_image.mini.url }}" ng-click="$parent.products = $index; saveColor(color.code); saveCode(color.code)" ng-class="{active: $index==$parent.products}"
 
-    .add-to-cart.alpha60black
-      ' to cart
+    .add-to-cart.alpha60black ng-click="modalAddToCart()"
+      ' {{ "PRODUCTS_INDEX_ADD_TO_CART" | translate }}
 
   .basic-info
     p.price

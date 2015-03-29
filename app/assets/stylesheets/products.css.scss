@@ -327,29 +327,6 @@ p.name {
   }
 }
 
-
-.modal-layout {
-  padding: 10px;
-
-  p {
-    text-transform: uppercase;
-  }
-
-  .size {
-    border: 1px solid transparent;
-    display: inline-block;
-    cursor: pointer;
-    text-align: center;
-    font-size: 14px;
-    padding:5px;
-    width: 35px;
-    margin: 2px;
-    &:hover, &.active {
-      border: 1px solid black;
-    }
-  }
-}
-
 .product-show {
   margin-left: 0px;
   margin-right: 0px;
