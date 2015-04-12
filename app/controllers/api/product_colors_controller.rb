@@ -1,7 +1,8 @@
 class Api::ProductColorsController < ApplicationController
 
   def index
-    all_products = products = Product.filter_prod_by_category(params[:main_category], params[:category_type], params[:category])
+    all_products = products = Product.includes(product_colors: :product_sizes, category: [category_type: :main_category])
+      .filter_prod_by_category(params[:main_category], params[:category_type], params[:category])
     filter = JSON.parse(params[:filter]) if params[:filter] != "{}"
     per_page = 4
     page = (params[:item].to_f/per_page).to_i + 1
@@ -17,10 +18,12 @@ class Api::ProductColorsController < ApplicationController
   end
 
   def show
-    pc = ProductColor.find_by(code: params[:id])
+    pc = ProductColor.includes(product: [category: [category_type: :main_category]])
+      .find_by(code: params[:id])
     pr_cat = pc.product.category
 
-    products = Product.joins(:category).where(categories: {id: pr_cat.id})
+    products = Product.includes(product_colors: :product_sizes, category: [category_type: :main_category])
+      .joins(:category).where(categories: {id: pr_cat.id})
     codes = products.map {|pr| pr.product_colors[0].code }
 
     pc_code = pc.product.product_colors[0].code

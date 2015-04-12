@@ -16,7 +16,7 @@ class Product < ActiveRecord::Base
     products = self.filter_colors(products, colors) if colors.present?
     products = self.filter_sizes(products, sizes) if sizes.present?
     products = self.filter_price(products, min, max) if min.present? || max.present?
-    products.distinct
+    products.distinct.includes(product_colors: :product_sizes, category: [category_type: :main_category])
   end
 
   def self.filter_prod_by_category(main_category, category_type, category = nil)
