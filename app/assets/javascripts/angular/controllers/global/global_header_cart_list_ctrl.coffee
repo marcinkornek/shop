@@ -25,7 +25,8 @@ GlobalHeaderCartListCtrl = ($scope, orderDetailData, $cookies, ngDialog) ->
     $scope.formData.order.products = _.filter($scope.formData.order.products, (item) ->
       (item.size_id isnt id)
     )
-    $scope.saveItemsToCookie($scope.formData.order.products)
+    items =_.pluck($scope.formData.order.products, 'size_id')
+    $scope.saveItemsToCookie(items)
     # save new values to cookie, refresh counter, total_price
 
   $scope.saveTotalPriceToCookies = (deletedItem) ->
