@@ -7,8 +7,9 @@ angular.module('shop').factory "PaginationIndex", (productColorData) ->
     @products = []
     @busy = false
 
+  # coffeelint: disable=max_line_length
   PaginationIndex::nextPage = (category, main_category, category_type, filter, sort, search_query) ->
-    # console.log 'filter-', filter, ', sort-', sort, ', busy-', @busy
+  # coffeelint: enable=max_line_length
     return if @busy
     @busy = true
     self = this

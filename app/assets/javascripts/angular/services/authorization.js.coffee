@@ -2,12 +2,15 @@
 # http://stackoverflow.com/a/22540482/3922041
 # ###
 
+# coffeelint: disable=max_line_length
 angular.module('shop').factory "authorization", [ "$rootScope", "$state", "principal", ($rootScope, $state, principal) ->
+# coffeelint: enable=max_line_length
   authorize: ->
+    isLoggedIn = @isLoggedIn
     principal.identity()
       .then ->
         isAuthenticated = principal.isAuthenticated()
-        if $rootScope.toState.data.roles && $rootScope.toState.data.roles.length > 0 && !principal.isInAnyRole($rootScope.toState.data.roles)
+        if isLoggedIn()
           if isAuthenticated # user is signed in but not authorized for desired state
             $state.go('home')
           else
@@ -19,4 +22,7 @@ angular.module('shop').factory "authorization", [ "$rootScope", "$state", "princ
             # now, send them to the signin state so they can log in
             $state.go "login"
 
+  isLoggedIn: ->
+    roles = $rootScope.toState.data.roles
+    !_.isEmpty(roles) && !principal.isInAnyRole(roles)
  ]

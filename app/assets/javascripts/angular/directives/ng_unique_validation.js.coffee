@@ -13,7 +13,8 @@ angular.module("shop").directive "ngUnique",[ "$http", ($http) ->
       # object = username/email
       key = attrs.ngUnique
 
-      # function uses 'underscore.js' function 'debounce' -> function inside debounce is invoked after time in parameter (in miliseconds)
+      # function uses 'underscore.js' function 'debounce' -> function inside debounce is invoked
+      # after time in parameter (in miliseconds)
 
       debouncedRequest = _.debounce((value) ->
         params = {}

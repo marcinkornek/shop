@@ -3,7 +3,7 @@ UserEditChangePasswordCtrl = ($scope, $state, userData) ->
   # functions
 
   $scope.changePassword = ->
-    if $scope.formData.password.old_password && $scope.formData.password.new_password && $scope.formData.password.new_password_confirmation && $scope.formData.password.new_password_confirmation == $scope.formData.password.new_password
+    if $scope.isFormValid()
       password = $scope.formData.password
       userData.change_password({}, password
       , (success) ->
@@ -13,6 +13,11 @@ UserEditChangePasswordCtrl = ($scope, $state, userData) ->
         console.log 'error'
         $scope.addAlert('danger', 'USER_EDIT_CHANGE_PASSWORD_ALERT_DANGER')
       )
+
+  $scope.isFormValid = ->
+    $scope.formData.password.old_password && $scope.formData.password.new_password \
+      && $scope.formData.password.new_password_confirmation \
+      && $scope.formData.password.new_password_confirmation == $scope.formData.password.new_password
 
   $scope.clearPasswordForm = ->
     $scope.formData.password.old_password = ''

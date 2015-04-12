@@ -12,5 +12,7 @@ ProductsIndexCtrl = ($scope, $stateParams, $state, productColorData, PaginationI
   $scope.loadProducts()
   $scope.formData = {}
 
+# coffeelint: disable=max_line_length
 angular.module("shop").controller "ProductsIndexCtrl", ProductsIndexCtrl
 ProductsIndexCtrl.$inject = ["$scope", "$stateParams", "$state", "productColorData", "PaginationIndex"]
+# coffeelint: enable=max_line_length

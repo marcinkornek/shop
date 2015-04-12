@@ -5,7 +5,7 @@ UserNewCtrl = ($scope, $state, userData, principal) ->
   $scope.principal = principal
 
   $scope.createUser = ->
-    if $scope.formData.first_name && $scope.formData.last_name && $scope.formData.email && $scope.formData.password && $scope.formData.password_confirmation
+    if $scope.isFormValid()
       userData.save({}, $scope.formData
       , (success) ->
         $state.go('login')
@@ -13,6 +13,10 @@ UserNewCtrl = ($scope, $state, userData, principal) ->
         console.log 'error'
         console.log error
       )
+
+  $scope.isFormValid = ->
+    $scope.formData.first_name && $scope.formData.last_name && $scope.formData.email \
+      && $scope.formData.password && $scope.formData.password_confirmation
 
   $scope.open = ($event) ->
     $event.preventDefault()

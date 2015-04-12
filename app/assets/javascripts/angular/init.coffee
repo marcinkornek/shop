@@ -54,7 +54,9 @@ angular.module("shop").config ($locationProvider) ->
 # http://stackoverflow.com/a/22540482/3922041
 # ###
 
+# coffeelint: disable=max_line_length
 angular.module('shop').run([ "$rootScope", "$state", "$stateParams", "authorization", "principal", ($rootScope, $state, $stateParams, authorization, principal) ->
+# coffeelint: enable=max_line_length
   $rootScope.$on "$stateChangeStart", (event, toState, toParams, fromState, fromParams) ->
     # console.log "toState.name: " + toState.name
     # console.log "fromState.name: " + fromState.name

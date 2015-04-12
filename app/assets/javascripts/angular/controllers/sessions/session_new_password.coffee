@@ -6,8 +6,7 @@ SessionNewPasswordCtrl = ($scope, $state, $stateParams, userData, $timeout) ->
 
   $scope.setNewPassword = ->
     $scope.formData.token = $stateParams.token
-    if $scope.formData.password && $scope.formData.password_confirmation && $scope.formData.password == $scope.formData.password_confirmation && $scope.formData.token
-      console.log $scope.formData
+    if $scope.isFormValid()
       userData.set_new_password({}, $scope.formData
       , (success) ->
         $scope.addAlert('success', 'PASSWORD_RESET_ALERT_SUCCESS')
@@ -19,6 +18,10 @@ SessionNewPasswordCtrl = ($scope, $state, $stateParams, userData, $timeout) ->
         console.log error
         $scope.addAlert('danger', 'PASSWORD_RESET_ALERT_DANGER')
       )
+
+  $scope.isFormValid = ->
+    $scope.formData.password && $scope.formData.password_confirmation && \
+      $scope.formData.password == $scope.formData.password_confirmation && $scope.formData.token
 
   $scope.alerts ||= []
 

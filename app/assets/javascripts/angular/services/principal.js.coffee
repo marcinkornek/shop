@@ -33,12 +33,14 @@ angular.module('shop').factory "principal", [ "$q", "$http", "$timeout", ($q, $h
     deferred = $q.defer()
     _identity = undefined  if force is true
 
-    # check and see if we have retrieved the identity data from the server. if we have, reuse it by immediately resolving
+    # check and see if we have retrieved the identity data from the server. if we have,
+    # reuse it by immediately resolving
     if angular.isDefined(_identity)
       deferred.resolve _identity
       return deferred.promise
 
-    # otherwise, retrieve the identity data from the server, update the identity object, and then resolve.
+    # otherwise, retrieve the identity data from the server, update the identity object,
+    # and then resolve.
     #                   $http.get('/svc/account/identity', { ignoreErrors: true })
     #                        .success(function(data) {
     #                            _identity = data;

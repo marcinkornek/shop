@@ -24,7 +24,13 @@ ProductsIndexSortCtrl = ($scope) ->
   $scope.clearProducts = ->
     $scope.pagination.products = []
     $scope.pagination.busy = false
-    $scope.pagination.nextPage($scope.data.category, $scope.data.main_category, $scope.data.category_type, $scope.formData, $scope.sort)
+    $scope.pagination.nextPage(
+      $scope.data.category,
+      $scope.data.main_category,
+      $scope.data.category_type,
+      $scope.formData,
+      $scope.sort
+    )
 
 angular.module("shop").controller "ProductsIndexSortCtrl", ProductsIndexSortCtrl
 ProductsIndexSortCtrl.$inject = ["$scope"]

@@ -56,7 +56,7 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
         $scope.editAddress(addressId)
 
   $scope.createAddress = ->
-    if $scope.formData.address.first_name && $scope.formData.address.last_name && $scope.formData.address.tel_num && $scope.formData.address.street && $scope.formData.address.house_num && $scope.formData.address.town && $scope.formData.address.postcode
+    if $scope.isFormValid()
       address = $scope.formData.address
       addressData.save({}, address
       , (success) ->
@@ -73,7 +73,7 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
       )
 
   $scope.editAddress = (addressId) ->
-    if $scope.formData.address.first_name && $scope.formData.address.last_name && $scope.formData.address.tel_num && $scope.formData.address.street && $scope.formData.address.house_num && $scope.formData.address.town && $scope.formData.address.postcode
+    if $scope.isFormValid()
       address = $scope.formData.address
       addressData.update({id: addressId}, address
       , (success) ->
@@ -87,6 +87,12 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
         console.log 'error'
         $scope.formData.user_error = error.data.error
       )
+
+  $scope.isFormValid = ->
+    $scope.formData.address.first_name && $scope.formData.address.last_name \
+      && $scope.formData.address.tel_num && $scope.formData.address.street \
+      && $scope.formData.address.house_num && $scope.formData.address.town \
+      && $scope.formData.address.postcode
 
   $scope.replaceAddress = (address) ->
     # console.log 'id', address
@@ -143,5 +149,7 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
       response.data.results.map (item) ->
         item.formatted_address
 
+# coffeelint: disable=max_line_length
 angular.module("shop").controller "UserEditAddressCtrl", UserEditAddressCtrl
 UserEditAddressCtrl.$inject = ["$scope", "$stateParams", "$state", "userData", "addressData", "$http", "ngDialog"]
+# coffeelint: enable=max_line_length

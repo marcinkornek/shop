@@ -1,4 +1,6 @@
+# coffeelint: disable=max_line_length
 GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies, sessionData, principal, orderDetailData) ->
+# coffeelint: enable=max_line_length
 
   # loading data 1/2
 
@@ -60,5 +62,7 @@ GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies, sessionD
 
   $scope.loadData()
 
+# coffeelint: disable=max_line_length
 angular.module("shop").controller "GlobalHeaderCtrl", GlobalHeaderCtrl
 GlobalHeaderCtrl.$inject = ["$scope", "$state", "$translate", "$stateParams", "$cookies", "sessionData", "principal", "orderDetailData"]
+# coffeelint: enable=max_line_length

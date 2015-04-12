@@ -55,7 +55,14 @@ ProductsSearchCtrl = ($scope, $stateParams, $state, PaginationSearch) ->
   $scope.clearProducts = ->
     $scope.pagination.products = []
     $scope.pagination.busy = false
-    $scope.pagination.nextPage($scope.data.category, $scope.data.main_category, $scope.data.category_type, $scope.formData, $scope.sort, $stateParams.searchQuery)
+    $scope.pagination.nextPage(
+      $scope.data.category,
+      $scope.data.main_category,
+      $scope.data.category_type,
+      $scope.formData,
+      $scope.sort,
+      $stateParams.searchQuery
+    )
 
 angular.module("shop").controller "ProductsSearchCtrl", ProductsSearchCtrl
 ProductsSearchCtrl.$inject = ["$scope", "$stateParams", "$state", "PaginationSearch"]

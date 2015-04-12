@@ -1,4 +1,6 @@
+# coffeelint: disable=max_line_length
 ProductShowCtrl = ($scope, $stateParams, $state, productColorData, $cookies, orderDetailData, ngDialog) ->
+# coffeelint: enable=max_line_length
 
   # loading data
 
@@ -69,5 +71,7 @@ ProductShowCtrl = ($scope, $stateParams, $state, productColorData, $cookies, ord
 
   $scope.isCollapsed = $scope.isCollapsed2 = $scope.isCollapsed3 = true
 
+# coffeelint: disable=max_line_length
 angular.module("shop").controller "ProductShowCtrl", ProductShowCtrl
 ProductShowCtrl.$inject = ["$scope", "$stateParams", "$state", "productColorData", "$cookies", "orderDetailData", "ngDialog"]
+# coffeelint: enable=max_line_length

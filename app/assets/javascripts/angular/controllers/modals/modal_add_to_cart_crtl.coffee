@@ -1,4 +1,6 @@
+# coffeelint: disable=max_line_length
 ModalAddToCartCtrl = ($scope, $stateParams, productColorData, $cookies, orderDetailData, ngDialog) ->
+# coffeelint: enable=max_line_length
 
   # loading data
 
@@ -70,5 +72,7 @@ ModalAddToCartCtrl = ($scope, $stateParams, productColorData, $cookies, orderDet
 
   $scope.isCollapsed = $scope.isCollapsed2 = $scope.isCollapsed3 = true
 
+# coffeelint: disable=max_line_length
 angular.module('shop').controller 'ModalAddToCartCtrl', ModalAddToCartCtrl
 ModalAddToCartCtrl.$inject = ['$scope', '$stateParams', 'productColorData', '$cookies', 'orderDetailData', 'ngDialog']
+# coffeelint: enable=max_line_length
