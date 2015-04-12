@@ -10,7 +10,7 @@ class Address < ActiveRecord::Base
   validates :last_name,               length: { in: 3..30 },
                                       format: { with: VALID_NAME_REGEX }
 
-  VALID_NUMBER_REGEX = /\d+/
+  VALID_NUMBER_REGEX = /\A\d+\z/
   validates :tel_num,                 length: { is: 9 },
                                       format: { with: VALID_NUMBER_REGEX }
 
