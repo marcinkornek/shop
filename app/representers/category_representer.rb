@@ -1,5 +1,5 @@
 module CategoryRepresenter
-  include Roar::Representer::JSON
+  include Roar::JSON
 
   property :name
 

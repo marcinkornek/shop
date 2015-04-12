@@ -1,5 +1,5 @@
 module CategoryTypeIndexRepresenter
-  include Roar::Representer::JSON
+  include Roar::JSON
 
   property :name
   property :main_category, extend: MainCategoryIndexRepresenter

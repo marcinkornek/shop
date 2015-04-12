@@ -1,5 +1,5 @@
 module ProductColorOrderRepresenter
-  include Roar::Representer::JSON
+  include Roar::JSON
 
   property :color
   property :images, as: :product_images

@@ -1,5 +1,5 @@
 module UserRepresenter
-  include Roar::Representer::JSON
+  include Roar::JSON
 
   property :id
   property :first_name

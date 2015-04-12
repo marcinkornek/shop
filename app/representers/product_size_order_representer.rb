@@ -1,5 +1,5 @@
 module ProductSizeOrderRepresenter
-  include Roar::Representer::JSON
+  include Roar::JSON
 
   property :id, as: :size_id
   property :size

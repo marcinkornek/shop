@@ -1,5 +1,5 @@
 module ProductOrderRepresenter
-  include Roar::Representer::JSON
+  include Roar::JSON
 
   property :name
   property :price

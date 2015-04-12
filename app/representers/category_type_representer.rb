@@ -1,5 +1,5 @@
 module CategoryTypeRepresenter
-  include Roar::Representer::JSON
+  include Roar::JSON
 
   property :name, as: :category_type
   collection :categories, extend: CategoryRepresenter

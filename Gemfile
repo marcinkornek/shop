@@ -6,11 +6,11 @@ gem 'pg'
 
 gem 'slim-rails'
 gem 'figaro'
-gem 'sorcery', '~> 0.8.6'
+gem 'sorcery'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'angular_rails_csrf'
-gem 'roar-rails', '~> 0.1.6' # representer - extends/fits json files
+gem 'roar-rails' # representer - extends/fits json files
 gem 'jquery-rails'
 gem 'carrierwave', :git => "git://github.com/carrierwaveuploader/carrierwave.git", :branch => "master"
 gem 'rmagick'
