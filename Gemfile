@@ -60,6 +60,7 @@ group :production do
 end
 
 group :development do
+  gem 'bullet'
   gem 'better_errors'
   gem "letter_opener"
 end
