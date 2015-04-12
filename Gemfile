@@ -50,7 +50,7 @@ group :development, :test do
   gem 'spring'
   gem 'pry-rails'
   gem 'quiet_assets'
-  gem 'rspec-rails', '~> 2.14.0.rc1'
+  gem 'rspec-rails'
   gem 'faker'
 end
 
