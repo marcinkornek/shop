@@ -1,18 +1,8 @@
-GIT
-  remote: git://github.com/carrierwaveuploader/carrierwave.git
-  revision: 56873b07105396e0f1cfdd5e38be930dc3dcd362
-  branch: master
-  specs:
-    carrierwave (0.10.0)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      json (>= 1.7)
-      mime-types (>= 1.16)
-
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
   specs:
+    CFPropertyList (2.3.1)
     actionmailer (4.2.1)
       actionpack (= 4.2.1)
       actionview (= 4.2.1)
@@ -48,14 +38,15 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.3.6)
+    addressable (2.3.8)
     angular_rails_csrf (1.0.3)
       rails (>= 3, < 5)
     arel (6.0.0)
-    autoprefixer-rails (4.0.2.1)
+    autoprefixer-rails (5.1.8.1)
       execjs
+      json
     bcrypt (3.1.10)
-    better_errors (2.1.0)
+    better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
@@ -66,21 +57,26 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
     coffee-rails-source-maps (1.4.0)
       coffee-script-source (>= 1.6.1)
-    coffee-script (2.3.0)
+    coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.8.0)
+    coffee-script-source (1.9.1)
     diff-lcs (1.2.5)
     diffy (3.0.7)
     erubis (2.7.0)
-    excon (0.42.1)
-    execjs (2.2.2)
+    excon (0.45.1)
+    execjs (2.5.2)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.5.0)
@@ -90,58 +86,113 @@ GEM
       i18n (~> 0.5)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
-    figaro (1.0.0)
+    figaro (1.1.0)
       thor (~> 0.14)
-    fog (1.24.0)
-      fog-brightbox
-      fog-core (~> 1.23)
+    fission (0.5.0)
+      CFPropertyList (~> 2.2)
+    fog (1.29.0)
+      fog-atmos
+      fog-aws (~> 0.0)
+      fog-brightbox (~> 0.4)
+      fog-core (~> 1.27, >= 1.27.4)
+      fog-ecloud
       fog-json
+      fog-local
+      fog-powerdns (>= 0.1.1)
+      fog-profitbricks
       fog-radosgw (>= 0.0.2)
+      fog-riakcs
       fog-sakuracloud (>= 0.0.4)
+      fog-serverlove
       fog-softlayer
+      fog-storm_on_demand
+      fog-terremark
+      fog-vmfusion
+      fog-voxel
+      fog-xml (~> 0.1.1)
       ipaddress (~> 0.5)
       nokogiri (~> 1.5, >= 1.5.11)
+    fog-atmos (0.1.0)
+      fog-core
+      fog-xml
+    fog-aws (0.1.2)
+      fog-core (~> 1.27)
+      fog-json (~> 1.0)
+      fog-xml (~> 0.1)
+      ipaddress (~> 0.8)
     fog-brightbox (0.7.1)
       fog-core (~> 1.22)
       fog-json
       inflecto (~> 0.0.2)
-    fog-core (1.27.1)
+    fog-core (1.30.0)
       builder
-      excon (~> 0.38)
+      excon (~> 0.45)
       formatador (~> 0.2)
       mime-types
       net-scp (~> 1.1)
       net-ssh (>= 2.1.3)
-    fog-json (1.0.0)
+    fog-ecloud (0.1.1)
+      fog-core
+      fog-xml
+    fog-json (1.0.1)
+      fog-core (~> 1.0)
       multi_json (~> 1.0)
-    fog-radosgw (0.0.3)
+    fog-local (0.2.1)
+      fog-core (~> 1.27)
+    fog-powerdns (0.1.1)
+      fog-core (~> 1.27)
+      fog-json (~> 1.0)
+      fog-xml (~> 0.1)
+    fog-profitbricks (0.0.2)
+      fog-core
+      fog-xml
+      nokogiri
+    fog-radosgw (0.0.4)
       fog-core (>= 1.21.0)
       fog-json
       fog-xml (>= 0.0.1)
-    fog-sakuracloud (0.1.1)
+    fog-riakcs (0.1.0)
       fog-core
       fog-json
-    fog-softlayer (0.3.25)
+      fog-xml
+    fog-sakuracloud (1.0.1)
       fog-core
       fog-json
-    fog-xml (0.1.1)
+    fog-serverlove (0.1.2)
+      fog-core
+      fog-json
+    fog-softlayer (0.4.5)
+      fog-core
+      fog-json
+    fog-storm_on_demand (0.1.1)
+      fog-core
+      fog-json
+    fog-terremark (0.1.0)
+      fog-core
+      fog-xml
+    fog-vmfusion (0.1.0)
+      fission
+      fog-core
+    fog-voxel (0.1.0)
+      fog-core
+      fog-xml
+    fog-xml (0.1.2)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
-    hashie (3.3.2)
+    hashie (3.4.1)
     hike (1.2.3)
-    httpauth (0.2.1)
     i18n (0.7.0)
     inflecto (0.0.2)
     ipaddress (0.8.0)
-    jquery-rails (3.1.2)
-      railties (>= 3.0, < 5.0)
+    jquery-rails (4.0.3)
+      rails-dom-testing (~> 1.0)
+      railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.2)
-    jwt (0.1.13)
-      multi_json (>= 1.5)
+    jwt (1.4.1)
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.3.0)
@@ -155,39 +206,42 @@ GEM
     mini_portile (0.6.2)
     minitest (5.5.1)
     multi_json (1.11.0)
+    multi_xml (0.5.5)
     multipart-post (2.0.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
-    net-ssh (2.9.1)
-    ngannotate-rails (0.14.1)
+    net-ssh (2.9.2)
+    ngannotate-rails (0.15.4)
       execjs
       rails (>= 3.1)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     oauth (0.4.7)
-    oauth2 (0.8.1)
-      faraday (~> 0.8)
-      httpauth (~> 0.1)
-      jwt (~> 0.1.4)
-      multi_json (~> 1.0)
+    oauth2 (1.0.0)
+      faraday (>= 0.8, < 0.10)
+      jwt (~> 1.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
       rack (~> 1.2)
     omniauth (1.2.2)
       hashie (>= 1.2, < 4)
       rack (~> 1.0)
-    omniauth-facebook (1.6.0)
-      omniauth-oauth2 (~> 1.1)
+    omniauth-facebook (2.0.1)
+      omniauth-oauth2 (~> 1.2)
     omniauth-google-oauth2 (0.2.6)
       omniauth (> 1.0)
       omniauth-oauth2 (~> 1.1)
-    omniauth-oauth2 (1.1.1)
-      oauth2 (~> 0.8.0)
-      omniauth (~> 1.0)
-    pg (0.17.1)
+    omniauth-oauth2 (1.2.0)
+      faraday (>= 0.8, < 0.10)
+      multi_json (~> 1.3)
+      oauth2 (~> 1.0)
+      omniauth (~> 1.2)
+    pg (0.18.1)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    pry-rails (0.3.2)
+    pry-rails (0.3.4)
       pry (>= 0.9.10)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
@@ -206,21 +260,21 @@ GEM
       railties (= 4.2.1)
       sprockets-rails
     rails-assets-Font-Awesome (4.3.0)
-    rails-assets-angular (1.2.28)
-    rails-assets-angular-animate (1.2.28)
-      rails-assets-angular (= 1.2.28)
-    rails-assets-angular-bootstrap (0.12.0)
-      rails-assets-angular (>= 1, < 1.3.0)
+    rails-assets-angular (1.3.9)
+    rails-assets-angular-animate (1.3.9)
+      rails-assets-angular (= 1.3.9)
+    rails-assets-angular-bootstrap (0.11.2)
+      rails-assets-angular (>= 1)
     rails-assets-angular-cache (2.3.7)
     rails-assets-angular-carousel (0.3.10)
       rails-assets-angular (>= 1.2.10)
       rails-assets-angular-touch (>= 1.2.10)
-    rails-assets-angular-cookies (1.2.28)
-      rails-assets-angular (= 1.2.28)
-    rails-assets-angular-resource (1.2.28)
-      rails-assets-angular (= 1.2.28)
-    rails-assets-angular-touch (1.2.28)
-      rails-assets-angular (= 1.2.28)
+    rails-assets-angular-cookies (1.3.9)
+      rails-assets-angular (= 1.3.9)
+    rails-assets-angular-resource (1.3.9)
+      rails-assets-angular (= 1.3.9)
+    rails-assets-angular-touch (1.3.9)
+      rails-assets-angular (= 1.3.9)
     rails-assets-angular-translate (2.6.1)
       rails-assets-angular (>= 1.2.26, <= 1.4)
     rails-assets-angular-ui-router (0.2.13)
@@ -246,7 +300,7 @@ GEM
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
-    rails_serve_static_assets (0.0.3)
+    rails_serve_static_assets (0.0.4)
     rails_stdout_logging (0.0.3)
     railties (4.2.1)
       actionpack (= 4.2.1)
@@ -260,7 +314,7 @@ GEM
       uber (~> 0.0.7)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
-    rmagick (2.13.2)
+    rmagick (2.14.0)
     roar (1.0.1)
       representable (>= 2.0.1, <= 3.0.0)
     roar-rails (1.0.1)
@@ -287,8 +341,8 @@ GEM
       rspec-mocks (~> 3.2.0)
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
-    sass (3.4.9)
-    sass-rails (5.0.0)
+    sass (3.4.13)
+    sass-rails (5.0.3)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.1)
       sprockets (>= 2.8, < 4.0)
@@ -308,7 +362,7 @@ GEM
       bcrypt (~> 3.1)
       oauth (~> 0.4, >= 0.4.4)
       oauth2 (>= 0.8.0)
-    spring (1.2.0)
+    spring (1.3.4)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -328,7 +382,7 @@ GEM
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uber (0.0.13)
-    uglifier (2.6.0)
+    uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     will_paginate (3.0.7)
@@ -343,7 +397,7 @@ DEPENDENCIES
   autoprefixer-rails
   better_errors
   capybara
-  carrierwave!
+  carrierwave
   coffee-rails
   coffee-rails-source-maps
   execjs
@@ -361,7 +415,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.2.1)
   rails-assets-Font-Awesome!
-  rails-assets-angular!
+  rails-assets-angular (= 1.3.9)!
   rails-assets-angular-animate!
   rails-assets-angular-bootstrap!
   rails-assets-angular-cache (~> 2.3.4)!

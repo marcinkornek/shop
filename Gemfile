@@ -29,7 +29,7 @@ gem 'will_paginate'
 # assets
 source 'https://rails-assets.org' do
   gem 'rails-assets-lodash'
-  gem 'rails-assets-angular'
+  gem 'rails-assets-angular', '1.3.9'
   gem 'rails-assets-angular-cache', '~> 2.3.4'
   gem 'rails-assets-angular-ui-router'
   gem 'rails-assets-angular-resource'
