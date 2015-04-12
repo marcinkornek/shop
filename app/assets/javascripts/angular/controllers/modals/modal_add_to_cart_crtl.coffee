@@ -1,4 +1,4 @@
-ModalAddToCartCtrl = ($scope, $stateParams, $state, productColorData, $cookies, orderDetailData, ngDialog) ->
+ModalAddToCartCtrl = ($scope, $stateParams, productColorData, $cookies, orderDetailData, ngDialog) ->
 
   # loading data
 
@@ -13,15 +13,15 @@ ModalAddToCartCtrl = ($scope, $stateParams, $state, productColorData, $cookies, 
     $scope.data.category_type = category_type = $stateParams.category_type
     $scope.data.code = code = productCode || $scope.$parent.data.current_code
     productColorData.get({code: code}
-      , (product) ->
-        $scope.data.pr_det = product.pr_det
-        $scope.data.pr = product.pr
-        $scope.data.items = product
-        $scope.setSizeIfOne()
-      , (error) ->
-        console.log 'error'
-        console.log error.status
-        $scope.formData.error = 'There is no such product'
+    , (product) ->
+      $scope.data.pr_det = product.pr_det
+      $scope.data.pr = product.pr
+      $scope.data.items = product
+      $scope.setSizeIfOne()
+    , (error) ->
+      console.log 'error'
+      console.log error.status
+      $scope.formData.error = 'There is no such product'
     )
 
   $scope.loadProduct()
@@ -70,5 +70,5 @@ ModalAddToCartCtrl = ($scope, $stateParams, $state, productColorData, $cookies, 
 
   $scope.isCollapsed = $scope.isCollapsed2 = $scope.isCollapsed3 = true
 
-angular.module("shop").controller "ModalAddToCartCtrl", ModalAddToCartCtrl
-ModalAddToCartCtrl.$inject = ["$scope", "$stateParams", "$state", "productColorData", "$cookies", "orderDetailData", "ngDialog"]
+angular.module('shop').controller 'ModalAddToCartCtrl', ModalAddToCartCtrl
+ModalAddToCartCtrl.$inject = ['$scope', '$stateParams', 'productColorData', '$cookies', 'orderDetailData', 'ngDialog']

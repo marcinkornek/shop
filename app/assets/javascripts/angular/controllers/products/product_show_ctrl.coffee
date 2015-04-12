@@ -13,15 +13,15 @@ ProductShowCtrl = ($scope, $stateParams, $state, productColorData, $cookies, ord
     $scope.data.category_type = category_type = $stateParams.category_type
     $scope.data.code = code = $stateParams.code
     productColorData.get({code: code}
-      , (product) ->
-        $scope.data.pr_det = product.pr_det
-        $scope.data.pr = product.pr
-        $scope.data.items = product
-        $scope.setSizeIfOne()
-      , (error) ->
-        console.log 'error'
-        console.log error.status
-        $scope.formData.error = 'There is no such product'
+    , (product) ->
+      $scope.data.pr_det = product.pr_det
+      $scope.data.pr = product.pr
+      $scope.data.items = product
+      $scope.setSizeIfOne()
+    , (error) ->
+      console.log 'error'
+      console.log error.status
+      $scope.formData.error = 'There is no such product'
     )
 
   $scope.loadProduct()

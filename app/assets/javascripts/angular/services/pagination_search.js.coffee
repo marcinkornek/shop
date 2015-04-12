@@ -13,7 +13,13 @@ angular.module('shop').factory "PaginationSearch", (productColorData) ->
     @busy = true
     self = this
 
-    items = productColorData.search({item: @products.length, search_query: search_query, filter: filter, sort: sort}
+    items = productColorData.search(
+      {
+        item: @products.length,
+        search_query: search_query,
+        filter: filter,
+        sort: sort
+      }
       , (data) ->
         product = data.products
         i = 0

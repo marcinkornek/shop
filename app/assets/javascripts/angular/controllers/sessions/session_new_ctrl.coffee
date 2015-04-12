@@ -7,20 +7,17 @@ SessionNewCtrl = ($scope, $state, sessionData, principal) ->
   $scope.createSession = ->
     if $scope.formData.email && $scope.formData.password
       sessionData.save({}, $scope.formData
-        , (success) ->
-          console.log 'success'
-          console.log success.user
-          window.currentUser = success.user
-          console.log 'role = ', success.user.role
-          principal.authenticate(success.user.role)
-          # friendly forwarding
-          if ($scope.returnToState)
-            $state.go($scope.returnToState.name, $scope.returnToStateParams)
-          else
-            $state.go('home')
-        , (error) ->
-          console.log 'error'
-          $scope.addAlert('danger', error.data.error) if error.data
+      , (success) ->
+        window.currentUser = success.user
+        principal.authenticate(success.user.role)
+        # friendly forwarding
+        if ($scope.returnToState)
+          $state.go($scope.returnToState.name, $scope.returnToStateParams)
+        else
+          $state.go('home')
+      , (error) ->
+        console.log 'error'
+        $scope.addAlert('danger', error.data.error) if error.data
       )
 
   $scope.alerts ||= []

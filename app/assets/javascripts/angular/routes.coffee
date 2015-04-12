@@ -1,5 +1,6 @@
+# coffeelint: disable=max_line_length
 angular.module('shop').config ($stateProvider, $urlRouterProvider) ->
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/')
 
   $stateProvider
     .state('home', {

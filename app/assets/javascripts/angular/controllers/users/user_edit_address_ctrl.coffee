@@ -21,20 +21,19 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
     # console.log 'loadAddress'
     $scope.closeAlert()
     addressData.get({id: AddressId}
-      , (address) ->
-        # console.log address
-        $scope.formData.address.id = address.id
-        $scope.formData.address.first_name = address.first_name
-        $scope.formData.address.last_name = address.last_name
-        $scope.formData.address.tel_num = address.tel_num
-        $scope.formData.address.street = address.street
-        $scope.formData.address.house_num = address.house_num
-        $scope.formData.address.town = address.town
-        $scope.formData.address.postcode = address.postcode
-      , (error) ->
-        console.log 'error'
-        console.log error.status
-        $scope.formData.error = 'There is no such address'
+    , (address) ->
+      $scope.formData.address.id = address.id
+      $scope.formData.address.first_name = address.first_name
+      $scope.formData.address.last_name = address.last_name
+      $scope.formData.address.tel_num = address.tel_num
+      $scope.formData.address.street = address.street
+      $scope.formData.address.house_num = address.house_num
+      $scope.formData.address.town = address.town
+      $scope.formData.address.postcode = address.postcode
+    , (error) ->
+      console.log 'error'
+      console.log error.status
+      $scope.formData.error = 'There is no such address'
     )
 
   # functions
@@ -60,33 +59,33 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
     if $scope.formData.address.first_name && $scope.formData.address.last_name && $scope.formData.address.tel_num && $scope.formData.address.street && $scope.formData.address.house_num && $scope.formData.address.town && $scope.formData.address.postcode
       address = $scope.formData.address
       addressData.save({}, address
-        , (success) =>
-          $scope.editOrCreateAddressForm.$setPristine()
-          $scope.editOrCreateAddressForm.$setUntouched()
-          $scope.addAlert('success', 'USER_EDIT_ADDRESS_ALERT_SUCCESS_ADD')
-          $scope.formData.addresses.push(success)
-          $scope.changeAddressesNumber('+')
-          $scope.loadAddress(success.id)
-          $scope.checked = success.id
-        , (error) ->
-          console.log 'error'
-          $scope.formData.user_error = error.data.error
+      , (success) ->
+        $scope.editOrCreateAddressForm.$setPristine()
+        $scope.editOrCreateAddressForm.$setUntouched()
+        $scope.addAlert('success', 'USER_EDIT_ADDRESS_ALERT_SUCCESS_ADD')
+        $scope.formData.addresses.push(success)
+        $scope.changeAddressesNumber('+')
+        $scope.loadAddress(success.id)
+        $scope.checked = success.id
+      , (error) ->
+        console.log 'error'
+        $scope.formData.user_error = error.data.error
       )
 
   $scope.editAddress = (addressId) ->
     if $scope.formData.address.first_name && $scope.formData.address.last_name && $scope.formData.address.tel_num && $scope.formData.address.street && $scope.formData.address.house_num && $scope.formData.address.town && $scope.formData.address.postcode
       address = $scope.formData.address
       addressData.update({id: addressId}, address
-        , (success) =>
-          $scope.editOrCreateAddressForm.$setPristine()
-          $scope.editOrCreateAddressForm.$setUntouched()
-          $scope.replaceAddress(success)
-          $scope.loadAddress(success.id)
-          $scope.addAlert('success', 'USER_EDIT_ADDRESS_ALERT_SUCCESS_EDIT')
-          $scope.checked = success.id
-        , (error) ->
-          console.log 'error'
-          $scope.formData.user_error = error.data.error
+      , (success) ->
+        $scope.editOrCreateAddressForm.$setPristine()
+        $scope.editOrCreateAddressForm.$setUntouched()
+        $scope.replaceAddress(success)
+        $scope.loadAddress(success.id)
+        $scope.addAlert('success', 'USER_EDIT_ADDRESS_ALERT_SUCCESS_EDIT')
+        $scope.checked = success.id
+      , (error) ->
+        console.log 'error'
+        $scope.formData.user_error = error.data.error
       )
 
   $scope.replaceAddress = (address) ->

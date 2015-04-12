@@ -13,7 +13,15 @@ angular.module('shop').factory "PaginationIndex", (productColorData) ->
     @busy = true
     self = this
 
-    items = productColorData.query({item: @products.length, category: category, main_category: main_category, category_type: category_type, filter: filter, sort: sort}
+    items = productColorData.query(
+      {
+        item: @products.length,
+        category: category,
+        main_category: main_category,
+        category_type: category_type,
+        filter: filter,
+        sort: sort
+      }
       , (data) ->
         product = data.products
 

@@ -6,14 +6,14 @@ UserEditDataCtrl = ($scope, $stateParams, $state, userData, addressData, $http) 
     if $scope.formData.email && $scope.formData.first_name && $scope.formData.last_name
       user = $scope.formData
       userData.update({id: userId}, user
-        , (success) =>
-          $scope.editUserForm.$setPristine()
-          $scope.editUserForm.$setUntouched()
-          $scope.addAlert('success')
-          window.currentUser.first_name = success.first_name
-        , (error) ->
-          console.log 'error'
-          $scope.formData.user_error = error.data.error
+      , (success) ->
+        $scope.editUserForm.$setPristine()
+        $scope.editUserForm.$setUntouched()
+        $scope.addAlert('success')
+        window.currentUser.first_name = success.first_name
+      , (error) ->
+        console.log 'error'
+        $scope.formData.user_error = error.data.error
       )
 
   # datepicker

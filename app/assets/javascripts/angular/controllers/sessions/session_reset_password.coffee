@@ -7,16 +7,14 @@ SessionResetPasswordCtrl = ($scope, $state, userData, $timeout) ->
   $scope.resetPassword = ->
     if $scope.formData.email
       userData.reset_password({}, $scope.formData
-        , (success) ->
-          # console.log 'success'
-          # console.log success
-          $scope.addAlert('success', { message: 'PASSWORD_RESET_EMAIL_ALERT_SUCCESS' })
-          $timeout (->
-            $state.go('login')
-          ), 3000
-        , (error) ->
-          console.log 'error'
-          $scope.addAlert('danger', error.data.error) if error.data.error
+      , (success) ->
+        $scope.addAlert('success', { message: 'PASSWORD_RESET_EMAIL_ALERT_SUCCESS' })
+        $timeout (->
+          $state.go('login')
+        ), 3000
+      , (error) ->
+        console.log 'error'
+        $scope.addAlert('danger', error.data.error) if error.data.error
       )
 
   $scope.alerts ||= []
