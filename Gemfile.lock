@@ -1,3 +1,14 @@
+GIT
+  remote: git://github.com/carrierwaveuploader/carrierwave.git
+  revision: 12ec8017360a3a20696f6ec9e807a971e00d04c1
+  branch: master
+  specs:
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -57,11 +68,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    carrierwave (0.10.0)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      json (>= 1.7)
-      mime-types (>= 1.16)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -397,7 +403,7 @@ DEPENDENCIES
   autoprefixer-rails
   better_errors
   capybara
-  carrierwave
+  carrierwave!
   coffee-rails
   coffee-rails-source-maps
   execjs

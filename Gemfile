@@ -12,6 +12,7 @@ gem 'omniauth-facebook'
 gem 'angular_rails_csrf'
 gem 'roar-rails' # representer - extends/fits json files
 gem 'jquery-rails'
+# use 'carrierwave' 'master' branch to use 'mount_uploaders' - new feature currently only on this branch
 gem 'carrierwave', :git => "git://github.com/carrierwaveuploader/carrierwave.git", :branch => "master"
 gem 'rmagick'
 gem 'fog' # Ruby cloud services library
