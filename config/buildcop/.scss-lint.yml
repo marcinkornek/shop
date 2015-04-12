@@ -1,0 +1,7 @@
+# This is the main configuration file for SCSS-Lint
+# More on configuring SCSS-Lint: https://github.com/causes/scss-lint#configuration
+# Available linters: https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md
+
+linters:
+  UrlQuotes:
+    enabled: true

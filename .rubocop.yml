@@ -1,0 +1,9 @@
+# This is the main configuration file for RuboCop
+# More on configuring RuboCop: https://github.com/bbatsov/rubocop#configuration
+# Cops: http://www.rubydoc.info/github/bbatsov/rubocop/master/Rubocop/Cop/Cop, section 'Direct Known Subclasses' (or run rubocop --show-cops)
+
+Metrics/LineLength:
+  Enabled: false
+
+Lint/ParenthesesAsGroupedExpression:
+  Enabled: false

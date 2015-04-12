@@ -69,3 +69,14 @@ group :test do
   gem 'capybara'
   gem 'factory_girl_rails'
 end
+
+# code-analyzing tools
+gem 'rubocop',            require: false
+gem 'brakeman',           require: false
+gem 'coffeelint',         require: false
+gem 'scss-lint',          require: false
+gem 'jslint-v8',          require: false
+gem 'flay',               require: false
+gem 'simplecov',          require: false
+gem 'simplecov-console',  require: false
+gem 'simplecov-json',     require: false
