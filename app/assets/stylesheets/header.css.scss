@@ -197,13 +197,24 @@ input {
   padding-top: 10px;
   padding-bottom: 10px;
   .cart-list-item-header {
+    position: relative;
     display: block;
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 30px;
     padding-bottom: 10px;
   }
   .cart-list-item-header:last-child {
     padding-bottom: 0px;
+  }
+}
+
+.cart-list-header-remove-item {
+  position: absolute;
+  right: 15px;
+  top: 8px;
+
+  &:hover {
+    color: red;
   }
 }
 

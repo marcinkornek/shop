@@ -1,0 +1,26 @@
+li.cart
+  a
+    i.fa.fa-shopping-cart
+    .cart-items-header ng-show="formData.order.car_items_number"
+      .total-price-header
+        ' {{ formData.order.total_price }}
+        ' {{ "CURRENCY" | translate }}
+      .cart-count-header
+        ' {{ formData.order.car_items_number }}
+      .cart-list-header
+        .cart-list-item-header ng-repeat="product in formData.order.products"
+          .cart-list-image-header
+            img ng-src="{{product.product_color.product_images[0].thumb.url}}"
+          ' {{ "HEADER_ORDER_NAME" | translate }}:
+          ' {{ product.product_color.product.name }},
+          ' {{ "HEADER_ORDER_PRICE" | translate }}:
+          ' {{ product.product_color.product.price }}
+          ' {{ "CURRENCY" | translate }},
+          ' {{ "HEADER_ORDER_SIZE" | translate }}:
+          ' {{ product.size }},
+          ' {{ "HEADER_ORDER_COLOR" | translate }}:
+          ' {{ product.product_color.color }},
+          ' {{ "HEADER_ORDER_AMOUNT" | translate }}:
+          ' {{ product.amount }}
+          .cart-list-header-remove-item ng-click="modalDeleteConfirmation(product.size_id)"
+            ' x

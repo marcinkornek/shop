@@ -36,14 +36,6 @@ GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies, sessionD
       $state.go('home', {}, {reload: true})
     )
 
-  $scope.loadCartItemsFromCookie = ->
-    $scope.formData.order.car_items_number = orderDetailData.loadCartItemsCountFromCookie()
-    $scope.formData.order.total_price = orderDetailData.loadCartItemsTotalPriceFromCookie()
-    $scope.formData.order.products = orderDetailData.loadCartItemsFromServer()
-
-  $scope.loadCartItemsFromCookie()
-
-
   # language
 
   $scope.setLanguage = ->
