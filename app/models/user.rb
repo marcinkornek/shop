@@ -25,13 +25,13 @@ class User < ActiveRecord::Base
                                       format: { with: VALID_NUMBER_REGEX }
 
   def self.find_for_oauth(auth)
-    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    user = User.where(provider: auth.provider, uid: auth.uid).first
     if user
       p '--------- already registered with oauth -----------'
       return user
     else
       p '--------- already registered -----------'
-      registered_user = User.where(:email => auth.info.email).first
+      registered_user = User.where(email: auth.info.email).first
       if registered_user
         return registered_user
       else

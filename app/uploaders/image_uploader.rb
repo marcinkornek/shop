@@ -32,15 +32,15 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Process files as they are uploaded:
   # process :scale => [200, 300]
   version :normal do
-    process :resize_to_fill => [240, 240, gravity=::Magick::WestGravity]
+    process resize_to_fill: [240, 240, gravity=::Magick::WestGravity]
   end
 
   version :thumb do
-    process :resize_to_fill => [100, 100, gravity=::Magick::WestGravity]
+    process resize_to_fill: [100, 100, gravity=::Magick::WestGravity]
   end
 
   version :mini do
-    process :resize_to_fill => [20, 20, gravity=::Magick::WestGravity]
+    process resize_to_fill: [20, 20, gravity=::Magick::WestGravity]
   end
   #
   # def scale(width, height)
