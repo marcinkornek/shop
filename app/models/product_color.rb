@@ -12,7 +12,7 @@ class ProductColor < ActiveRecord::Base
   before_save { color.downcase! }
   before_save :add_code
 
-  validates :code,            uniqueness: { case_sensitive: false }
+  validates :code,            uniqueness: {case_sensitive: false}
   validates :color,           presence: true
   validates :image,           presence: true
   validates :images,          presence: true

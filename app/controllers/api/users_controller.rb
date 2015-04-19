@@ -76,7 +76,7 @@ class Api::UsersController < ApplicationController
       @user.deliver_reset_password_instructions! if @user
       render json: {}
     elsif @user && @user.provider
-      render json: {error: {message: "REGISTER_WITH_OMNIAUTH_DANGER", variable: @user.provider} }, status: :not_acceptable
+      render json: {error: {message: "REGISTER_WITH_OMNIAUTH_DANGER", variable: @user.provider}}, status: :not_acceptable
     else
       render json: {}
     end
@@ -96,7 +96,7 @@ class Api::UsersController < ApplicationController
         render json: @user
       end
     else
-      render json: { error: { message: 'PASSWORD_RESET_ALERT_DANGER'} }, status: :not_acceptable
+      render json: {error: {message: 'PASSWORD_RESET_ALERT_DANGER'}}, status: :not_acceptable
     end
   end
 

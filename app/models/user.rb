@@ -6,23 +6,23 @@ class User < ActiveRecord::Base
 
   authenticates_with_sorcery!
 
-  validates :password,                length: { minimum: 6 }, if: lambda { new_record? || !password.nil? }
+  validates :password,                length: {minimum: 6}, if: lambda { new_record? || !password.nil? }
   validates :password,                confirmation: true
   validates :password_confirmation,   presence: true, if: lambda { new_record? || !password.nil? }
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-zA-Z\d\-]+(?:\.[a-zA-Z\d\-]+)*\.[a-zA-Z]+\z/i
-  validates :email,                   uniqueness: { case_sensitive: false },
-                                      format: { with: VALID_EMAIL_REGEX }
+  validates :email,                   uniqueness: {case_sensitive: false},
+                                      format: {with: VALID_EMAIL_REGEX}
 
   VALID_NAME_REGEX = /\A[a-zA-ZàáâäãåąčćśęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+\z/u
-  validates :first_name,              length: { in: 3..30 },
-                                      format: { with: VALID_NAME_REGEX }
-  validates :last_name,               length: { in: 3..30 },
-                                      format: { with: VALID_NAME_REGEX }
+  validates :first_name,              length: {in: 3..30},
+                                      format: {with: VALID_NAME_REGEX}
+  validates :last_name,               length: {in: 3..30},
+                                      format: {with: VALID_NAME_REGEX}
 
   VALID_NUMBER_REGEX = /\A\d+\z/
-  validates :tel_num,                 length: { is: 9 }, allow_blank: true,
-                                      format: { with: VALID_NUMBER_REGEX }
+  validates :tel_num,                 length: {is: 9}, allow_blank: true,
+                                      format: {with: VALID_NUMBER_REGEX}
 
   def self.find_for_oauth(auth)
     user = User.where(provider: auth.provider, uid: auth.uid).first
