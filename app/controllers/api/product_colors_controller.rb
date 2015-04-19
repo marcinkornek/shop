@@ -27,7 +27,7 @@ class Api::ProductColorsController < ApplicationController
     products = Product
       .includes(product_colors: :product_sizes, category: [category_type: :main_category])
       .joins(:category).where(categories: {id: pr_cat.id})
-    codes = products.map {|pr| pr.product_colors[0].code }
+    codes = products.map { |pr| pr.product_colors[0].code }
 
     pc_code = pc.product.product_colors[0].code
 

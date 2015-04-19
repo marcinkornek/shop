@@ -14,7 +14,7 @@ describe ProductColor do
 
   describe "when color" do
     context "is not present" do
-      before { @product_col.color = ''}
+      before { @product_col.color = '' }
       it { expect(@product_col).not_to be_valid }
     end
   end

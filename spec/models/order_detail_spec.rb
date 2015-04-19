@@ -14,15 +14,15 @@ describe OrderDetail do
 
   describe "when price" do
     context "is not present" do
-      before { @order_detail.price = ''}
+      before { @order_detail.price = '' }
       it { expect(@order_detail).not_to be_valid }
     end
     context "is smaller than 0" do
-      before { @order_detail.price = -1}
+      before { @order_detail.price = -1 }
       it { expect(@order_detail).not_to be_valid }
     end
     context "is greater than 0" do
-      before { @order_detail.price = 1}
+      before { @order_detail.price = 1 }
       it { expect(@order_detail).to be_valid }
     end
   end
@@ -30,15 +30,15 @@ describe OrderDetail do
 
   describe "when amount" do
     context "is not present" do
-      before { @order_detail.amount = ''}
+      before { @order_detail.amount = '' }
       it { expect(@order_detail).not_to be_valid }
     end
     context "is smaller than 0" do
-      before { @order_detail.amount = -1}
+      before { @order_detail.amount = -1 }
       it { expect(@order_detail).not_to be_valid }
     end
     context "is greater than 0" do
-      before { @order_detail.amount = 1}
+      before { @order_detail.amount = 1 }
       it { expect(@order_detail).to be_valid }
     end
   end
@@ -46,7 +46,7 @@ describe OrderDetail do
 
   describe "when order" do
     context "is not present" do
-      before { @order_detail.order = nil}
+      before { @order_detail.order = nil }
       it { expect(@order_detail).not_to be_valid }
     end
   end
@@ -54,7 +54,7 @@ describe OrderDetail do
 
   describe "when product_size" do
     context "is not present" do
-      before { @order_detail.product_size = nil}
+      before { @order_detail.product_size = nil }
       it { expect(@order_detail).not_to be_valid }
     end
   end

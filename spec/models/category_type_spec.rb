@@ -13,7 +13,7 @@ describe CategoryType do
 
   describe "when name" do
     context "is not present" do
-      before { @category_type.name = ''}
+      before { @category_type.name = '' }
       it { expect(@category_type).not_to be_valid }
     end
   end

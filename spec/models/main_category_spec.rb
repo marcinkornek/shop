@@ -12,7 +12,7 @@ describe MainCategory do
 
   describe "when name" do
     context "is not present" do
-      before { @main_category.name = ''}
+      before { @main_category.name = '' }
       it { expect(@main_category).not_to be_valid }
     end
   end

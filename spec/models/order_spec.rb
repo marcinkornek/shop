@@ -13,29 +13,29 @@ describe Order do
 
   describe "when total_price" do
     context "is not present" do
-      before { @order.total_price = ''}
+      before { @order.total_price = '' }
       it { expect(@order).not_to be_valid }
     end
     context "is smaller than 0" do
-      before { @order.total_price = -1}
+      before { @order.total_price = -1 }
       it { expect(@order).not_to be_valid }
     end
     context "is greater than 0" do
-      before { @order.total_price = 1}
+      before { @order.total_price = 1 }
       it { expect(@order).to be_valid }
     end
   end
 
   describe "when state" do
     context "is not present" do
-      before { @order.state = ''}
+      before { @order.state = '' }
       it { expect(@order).not_to be_valid }
     end
   end
 
   describe "when user" do
     context "is not present" do
-      before { @order.user = nil}
+      before { @order.user = nil }
       it { expect(@order).not_to be_valid }
     end
   end

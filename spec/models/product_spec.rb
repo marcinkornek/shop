@@ -15,7 +15,7 @@ describe Product do
 
   describe "when name" do
     context "is not present" do
-      before { @product.name = ''}
+      before { @product.name = '' }
       it { expect(@product).not_to be_valid }
     end
   end
@@ -23,7 +23,7 @@ describe Product do
 
   describe "when composition" do
     context "is not present" do
-      before { @product.composition = ''}
+      before { @product.composition = '' }
       it { expect(@product).not_to be_valid }
     end
   end
@@ -31,23 +31,23 @@ describe Product do
 
   describe "when price" do
     context "is not present" do
-      before { @product.price = ''}
+      before { @product.price = '' }
       it { expect(@product).not_to be_valid }
     end
     context "is not a number" do
-      before { @product.price = 'aa'}
+      before { @product.price = 'aa' }
       it { expect(@product).not_to be_valid }
     end
     context "is smaller than 0" do
-      before { @product.price = -1}
+      before { @product.price = -1 }
       it { expect(@product).not_to be_valid }
     end
     context "is 0" do
-      before { @product.price = 0}
+      before { @product.price = 0 }
       it { expect(@product).not_to be_valid }
     end
     context "is greater than 0" do
-      before { @product.price = 11}
+      before { @product.price = 11 }
       it { expect(@product).to be_valid }
     end
   end
@@ -55,7 +55,7 @@ describe Product do
 
   describe "when category" do
     context "is not present" do
-      before { @product.category = nil}
+      before { @product.category = nil }
       it { expect(@product).not_to be_valid }
     end
   end

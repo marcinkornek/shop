@@ -20,7 +20,7 @@ describe User do
 
   describe "when email" do
     context "is not present" do
-      before { @user.email = ''}
+      before { @user.email = '' }
       it { expect(@user).not_to be_valid }
     end
 
@@ -67,7 +67,7 @@ describe User do
 
   describe "when first_name" do
     context "is not present" do
-      before { @user.first_name = ''}
+      before { @user.first_name = '' }
       it { expect(@user).not_to be_valid }
     end
 
@@ -114,7 +114,7 @@ describe User do
 
   describe "when last_name" do
     context "is not present" do
-      before { @user.last_name = ''}
+      before { @user.last_name = '' }
       it { expect(@user).not_to be_valid }
     end
 
@@ -167,7 +167,7 @@ describe User do
 
   describe "when tel_num" do
     context "is not present" do
-      before { @user.tel_num = ''}
+      before { @user.tel_num = '' }
       it { expect(@user).to be_valid }
     end
 
@@ -203,7 +203,7 @@ describe User do
 
   describe "when birth_date" do
     context "is not present" do
-      before { @user.birth_date = ''}
+      before { @user.birth_date = '' }
       it { expect(@user).to be_valid }
     end
   end
@@ -211,7 +211,7 @@ describe User do
 
   describe "when password" do
     context "is not present" do
-      before { @user.password = ''}
+      before { @user.password = '' }
       it { expect(@user).not_to be_valid }
     end
 

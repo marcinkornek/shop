@@ -13,7 +13,7 @@ describe ProductSize do
 
   describe "when size" do
     context "is not present" do
-      before { @product_size.size = ''}
+      before { @product_size.size = '' }
       it { expect(@product_size).not_to be_valid }
     end
   end
@@ -21,7 +21,7 @@ describe ProductSize do
 
   describe "when quantity" do
     context "is not present" do
-      before { @product_size.quantity = ''}
+      before { @product_size.quantity = '' }
       it { expect(@product_size).not_to be_valid }
     end
   end
