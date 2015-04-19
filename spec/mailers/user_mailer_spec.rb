@@ -1,6 +1,7 @@
 require 'rails_helper'
 
-describe UserMailer do
+describe UserMailer, type: :mailer do
+
   before do
     @user = FactoryGirl.create(:user)
   end
@@ -21,7 +22,7 @@ describe UserMailer do
   end
 
   describe "#reset_password_email" do
-    let(:mail) { @user.deliver_reset_password_instructions! }
+    let(:mail) { UserMailer.reset_password_email(@user) }
 
     it "renders the headers" do
       expect(mail.subject).to eq("Twoje hasło zostało zresetowane")

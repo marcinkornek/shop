@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe OrderDetail, focus:true do
+describe OrderDetail do
 
   before do
     @order_detail = FactoryGirl.create(:order_detail)
