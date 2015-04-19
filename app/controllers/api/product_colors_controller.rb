@@ -1,7 +1,8 @@
 class Api::ProductColorsController < ApplicationController
 
   def index
-    all_products = products = Product.includes(product_colors: :product_sizes, category: [category_type: :main_category])
+    all_products = products = Product
+      .includes(product_colors: :product_sizes, category: [category_type: :main_category])
       .filter_prod_by_category(params[:main_category], params[:category_type], params[:category])
     filter = JSON.parse(params[:filter]) if params[:filter] != "{}"
     per_page = 4
@@ -18,11 +19,13 @@ class Api::ProductColorsController < ApplicationController
   end
 
   def show
-    pc = ProductColor.includes(product: [category: [category_type: :main_category]])
+    pc = ProductColor
+      .includes(product: [category: [category_type: :main_category]])
       .find_by(code: params[:id])
     pr_cat = pc.product.category
 
-    products = Product.includes(product_colors: :product_sizes, category: [category_type: :main_category])
+    products = Product
+      .includes(product_colors: :product_sizes, category: [category_type: :main_category])
       .joins(:category).where(categories: {id: pr_cat.id})
     codes = products.map {|pr| pr.product_colors[0].code }
 
@@ -38,7 +41,11 @@ class Api::ProductColorsController < ApplicationController
       pr_numb: index + 1,
       prs_numb: codes.length,
     }
-    render json: {pr_det: pc.extend(ProductColorRepresenter).to_hash, pr: pc.product.extend(ProductIndexRepresenter).to_hash}.merge(items)
+
+    render json: {
+      pr_det: pc.extend(ProductColorRepresenter).to_hash,
+      pr: pc.product.extend(ProductIndexRepresenter).to_hash
+    }.merge(items)
   end
 
   def products_search
@@ -60,9 +67,13 @@ class Api::ProductColorsController < ApplicationController
 
   def paginate_prod_or_nil(products, item, page, per_page)
     if item == '0' || nil
-      products.paginate(page: page, per_page: per_page * 4).extend(ProductsIndexRepresenter).to_hash
+      products
+        .paginate(page: page, per_page: per_page * 4)
+        .extend(ProductsIndexRepresenter).to_hash
     elsif item.to_i != products.count
-      products.paginate(page: page, per_page: per_page).extend(ProductsIndexRepresenter).to_hash
+      products
+        .paginate(page: page, per_page: per_page)
+        .extend(ProductsIndexRepresenter).to_hash
     else
       nil
     end
@@ -80,6 +91,12 @@ class Api::ProductColorsController < ApplicationController
   end
 
   def filter_prod(products, filter)
-    Product.filter(products, filter['colors'], filter['sizes'], filter['price_from'], filter['price_to'])
+    Product.filter(
+      products,
+      filter['colors'],
+      filter['sizes'],
+      filter['price_from'],
+      filter['price_to']
+    )
   end
 end

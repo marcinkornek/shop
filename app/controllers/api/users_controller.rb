@@ -1,6 +1,8 @@
 class Api::UsersController < ApplicationController
+  # rubocop:disable Metrics/LineLength
   before_action :require_login, except: [:create, :activate, :show, :check_if_unique, :reset_password, :set_new_password]
   before_action :check_if_admin, except: [:create, :activate, :show, :update, :check_if_unique, :reset_password, :set_new_password]
+  # rubocop:enable Metrics/LineLength
 
   def index
     @users = User.all.order(created_at: :desc).extend(ListUsersRepresenter)
@@ -28,7 +30,11 @@ class Api::UsersController < ApplicationController
     # p '---------user--------'
     # p show_user
     # p '---------user--------'
-    render json: {user: show_user, addresses_number: show_user.addresses.size, addresses: show_user.addresses.order(:created_at)}
+    render json: {
+      user: show_user,
+      addresses_number: show_user.addresses.size,
+      addresses: show_user.addresses.order(:created_at)
+    }
   end
 
   def update
@@ -76,7 +82,9 @@ class Api::UsersController < ApplicationController
       @user.deliver_reset_password_instructions! if @user
       render json: {}
     elsif @user && @user.provider
-      render json: {error: {message: "REGISTER_WITH_OMNIAUTH_DANGER", variable: @user.provider}}, status: :not_acceptable
+      render json: {
+        error: {message: "REGISTER_WITH_OMNIAUTH_DANGER", variable: @user.provider}
+      }, status: :not_acceptable
     else
       render json: {}
     end
@@ -96,7 +104,9 @@ class Api::UsersController < ApplicationController
         render json: @user
       end
     else
-      render json: {error: {message: 'PASSWORD_RESET_ALERT_DANGER'}}, status: :not_acceptable
+      render json: {
+        error: {message: 'PASSWORD_RESET_ALERT_DANGER'}
+      }, status: :not_acceptable
     end
   end
 
@@ -109,7 +119,10 @@ class Api::UsersController < ApplicationController
   end
 
   def user_create_params
-    params.permit(:first_name, :last_name, :email, :tel_num, :birth_date, :password, :password_confirmation, :provider, :uid, :friendly_token)
+    params.permit(
+      :first_name, :last_name, :email, :tel_num, :birth_date,
+      :password, :password_confirmation, :provider, :uid, :friendly_token
+    )
   end
 
   def user_change_password_params

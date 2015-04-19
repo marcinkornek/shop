@@ -81,7 +81,13 @@ describe Address do
 
     context "format is valid" do
       it "should be valid" do
-        names = ["d'Arras", "Luther King", "Sausage-Hausen", "B-Ball Basketball", "Bżęczyszczykiewicz"]
+        names = [
+          "d'Arras",
+          "Luther King",
+          "Sausage-Hausen",
+          "B-Ball Basketball",
+          "Bżęczyszczykiewicz"
+        ]
         names.each do |valid_name|
           @address.first_name = valid_name
           expect(@address).to be_valid

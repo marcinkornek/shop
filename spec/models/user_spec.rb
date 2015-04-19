@@ -130,7 +130,13 @@ describe User do
 
     context "format is valid" do
       it "should be valid" do
-        names = ["d'Arras", "Luther King", "Sausage-Hausen", "B-Ball Basketball", "Bżęczyszczykiewicz"]
+        names = [
+          "d'Arras",
+          "Luther King",
+          "Sausage-Hausen",
+          "B-Ball Basketball",
+          "Bżęczyszczykiewicz"
+        ]
         names.each do |valid_name|
           @user.first_name = valid_name
           expect(@user).to be_valid

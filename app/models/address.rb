@@ -3,7 +3,7 @@ class Address < ActiveRecord::Base
 
   before_save :prepare_to_save
 
-  VALID_NAME_REGEX = /\A[a-zA-ZàáâäãåąčćśęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+\z/u
+  VALID_NAME_REGEX = /\A[a-zA-ZàáâäãåąčćśęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+\z/u # rubocop:disable Metrics/LineLength
   validates :first_name,              length: {in: 3..30},
                                       format: {with: VALID_NAME_REGEX}
 
