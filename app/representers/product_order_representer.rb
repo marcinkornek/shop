@@ -3,5 +3,4 @@ module ProductOrderRepresenter
 
   property :name
   property :price
-
 end

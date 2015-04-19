@@ -3,5 +3,4 @@ class Category < ActiveRecord::Base
   belongs_to :category_type
 
   validates :name,            presence: true
-
 end

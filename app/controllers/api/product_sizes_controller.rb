@@ -1,5 +1,4 @@
 class Api::ProductSizesController < ApplicationController
-
   def index
     array = params[:ids].split(",").map(&:to_i)
     b = Hash.new(0)

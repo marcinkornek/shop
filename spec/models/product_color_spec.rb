@@ -19,7 +19,6 @@ describe ProductColor do
     end
   end
 
-
   describe "when image" do
     context "is not present" do
       before { @product_col.remove_image! }
@@ -27,14 +26,12 @@ describe ProductColor do
     end
   end
 
-
   describe "when product" do
     context "is not present" do
       before { @product_col.product = nil }
       it { expect(@product_col).not_to be_valid }
     end
   end
-
 
   describe "when code" do
     context "is already taken" do

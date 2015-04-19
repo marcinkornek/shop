@@ -4,5 +4,4 @@ module ProductSizeRepresenter
   property :id
   property :size
   property :quantity
-
 end

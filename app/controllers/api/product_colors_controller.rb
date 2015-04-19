@@ -1,5 +1,4 @@
 class Api::ProductColorsController < ApplicationController
-
   def index
     all_products = products = Product
       .includes(product_colors: :product_sizes, category: [category_type: :main_category])

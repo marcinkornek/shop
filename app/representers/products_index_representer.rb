@@ -4,5 +4,4 @@ module ProductsIndexRepresenter
   include Representable::JSON::Collection
 
   items extend: ProductIndexRepresenter
-
 end

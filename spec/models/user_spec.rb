@@ -64,7 +64,6 @@ describe User do
     end
   end
 
-
   describe "when first_name" do
     context "is not present" do
       before { @user.first_name = '' }
@@ -110,7 +109,6 @@ describe User do
       end
     end
   end
-
 
   describe "when last_name" do
     context "is not present" do
@@ -164,7 +162,6 @@ describe User do
     end
   end
 
-
   describe "when tel_num" do
     context "is not present" do
       before { @user.tel_num = '' }
@@ -200,14 +197,12 @@ describe User do
     end
   end
 
-
   describe "when birth_date" do
     context "is not present" do
       before { @user.birth_date = '' }
       it { expect(@user).to be_valid }
     end
   end
-
 
   describe "when password" do
     context "is not present" do

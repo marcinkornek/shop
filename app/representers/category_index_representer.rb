@@ -3,5 +3,4 @@ module CategoryIndexRepresenter
 
   property :name
   property :category_type, extend: CategoryTypeIndexRepresenter
-
 end

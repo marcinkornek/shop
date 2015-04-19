@@ -8,5 +8,4 @@ module ProductIndexRepresenter
   property :price
   property :category, extend: CategoryIndexRepresenter
   collection :product_colors, extend: ProductColorRepresenter
-
 end

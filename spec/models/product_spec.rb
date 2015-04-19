@@ -20,14 +20,12 @@ describe Product do
     end
   end
 
-
   describe "when composition" do
     context "is not present" do
       before { @product.composition = '' }
       it { expect(@product).not_to be_valid }
     end
   end
-
 
   describe "when price" do
     context "is not present" do
@@ -51,7 +49,6 @@ describe Product do
       it { expect(@product).to be_valid }
     end
   end
-
 
   describe "when category" do
     context "is not present" do

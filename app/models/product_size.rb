@@ -5,5 +5,4 @@ class ProductSize < ActiveRecord::Base
   validates :size,            presence: true
   validates :quantity,        presence: true
   validates :product_color,   presence: true
-
 end

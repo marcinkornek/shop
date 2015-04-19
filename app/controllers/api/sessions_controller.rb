@@ -1,5 +1,4 @@
 class Api::SessionsController < ApplicationController
-
   def create
     if @user = login(params[:email].downcase, params[:password], params[:remember])
       @user = User.find(@user.id)

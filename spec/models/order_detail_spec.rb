@@ -27,7 +27,6 @@ describe OrderDetail do
     end
   end
 
-
   describe "when amount" do
     context "is not present" do
       before { @order_detail.amount = '' }
@@ -43,14 +42,12 @@ describe OrderDetail do
     end
   end
 
-
   describe "when order" do
     context "is not present" do
       before { @order_detail.order = nil }
       it { expect(@order_detail).not_to be_valid }
     end
   end
-
 
   describe "when product_size" do
     context "is not present" do

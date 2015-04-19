@@ -6,5 +6,4 @@ module ListUserRepresenter
   property :last_name
   property :created_at
   property :role
-
 end

@@ -4,5 +4,4 @@ module HeaderUserRepresenter
   property :id
   property :first_name
   property :role
-
 end

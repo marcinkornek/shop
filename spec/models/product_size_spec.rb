@@ -18,14 +18,12 @@ describe ProductSize do
     end
   end
 
-
   describe "when quantity" do
     context "is not present" do
       before { @product_size.quantity = '' }
       it { expect(@product_size).not_to be_valid }
     end
   end
-
 
   describe "when product_color" do
     context "is not present" do

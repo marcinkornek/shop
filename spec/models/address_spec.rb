@@ -62,7 +62,6 @@ describe Address do
     end
   end
 
-
   describe "when last_name" do
     context "is not present" do
       before { @address.last_name = '' }
@@ -115,7 +114,6 @@ describe Address do
     end
   end
 
-
   describe "when tel_num" do
     context "is not present" do
       before { @address.tel_num = '' }
@@ -151,7 +149,6 @@ describe Address do
     end
   end
 
-
   describe "when street" do
     context "is not present" do
       before { @address.street = '' }
@@ -168,7 +165,6 @@ describe Address do
       it { expect(@address).not_to be_valid }
     end
   end
-
 
   describe "when house_num" do
     context "is not present" do
@@ -202,7 +198,6 @@ describe Address do
     end
   end
 
-
   describe "when town" do
     context "is not present" do
       before { @address.town = '' }
@@ -219,7 +214,6 @@ describe Address do
       it { expect(@address).not_to be_valid }
     end
   end
-
 
   describe "when postcode" do
     context "is not present" do
