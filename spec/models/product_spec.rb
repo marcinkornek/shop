@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe Product do
-
   before do
     @product = FactoryGirl.create(:product)
   end
@@ -60,5 +59,4 @@ describe Product do
       it { expect(@product).not_to be_valid }
     end
   end
-
 end

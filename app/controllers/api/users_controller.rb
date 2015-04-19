@@ -123,6 +123,5 @@ class Api::UsersController < ApplicationController
   def admin_user
     @user ||= User.find(params[:id])
   end
-
 end
 

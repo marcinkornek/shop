@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe Address do
-
   before do
     @address = FactoryGirl.create(:address)
   end
@@ -252,5 +251,4 @@ describe Address do
       end
     end
   end
-
 end

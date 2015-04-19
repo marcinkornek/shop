@@ -9,5 +9,4 @@ class Api::ProductSizesController < ApplicationController
     end
     render json: array_new
   end
-
 end

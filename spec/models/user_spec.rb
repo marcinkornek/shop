@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe User do
-
   before do
     @user = FactoryGirl.create(:user)
   end
@@ -220,5 +219,4 @@ describe User do
       it { expect(@user).not_to be_valid }
     end
   end
-
 end

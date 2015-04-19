@@ -37,5 +37,4 @@ describe UserMailer, type: :mailer do
       expect(mail.body.encoded).to match("Życzymy miłego dnia!")
     end
   end
-
 end

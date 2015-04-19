@@ -82,5 +82,4 @@ class Api::ProductColorsController < ApplicationController
   def filter_prod(products, filter)
     Product.filter(products, filter['colors'], filter['sizes'], filter['price_from'], filter['price_to'])
   end
-
 end

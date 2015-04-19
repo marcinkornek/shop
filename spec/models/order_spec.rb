@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe Order do
-
   before do
     @order = FactoryGirl.create(:order)
   end
@@ -40,5 +39,4 @@ describe Order do
       it { expect(@order).not_to be_valid }
     end
   end
-
 end

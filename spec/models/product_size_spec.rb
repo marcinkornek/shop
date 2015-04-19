@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe ProductSize do
-
   before do
     @product_size = FactoryGirl.create(:product_size)
   end
@@ -34,5 +33,4 @@ describe ProductSize do
       it { expect(@product_size).not_to be_valid }
     end
   end
-
 end

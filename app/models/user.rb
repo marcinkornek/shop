@@ -73,5 +73,4 @@ class User < ActiveRecord::Base
     self.first_name = first_name.capitalize_words
     self.last_name = last_name.capitalize_words
   end
-
 end

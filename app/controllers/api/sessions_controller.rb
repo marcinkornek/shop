@@ -27,5 +27,4 @@ class Api::SessionsController < ApplicationController
     auto_login(user)
     redirect_to root_path
   end
-
 end

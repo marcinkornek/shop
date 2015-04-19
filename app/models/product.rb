@@ -62,5 +62,4 @@ class Product < ActiveRecord::Base
     products = products.where("price < ?", max) if max.present?
     products
   end
-
 end

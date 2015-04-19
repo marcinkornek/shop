@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe ProductColor do
-
   before do
     @product_col = FactoryGirl.create(:product_color)
   end
@@ -47,5 +46,4 @@ describe ProductColor do
       it { should_not be_valid }
     end
   end
-
 end

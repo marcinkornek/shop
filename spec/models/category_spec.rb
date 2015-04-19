@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe Category do
-
   before do
     @category = FactoryGirl.create(:category)
   end
@@ -18,5 +17,4 @@ describe Category do
       it { expect(@category).not_to be_valid }
     end
   end
-
 end

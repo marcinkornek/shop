@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe MainCategory do
-
   before do
     @main_category = FactoryGirl.create(:main_category)
   end
@@ -17,5 +16,4 @@ describe MainCategory do
       it { expect(@main_category).not_to be_valid }
     end
   end
-
 end

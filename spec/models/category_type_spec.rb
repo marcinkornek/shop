@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe CategoryType do
-
   before do
     @category_type = FactoryGirl.create(:category_type)
   end
@@ -18,5 +17,4 @@ describe CategoryType do
       it { expect(@category_type).not_to be_valid }
     end
   end
-
 end

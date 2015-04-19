@@ -38,5 +38,4 @@ class Address < ActiveRecord::Base
     self.street = street.capitalize_words
     self.town = town.capitalize_words
   end
-
 end

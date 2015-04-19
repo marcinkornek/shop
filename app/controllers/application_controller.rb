@@ -23,5 +23,4 @@ class ApplicationController < ActionController::Base
       render json: {error: 'admin: false'}, status: :not_acceptable
     end
   end
-
 end

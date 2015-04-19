@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe OrderDetail do
-
   before do
     @order_detail = FactoryGirl.create(:order_detail)
   end
@@ -59,5 +58,4 @@ describe OrderDetail do
       it { expect(@order_detail).not_to be_valid }
     end
   end
-
 end

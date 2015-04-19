@@ -26,5 +26,4 @@ class ProductColor < ActiveRecord::Base
     code = main_cat.name.slice(0..2)+'-'+cat_type.name.slice(0..2)+'-'+product.category.name.gsub(/-/, '').slice(0..2)+'-'+SecureRandom.hex(3)+'-'+color
     self.code = code
   end
-
 end

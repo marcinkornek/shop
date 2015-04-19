@@ -18,5 +18,4 @@ class UserMailer < ActionMailer::Base
       subject: t('mailer.reset_password_email.subject')
     )
   end
-
 end
