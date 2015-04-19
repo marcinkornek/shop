@@ -6,9 +6,9 @@ class User < ActiveRecord::Base
 
   authenticates_with_sorcery!
 
-  validates :password,              length: {minimum: 6}, if: lambda { new_record? || !password.nil? } # rubocop:disable Metrics/LineLength
+  validates :password,              length: {minimum: 6}, if: -> { new_record? || !password.nil? } # rubocop:disable Metrics/LineLength
   validates :password,              confirmation: true
-  validates :password_confirmation, presence: true, if: lambda { new_record? || !password.nil? }
+  validates :password_confirmation, presence: true, if: -> { new_record? || !password.nil? }
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-zA-Z\d\-]+(?:\.[a-zA-Z\d\-]+)*\.[a-zA-Z]+\z/i
   validates :email,                 uniqueness: {case_sensitive: false},
@@ -36,18 +36,7 @@ class User < ActiveRecord::Base
         return registered_user
       else
         p '--------- creating user with oauth -----------'
-        password = friendly_token
-        user = User.new(first_name: auth.info.first_name,
-                        last_name: auth.info.last_name,
-                        provider:auth.provider,
-                        uid:auth.uid,
-                        email:auth.info.email,
-                        password:password,
-                        password_confirmation:password,
-                      )
-        user.send_activation_email = false
-        user.save
-        user.activate!
+        user = create_user_with_aouth(auth)
         return user
       end
     end
@@ -72,5 +61,27 @@ class User < ActiveRecord::Base
     email.downcase!
     self.first_name = first_name.capitalize_words
     self.last_name = last_name.capitalize_words
+  end
+
+  def self.create_user_with_aouth(auth)
+    password = friendly_token
+    user = create_user(auth, password)
+    user.send_activation_email = false
+    user.activate!
+    user.save
+    user.activate!
+    user
+  end
+
+  def self.create_user(auth, password)
+    User.new(
+      first_name: auth.info.first_name,
+      last_name: auth.info.last_name,
+      provider: auth.provider,
+      uid: auth.uid,
+      email: auth.info.email,
+      password: password,
+      password_confirmation: password
+    )
   end
 end

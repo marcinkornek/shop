@@ -1,15 +1,15 @@
 class Api::ProductColorsController < ApplicationController
+  # rubocop:disable Metrics/AbcSize
   def index
-    all_products = products = Product
-      .includes(product_colors: :product_sizes, category: [category_type: :main_category])
+    all_products = products =
+      Product.includes(product_colors: :product_sizes, category: [category_type: :main_category])
       .filter_prod_by_category(params[:main_category], params[:category_type], params[:category])
     filter = JSON.parse(params[:filter]) if params[:filter] != "{}"
     per_page = 4
-    page = (params[:item].to_f/per_page).to_i + 1
-    count = products.count
+    page = (params[:item].to_f / per_page).to_i + 1
     products = filter_prod(products, filter) if filter
     products = sort_prod(products, params[:sort]) if params[:sort]
-    if params[:item] == '0' || nil
+    if params[:item] == '0'
       products_details = Product.products_colors_sizes(all_products).merge(count: products.count)
     end
     products = paginate_prod_or_nil(products, params[:item], page, per_page)
@@ -18,28 +18,18 @@ class Api::ProductColorsController < ApplicationController
   end
 
   def show
-    pc = ProductColor
-      .includes(product: [category: [category_type: :main_category]])
+    pc =
+      ProductColor.includes(product: [category: [category_type: :main_category]])
       .find_by(code: params[:id])
     pr_cat = pc.product.category
 
-    products = Product
-      .includes(product_colors: :product_sizes, category: [category_type: :main_category])
+    products =
+      Product.includes(product_colors: :product_sizes, category: [category_type: :main_category])
       .joins(:category).where(categories: {id: pr_cat.id})
-    codes = products.map { |pr| pr.product_colors[0].code }
 
     pc_code = pc.product.product_colors[0].code
 
-    index = codes.index(pc_code)
-    pr_prev = codes[index-1] if index > 0
-    pr_next = codes[index+1] if index < codes.length - 1
-
-    items = {
-      pr_prev: pr_prev,
-      pr_next: pr_next,
-      pr_numb: index + 1,
-      prs_numb: codes.length,
-    }
+    items = prev_and_next_items(products, pc_code)
 
     render json: {
       pr_det: pc.extend(ProductColorRepresenter).to_hash,
@@ -51,21 +41,21 @@ class Api::ProductColorsController < ApplicationController
     all_products = products = Product.search(params[:search_query])
     filter = JSON.parse(params[:filter]) if params[:filter] != "{}"
     per_page = 4
-    page = (params[:item].to_f/per_page).to_i + 1
-    count = products.count
+    page = (params[:item].to_f / per_page).to_i + 1
     products = filter_prod(products, filter) if filter
     products = sort_prod(products, params[:sort]) if params[:sort]
-    if params[:item] == '0' || nil
+    if params[:item] == '0'
       products_details = Product.products_colors_sizes(all_products).merge(count: products.count)
     end
     products = paginate_prod_or_nil(products, params[:item], page, per_page)
     render json: {products: products, products_details: products_details}
   end
+  # rubocop:enable Metrics/AbcSize
 
   private
 
   def paginate_prod_or_nil(products, item, page, per_page)
-    if item == '0' || nil
+    if item == '0'
       products
         .paginate(page: page, per_page: per_page * 4)
         .extend(ProductsIndexRepresenter).to_hash
@@ -73,8 +63,6 @@ class Api::ProductColorsController < ApplicationController
       products
         .paginate(page: page, per_page: per_page)
         .extend(ProductsIndexRepresenter).to_hash
-    else
-      nil
     end
   end
 
@@ -97,5 +85,28 @@ class Api::ProductColorsController < ApplicationController
       filter['price_from'],
       filter['price_to']
     )
+  end
+
+  def products_codes(products)
+    products.map { |pr| pr.product_colors[0].code }
+  end
+
+  def prev_and_next_items(products, pc_code)
+    codes = products_codes(products)
+    index = codes.index(pc_code)
+    {
+      pr_prev: previous_product(codes, index),
+      pr_next: next_product(codes, index),
+      pr_numb: index + 1,
+      prs_numb: codes.length
+    }
+  end
+
+  def previous_product(codes, index)
+    codes[index - 1] if index > 0
+  end
+
+  def next_product(codes, index)
+    codes[index + 1] if index < codes.length - 1
   end
 end

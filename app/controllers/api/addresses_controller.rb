@@ -47,4 +47,3 @@ class Api::AddressesController < ApplicationController
     @address ||= current_user.addresses.find(params[:id])
   end
 end
-

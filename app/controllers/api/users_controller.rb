@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/ClassLength
 class Api::UsersController < ApplicationController
   # rubocop:disable Metrics/LineLength
   before_action :require_login, except: [:create, :activate, :show, :check_if_unique, :reset_password, :set_new_password]
@@ -22,11 +23,12 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    show_user = if current_user.role == 'Admin'
-      admin_user
-    else
-      user
-    end
+    show_user =
+      if current_user.role == 'Admin'
+        admin_user
+      else
+        user
+      end
     # p '---------user--------'
     # p show_user
     # p '---------user--------'
@@ -100,9 +102,7 @@ class Api::UsersController < ApplicationController
       # the next line makes the password confirmation validation work
       @user.password_confirmation = params[:password_confirmation]
       # the next line clears the temporary token and updates the password
-      if @user.change_password!(params[:password])
-        render json: @user
-      end
+      render json: @user if @user.change_password!(params[:password])
     else
       render json: {
         error: {message: 'PASSWORD_RESET_ALERT_DANGER'}
@@ -137,4 +137,3 @@ class Api::UsersController < ApplicationController
     @user ||= User.find(params[:id])
   end
 end
-

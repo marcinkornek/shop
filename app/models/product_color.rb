@@ -23,8 +23,9 @@ class ProductColor < ActiveRecord::Base
   def add_code
     cat_type = product.category.category_type
     main_cat = cat_type.main_category
-    code = main_cat.name.slice(0..2) + '-' + cat_type.name.slice(0..2) + '-' \
-      + product.category.name.gsub(/-/, '').slice(0..2) + '-' + SecureRandom.hex(3) + '-' + color
+    code = "#{main_cat.name.slice(0..2)}-#{cat_type.name.slice(0..2)}-" \
+      "#{product.category.name.gsub(/-/, '').slice(0..2)}-" \
+      "#{SecureRandom.hex(3)}-#{color}"
     self.code = code
   end
 end

@@ -12,17 +12,17 @@ class Product < ActiveRecord::Base
   end
 
   def self.filter(products, colors = nil, sizes = nil, min = nil, max = nil)
-    products = self.join_colors_sizes.where(product_colors: {product: products})
-    products = self.filter_colors(products, colors) if colors.present?
-    products = self.filter_sizes(products, sizes) if sizes.present?
-    products = self.filter_price(products, min, max) if min.present? || max.present?
+    products = join_colors_sizes.where(product_colors: {product: products})
+    products = filter_colors(products, colors) if colors.present?
+    products = filter_sizes(products, sizes) if sizes.present?
+    products = filter_price(products, min, max) if min.present? || max.present?
     products.distinct.includes(
       product_colors: :product_sizes, category: [category_type: :main_category]
     )
   end
 
   def self.filter_prod_by_category(main_category, category_type, category = nil)
-    category_type = self.join_category.where(
+    category_type = join_category.where(
       main_categories: {name: main_category}, category_types: {name: category_type}
     )
     if category
@@ -37,20 +37,18 @@ class Product < ActiveRecord::Base
     colors = product_colors.map(&:color).uniq
     product_sizes = ProductSize.where(product_color: product_colors)
     sizes = product_sizes.map(&:size).uniq
-    products_details = {
+    {
       colors: colors,
-      sizes: sizes,
+      sizes: sizes
     }
   end
 
-  private
-
   def self.join_category
-    self.joins(category: [{category_type: :main_category}])
+    joins(category: [{category_type: :main_category}])
   end
 
   def self.join_colors_sizes
-    self.joins(product_colors: :product_sizes)
+    joins(product_colors: :product_sizes)
   end
 
   def self.filter_colors(products, colors)

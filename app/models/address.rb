@@ -16,7 +16,7 @@ class Address < ActiveRecord::Base
 
   validates :street,                  length: {in: 3..40}
 
-  VALID_HOUSE_NUMBER_REGEX = /\A\d{1,4}([a-z]{1})?((-|\/)\d{1,4})?([a-z]{1})?\z/
+  VALID_HOUSE_NUMBER_REGEX = %r(\A\d{1,4}([a-z]{1})?((-|/)\d{1,4})?([a-z]{1})?\z)
   validates :house_num,               length: {in: 1..9},
                                       format: {with: VALID_HOUSE_NUMBER_REGEX}
 

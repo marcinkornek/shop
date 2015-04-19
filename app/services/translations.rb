@@ -7,7 +7,7 @@ class Translations
 
   def for(lang)
     unless valid_locale?(lang.to_s)
-      raise InvalidLocale, "#{lang} is not supported"
+      fail InvalidLocale.new("#{lang} is not supported")
     end
 
     I18n.backend.send(:init_translations)

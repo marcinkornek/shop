@@ -29,7 +29,7 @@ module RailsAngularJStemplate
 
     config.assets.paths << Rails.root.join('spec/karma')
 
-    config.assets.precompile += %w{locales/*.json}
+    config.assets.precompile += %w(locales/*.json)
     config.active_record.raise_in_transactional_callbacks = true
   end
 end

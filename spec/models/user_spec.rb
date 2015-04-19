@@ -44,8 +44,8 @@ describe User do
 
     context "format is invalid" do
       it "should be invalid" do
-        addresses = %w[user@foo,com user_at_foo.org example.user@foo.
-                       foo@bar_baz.com foo@bar+baz.com foo@bar..com]
+        addresses = %w(user@foo,com user_at_foo.org example.user@foo.
+                       foo@bar_baz.com foo@bar+baz.com foo@bar..com)
         addresses.each do |invalid_address|
           @user.email = invalid_address
           expect(@user).not_to be_valid
@@ -55,8 +55,8 @@ describe User do
 
     context "format is valid" do
       it "should be valid" do
-        addresses = %w[user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn]
-      addresses.each do |valid_address|
+        addresses = %w(user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn)
+        addresses.each do |valid_address|
           @user.email = valid_address
           expect(@user).to be_valid
         end
@@ -218,6 +218,17 @@ describe User do
     context "doesn't match confirmation" do
       before { @user.password_confirmation = "mismatch" }
       it { expect(@user).not_to be_valid }
+    end
+  end
+
+  describe "#find_for_oauth" do
+    context "when user already registered" do
+    end
+
+    context "when user already registered with oauth" do
+    end
+
+    context "when user not registered" do
     end
   end
 end
