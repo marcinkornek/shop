@@ -1,0 +1,89 @@
+# This is the main configuration file for RuboCop
+# More on configuring RuboCop: https://github.com/bbatsov/rubocop#configuration
+# Cops: http://www.rubydoc.info/github/bbatsov/rubocop/master/Rubocop/Cop/Cop, section 'Direct Known Subclasses' (or run rubocop --show-cops)
+
+Metrics/LineLength:
+  Enabled: false
+
+Lint/ParenthesesAsGroupedExpression:
+  Enabled: false
+
+Lint/ParenthesesAsGroupedExpression:
+  Enabled: false
+
+AllCops:
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - '../../db/**/*'
+    - '../../bin/**/*'
+    - '../../node_modules/**/*'
+    - '../../spec/spec_helper.rb'
+    - '../../spec/rails_helper.rb'
+    - '../../config/initializers/*'
+    - '../../config/environments/*'
+
+Documentation:
+  Enabled: false
+
+AlignHash:
+  Enabled: false
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 15
+
+Metrics/LineLength:
+  Max: 100
+
+Metrics/AbcSize:
+  Max: 25
+
+# Checks enforced quotes style
+Style/StringLiterals:
+  Enabled: false
+
+# Checks formatting of special comments
+Style/CommentAnnotation:
+  Enabled: false
+
+Style/SpaceInsideHashLiteralBraces:
+  # Enabled: false
+  EnforcedStyle: no_space
+  EnforcedStyleForEmptyBraces: no_space
+
+# Style/MultilineBlockLayout:
+#   Enabled: false
+
+# Style/WordArray:
+#   Enabled: false
+
+Style/RaiseArgs:
+  # Enabled: false
+  EnforcedStyle: compact
+  SupportedStyles:
+    - compact # raise Exception.new(msg)
+    - exploded # raise Exception, msg
+
+Style/GuardClause:
+  Enabled: false
+
+# Checks the style of children definitions at classes and modules.
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# Style/PredicateName:
+#   # Predicate name prefices.
+#   NamePrefix:
+#     - is_
+#   # Predicate name prefices that should be removed.
+#   NamePrefixBlacklist:
+#     - is_
+
+# # Checks 'while' usage when having a single-line body.
+# Style/WhileUntilModifier:
+#   Enabled: false
+
+Style/SingleSpaceBeforeFirstArg:
+  Enabled: false

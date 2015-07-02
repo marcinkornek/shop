@@ -9,7 +9,9 @@ namespace :buildcop do
 
     # Any further configuration can be done here (these are merged with the default options)
     # You can check the default configuration by running `jslint-v8 -h`
-    lint_options = {browser: true, jquery: true, nomen: false, undef: false, onevar: false}
+    lint_options = {
+      browser: true, jquery: true, nomen: false, undef: false, onevar: false
+    }
     runner.jslint_options.merge!(lint_options)
 
     lint_result = runner.run { |_, errors| formatter.tick(errors) }
@@ -29,9 +31,6 @@ def lint_files
     'node_modules/**/*.js',
     'tmp/**/*.js'
   ]
-  excluded_files = excluded_paths.map do |path|
-    Dir.glob(path)
-  end.inject(:+)
-
+  excluded_files = excluded_paths.map { |path| Dir.glob(path) }.inject(:+)
   (included_files - excluded_files).sort
 end
