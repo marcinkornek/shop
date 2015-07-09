@@ -1,4 +1,4 @@
 # You can configure the behaviour of `buildcop:simplecov` rake task here.
 
 ---
-threshold: 80
+threshold: 75
