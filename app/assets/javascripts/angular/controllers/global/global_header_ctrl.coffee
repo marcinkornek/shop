@@ -5,6 +5,7 @@ GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies, sessionD
   # loading data 1/2
 
   $scope.formData = {}
+  $scope.data = {}
 
   $scope.formData.order = orderDetailData
 
@@ -41,21 +42,20 @@ GlobalHeaderCtrl = ($scope, $state, $translate, $stateParams, $cookies, sessionD
   # language
 
   $scope.setLanguage = ->
-    $scope.data = {}
-    $scope.data.locale = $cookies.locale || 'en'
-    $translate.use $scope.data.locale
-
-  $scope.setLanguage()
+    $scope.data.locale = $cookies.get('locale') || 'en'
+    $translate.use($scope.data.locale)
 
   $scope.changeLanguage = (key) ->
-    $translate.use key
-    $cookies.locale = $scope.data.locale = key
+    $translate.use(key)
+    $scope.data.locale = key
+    $cookies.put('locale', key)
 
   # loading data 2/2
 
   $scope.loadData = ->
     $scope.data.user =  window.currentUser
-    $scope.data.locale = $cookies.locale || 'pl'
+    $scope.data.locale = $cookies.get('locale') || 'pl'
+    $scope.setLanguage()
     $scope.loadCategories()
     if $stateParams.searchQuery
       $scope.data.search = 1
