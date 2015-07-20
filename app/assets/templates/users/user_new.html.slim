@@ -55,7 +55,7 @@
 
         .field
           .input-group
-            input.form-control(placeholder="{{ 'BIRTH_DATE_PLACEHOLDER' | translate }}" id="birth_date" name="birth_date" close-text="Close" date-disabled="disabled(date, mode)" datepicker-options="dateOptions" datepicker-popup="{{format}}" is-open="opened" max-date="maxDate" min-date="minDate" ng-model="formData.birth_date" type="text" style="margin-bottom:0px;margin-top:0px;")
+            input.form-control(placeholder="{{ 'BIRTH_DATE_PLACEHOLDER' | translate }}" id="birth_date" name="birth_date" close-text="Close" date-disabled="disabled(date, mode)" datepicker-options="dateOptions" datepicker-popup='dd-MM-yyyy' init-date='' is-open="opened" max-date="maxDate" min-date="minDate" ng-model="formData.birth_date" type="text" style="margin-bottom:0px;margin-top:0px;")
             span.input-group-btn
               button.btn.btn-default ng-click="open($event)" type="button"
                 i.glyphicon.glyphicon-calendar

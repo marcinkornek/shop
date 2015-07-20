@@ -18,10 +18,16 @@ UserEditDataCtrl = ($scope, $stateParams, $state, userData, addressData, $http) 
 
   # datepicker
 
+  $scope.formData.birth_date = new Date()
+
   $scope.open = ($event) ->
     $event.preventDefault()
     $event.stopPropagation()
     $scope.opened = true
+
+  $scope.dateOptions =
+    formatYear: "yyyy"
+    startingDay: 1
 
   # alerts
 
