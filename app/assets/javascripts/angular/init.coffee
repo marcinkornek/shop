@@ -42,41 +42,41 @@ angular.module('shop', [
     # Angular translate
     $translateProvider.useLoader('railsLocalesLoader')
     $translateProvider.preferredLanguage('pl')
+    $translateProvider.useSanitizeValueStrategy('escaped')
 
-angular.module("shop").config (datepickerConfig, datepickerPopupConfig) ->
-  datepickerPopupConfig.showButtonBar = false
-  datepickerConfig.showWeeks = false
+  .config (datepickerConfig, datepickerPopupConfig) ->
+    datepickerPopupConfig.showButtonBar = false
+    datepickerConfig.showWeeks = false
 
-angular.module("shop").config ($locationProvider) ->
-  $locationProvider.html5Mode true
+  .config ($locationProvider) ->
+    $locationProvider.html5Mode true
 
-# ###
-# http://stackoverflow.com/a/22540482/3922041
-# ###
+  # ###
+  # http://stackoverflow.com/a/22540482/3922041
+  # ###
+  # coffeelint: disable=max_line_length
+  .run(["$rootScope", "$state", "$stateParams", "authorization", "principal", ($rootScope, $state, $stateParams, authorization, principal) ->
+  # coffeelint: enable=max_line_length
+    $rootScope.$on "$stateChangeStart", (event, toState, toParams, fromState, fromParams) ->
+      # console.log "toState.name: " + toState.name
+      # console.log "fromState.name: " + fromState.name
+      # console.log "----------------------"
+      $rootScope.toState = toState
+      $rootScope.toStateParams = toParams
+      # console.log window.currentUser.id
+      if window.currentUser.id
+        principal.authenticate
+          username: window.currentUser.username
+          roles: [ window.currentUser.role ]
+      else
+        principal.authenticate(null)
+        # console.log 'false'
+      authorization.authorize()
+    $rootScope.$on "$stateChangeSuccess", (event, toState, toParams, fromState, fromParams) ->
+      # console.log 'success'
+  ])
 
-# coffeelint: disable=max_line_length
-angular.module('shop').run([ "$rootScope", "$state", "$stateParams", "authorization", "principal", ($rootScope, $state, $stateParams, authorization, principal) ->
-# coffeelint: enable=max_line_length
-  $rootScope.$on "$stateChangeStart", (event, toState, toParams, fromState, fromParams) ->
-    # console.log "toState.name: " + toState.name
-    # console.log "fromState.name: " + fromState.name
-    # console.log "----------------------"
-    $rootScope.toState = toState
-    $rootScope.toStateParams = toParams
-    # console.log window.currentUser.id
-    if window.currentUser.id
-      principal.authenticate
-        username: window.currentUser.username
-        roles: [ window.currentUser.role ]
-    else
-      principal.authenticate(null)
-      # console.log 'false'
-    authorization.authorize()
-  $rootScope.$on "$stateChangeSuccess", (event, toState, toParams, fromState, fromParams) ->
-    # console.log 'success'
-])
-
- # ui-bootstrap tooltip animation is broken using angular 1.3
-angular.module("shop").config [ "$tooltipProvider", ($tooltipProvider) ->
-  $tooltipProvider.options animation: false
-]
+  # ui-bootstrap tooltip animation is broken using angular 1.3
+  .config [ "$tooltipProvider", ($tooltipProvider) ->
+    $tooltipProvider.options animation: false
+  ]
