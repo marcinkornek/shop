@@ -45,6 +45,10 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-ngInfiniteScroll'
   gem 'rails-assets-ui-utils'
   gem 'rails-assets-ngDialog'
+  gem 'rails-assets-jasmine'
+  gem 'rails-assets-jasmine-jquery'
+  gem 'rails-assets-jasmine-ajax'
+  gem 'rails-assets-angular-mocks'
 end
 
 group :development, :test do
@@ -53,6 +57,7 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'rspec-rails'
   gem 'faker'
+  gem 'jasmine-rails'
 end
 
 group :production do
