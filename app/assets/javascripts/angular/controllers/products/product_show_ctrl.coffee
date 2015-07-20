@@ -32,8 +32,8 @@ ProductShowCtrl = ($scope, $stateParams, $state, productColorData, $cookies, ord
 
   $scope.addToCart = ->
     if $scope.formData.size_id
-      $saveTotalPriceToCookies()
-      $saveItemsToCookie()
+      $scope.saveTotalPriceToCookies()
+      $scope.saveItemsToCookie()
       ps = orderDetailData.loadCartItemsFromServer()
       $scope.formData.order.products = ps
       $scope.resetSize()
@@ -48,13 +48,13 @@ ProductShowCtrl = ($scope, $stateParams, $state, productColorData, $cookies, ord
   $scope.resetSize = ->
     $scope.formData.size_id = undefined
 
-  $saveTotalPriceToCookies = ->
+  $scope.saveTotalPriceToCookies = ->
     total_price = $cookies.total_price || 0
     total_price = parseFloat(total_price) + parseFloat($scope.data.pr.price)
     $cookies.total_price = total_price
     $scope.formData.order.total_price = orderDetailData.loadCartItemsTotalPriceFromCookie()
 
-  $saveItemsToCookie = ->
+  $scope.saveItemsToCookie = ->
     items_in_cart = JSON.parse($cookies.items_in_cart || '[]')
     items_in_cart.push $scope.formData.size_id
     $cookies.items_in_cart = JSON.stringify(items_in_cart)
