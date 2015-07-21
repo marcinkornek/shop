@@ -9,4 +9,5 @@ module UserRepresenter
   property :email
   property :created_at
   property :role
+  property :provider
 end

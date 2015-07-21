@@ -33,7 +33,7 @@ class Api::UsersController < ApplicationController
     # p show_user
     # p '---------user--------'
     render json: {
-      user: show_user,
+      user: show_user.extend(UserRepresenter).to_hash,
       addresses_number: show_user.addresses.size,
       addresses: show_user.addresses.order(:created_at)
     }

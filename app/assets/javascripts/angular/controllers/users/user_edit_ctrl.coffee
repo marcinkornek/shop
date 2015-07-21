@@ -37,33 +37,23 @@ UserEditCtrl = ($scope, $stateParams, $state, userData, addressData, $http) ->
       $scope.formData.provider = user.user.provider
       if user.addresses_number > 0
         $scope.loadTemporaryAddress()
-        $scope.firstLoadAddress(user.addresses[0].id)
+        $scope.firstLoadAddress(user.addresses[0])
     , (error) ->
       console.log 'error'
       console.log error.status
       $scope.formData.error = 'There is no such user'
     )
 
-  $scope.firstLoadAddress = (AddressId) ->
-    $scope.checked = $scope.formData.addresses[0].id
-    # console.log 'checked', $scope.checked
-    # console.log 'firstLoadAddress'
-    addressData.get({id: AddressId}
-    , (address) ->
-      # console.log address
-      $scope.formData.address.id = address.id
-      $scope.formData.address.first_name = address.first_name
-      $scope.formData.address.last_name = address.last_name
-      $scope.formData.address.tel_num = address.tel_num
-      $scope.formData.address.street = address.street
-      $scope.formData.address.house_num = address.house_num
-      $scope.formData.address.town = address.town
-      $scope.formData.address.postcode = address.postcode
-    , (error) ->
-      console.log 'error'
-      console.log error.status
-      $scope.formData.error = 'There is no such address'
-    )
+  $scope.firstLoadAddress = (address) ->
+    $scope.checked = address.id
+    $scope.formData.address.id = address.id
+    $scope.formData.address.first_name = address.first_name
+    $scope.formData.address.last_name = address.last_name
+    $scope.formData.address.tel_num = address.tel_num
+    $scope.formData.address.street = address.street
+    $scope.formData.address.house_num = address.house_num
+    $scope.formData.address.town = address.town
+    $scope.formData.address.postcode = address.postcode
 
   $scope.loadTemporaryUser()
   $scope.firstLoadUser()
