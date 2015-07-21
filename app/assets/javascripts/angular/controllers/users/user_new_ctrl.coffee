@@ -17,12 +17,7 @@ UserNewCtrl = ($scope, $state, userData, principal) ->
 
   $scope.isFormValid = ->
     $scope.formData.first_name && $scope.formData.last_name && $scope.formData.email \
-      && $scope.formData.password && $scope.formData.password_confirmation
-
-  $scope.open = ($event) ->
-    $event.preventDefault()
-    $event.stopPropagation()
-    $scope.opened = true
+      && $scope.formData.password && $scope.formData.password_confirmation && true
 
   # datepicker
 

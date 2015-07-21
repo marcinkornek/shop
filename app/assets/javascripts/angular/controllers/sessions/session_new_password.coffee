@@ -21,7 +21,8 @@ SessionNewPasswordCtrl = ($scope, $state, $stateParams, userData, $timeout) ->
 
   $scope.isFormValid = ->
     $scope.formData.password && $scope.formData.password_confirmation && \
-      $scope.formData.password == $scope.formData.password_confirmation && $scope.formData.token
+      $scope.formData.password == $scope.formData.password_confirmation && \
+      $scope.formData.token && true
 
   $scope.alerts ||= []
 

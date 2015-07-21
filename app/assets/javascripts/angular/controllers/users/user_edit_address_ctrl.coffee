@@ -92,7 +92,7 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
     $scope.formData.address.first_name && $scope.formData.address.last_name \
       && $scope.formData.address.tel_num && $scope.formData.address.street \
       && $scope.formData.address.house_num && $scope.formData.address.town \
-      && $scope.formData.address.postcode
+      && $scope.formData.address.postcode && true
 
   $scope.replaceAddress = (address) ->
     # console.log 'id', address

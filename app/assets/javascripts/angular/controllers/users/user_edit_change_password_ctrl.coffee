@@ -15,9 +15,10 @@ UserEditChangePasswordCtrl = ($scope, $state, userData) ->
       )
 
   $scope.isFormValid = ->
-    $scope.formData.password.old_password && $scope.formData.password.new_password \
-      && $scope.formData.password.new_password_confirmation \
-      && $scope.formData.password.new_password_confirmation == $scope.formData.password.new_password
+    $scope.formData.password.old_password && $scope.formData.password.new_password && \
+      $scope.formData.password.new_password_confirmation && \
+      $scope.formData.password.new_password_confirmation == $scope.formData.password.new_password \
+      && true
 
   $scope.clearPasswordForm = ->
     $scope.formData.password.old_password = ''
