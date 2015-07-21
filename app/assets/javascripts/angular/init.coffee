@@ -66,7 +66,7 @@ angular.module('shop', [
       # console.log window.currentUser.id
       if window.currentUser.id
         principal.authenticate
-          username: window.currentUser.username
+          username: window.currentUser.first_name
           roles: [ window.currentUser.role ]
       else
         principal.authenticate(null)
