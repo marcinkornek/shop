@@ -17,24 +17,19 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
   # loading data
 
   $scope.loadAddress = (AddressId) ->
-    $scope.checked = $scope.formData.addresses[0].id
-    # console.log 'loadAddress'
-    $scope.closeAlert()
-    addressData.get({id: AddressId}
-    , (address) ->
-      $scope.formData.address.id = address.id
-      $scope.formData.address.first_name = address.first_name
-      $scope.formData.address.last_name = address.last_name
-      $scope.formData.address.tel_num = address.tel_num
-      $scope.formData.address.street = address.street
-      $scope.formData.address.house_num = address.house_num
-      $scope.formData.address.town = address.town
-      $scope.formData.address.postcode = address.postcode
-    , (error) ->
-      console.log 'error'
-      console.log error.status
-      $scope.formData.error = 'There is no such address'
-    )
+    address = $scope.findAddress(AddressId)
+    $scope.checked = address.id
+    $scope.formData.address.id = address.id
+    $scope.formData.address.first_name = address.first_name
+    $scope.formData.address.last_name = address.last_name
+    $scope.formData.address.tel_num = address.tel_num
+    $scope.formData.address.street = address.street
+    $scope.formData.address.house_num = address.house_num
+    $scope.formData.address.town = address.town
+    $scope.formData.address.postcode = address.postcode
+
+  $scope.findAddress = (AddressId) ->
+    _.findWhere($scope.formData.addresses, { id: AddressId })
 
   # functions
 
@@ -66,7 +61,6 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
         $scope.formData.addresses.push(success)
         $scope.changeAddressesNumber('+')
         $scope.loadAddress(success.id)
-        $scope.checked = success.id
       , (error) ->
         console.log 'error'
         $scope.formData.user_error = error.data.error
@@ -82,7 +76,6 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
         $scope.replaceAddress(success)
         $scope.loadAddress(success.id)
         $scope.addAlert('success', 'USER_EDIT_ADDRESS_ALERT_SUCCESS_EDIT')
-        $scope.checked = success.id
       , (error) ->
         console.log 'error'
         $scope.formData.user_error = error.data.error
@@ -95,7 +88,6 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
       && $scope.formData.address.postcode && true
 
   $scope.replaceAddress = (address) ->
-    # console.log 'id', address
     $scope.formData.addresses = _.filter($scope.formData.addresses, (item) ->
       (item.id isnt address.id)
     )
@@ -114,9 +106,9 @@ UserEditAddressCtrl = ($scope, $stateParams, $state, userData, addressData, $htt
   $scope.changeAddressesNumber = (sign) ->
     switch sign
       when '+'
-        $scope.formData.addresses_number = $scope.formData.addresses_number + 1
+        $scope.formData.addresses_number += 1
       when '-'
-        $scope.formData.addresses_number = $scope.formData.addresses_number - 1
+        $scope.formData.addresses_number -= 1
 
   $scope.loadFirstOrNew = ->
     switch $scope.formData.addresses_number

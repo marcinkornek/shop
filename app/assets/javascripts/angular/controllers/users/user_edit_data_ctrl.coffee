@@ -4,6 +4,7 @@ UserEditDataCtrl = ($scope, $stateParams, $state, userData, addressData, $http) 
 
   $scope.editUser = (userId) ->
     if $scope.formData.email && $scope.formData.first_name && $scope.formData.last_name
+      $scope.formData.birth_date = $scope.birth_date
       user = $scope.formData
       userData.update({id: userId}, user
       , (success) ->
@@ -17,8 +18,6 @@ UserEditDataCtrl = ($scope, $stateParams, $state, userData, addressData, $http) 
       )
 
   # datepicker
-
-  $scope.formData.birth_date = new Date()
 
   $scope.open = ($event) ->
     $event.preventDefault()
