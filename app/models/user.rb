@@ -67,7 +67,6 @@ class User < ActiveRecord::Base
     password = friendly_token
     user = create_user(auth, password)
     user.send_activation_email = false
-    user.activate!
     user.save
     user.activate!
     user
